@@ -24,4 +24,15 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
 #### Install Kubernetes
 
 - Add Kubernetes signing key: `curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add`.
+- Add Software Repositories because Kubernetes is not included in the default repositories: `sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"`.
+- Install Kubernetes Admin, which is a tool that helps initialize a cluster, with the command:
+    - `sudo apt install kubeadm kubelet kubectl`;
+    - `sudo apt-mark hold kubeadm kubelet kubectl`;
+    - `kubeadm version` (verify the installation);
+    - Refer to: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 - Repeat for all server nodes.
+
+#### Deploy Kubernetes
+
+- [ALL] Disable the swap memory on each server: `sudo swapoff -a`.
+- [ALL] Assign unique hostname for each server node: `sudo hostnamectl set-hostname xxx`.
