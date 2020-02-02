@@ -49,3 +49,5 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
 - [WORKER] Connect each worker node to the cluster.
     - `kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443` (replace the alphanumeric codes with those from your master server during initialization);
 - [MASTER] Check the worker nodes joined to the clusster: `kubectl get nodes`.
+
+By going through all the instructions above, a Kubernetes cluster should be installed, deployed and ready for use.
