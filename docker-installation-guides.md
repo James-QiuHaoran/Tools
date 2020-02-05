@@ -40,6 +40,24 @@ ubuntu@tuleta:~/docker-ce$ tree ./components/packaging/static/build/linux
 
 - Send the `.tgz` to the machines you want, unpack it to the desired destination (`/usr/bin` if you don’t want to change the systemd scripts) and you’re done.
 
+```
+ubuntu@tuleta:~/test-docker$ tar zxvf docker-19.03.5.tgz 
+docker/
+docker/docker-proxy
+docker/ctr
+docker/runc
+docker/dockerd
+docker/containerd-shim
+docker/containerd
+docker/docker
+docker/docker-init
+
+ubuntu@tuleta:~/test-docker$ sudo mv docker/* /usr/bin/
+```
+
+- Start Docker daemon and run an application to check: `sudo dockerd &; sudo docker run hello-world`
+
+This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.
 
 ## Miscellaneous
 
