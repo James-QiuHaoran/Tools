@@ -17,6 +17,27 @@ git branch
 - Have a running `docker` daemon to proceed (`dockerd` is built using docker);
 - Build: `make static DOCKER_BUILD_PKGS=static-linux DOCKER_BUILDKIT=0`;
 - Check that results from the build: `tree ./components/packaging/static/build/linux`;
+
+```
+ubuntu@tuleta:~/docker-ce$ tree ./components/packaging/static/build/linux
+./components/packaging/static/build/linux
+├── docker
+│   ├── containerd
+│   ├── containerd-shim
+│   ├── ctr
+│   ├── docker
+│   ├── dockerd
+│   ├── docker-init
+│   ├── docker-proxy
+│   └── runc
+├── docker-19.03.5.tgz
+├── docker-rootless-extras
+│   ├── dockerd-rootless.sh
+│   ├── rootlesskit
+│   └── rootlesskit-docker-proxy
+└── docker-rootless-extras-19.03.5.tgz
+```
+
 - Send the `.tgz` to the machines you want, unpack it to the desired destination (`/usr/bin` if you don’t want to change the systemd scripts) and you’re done.
 
 
