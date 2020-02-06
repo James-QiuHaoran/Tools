@@ -3,7 +3,7 @@
 Docker support GPU natively (without replying on `nvidia-docker`) starting from version 19.03. However, this version does not support Power Machines.
 Therefore, this guide is about how to install Docker 19.03.5 on Power Machines with Ubuntu 18.04.
 
-## Get Docker Repository Ready
+### Get Docker 19.03.5 Ready
 
 - Download the repository: `git clone https://github.com/docker/docker-ce.git`;
 - Switch to the specific tag:
@@ -59,9 +59,50 @@ ubuntu@tuleta:~/test-docker$ sudo mv docker/* /usr/bin/
 
 This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.
 
-## Miscellaneous
+### Nvidia GPU Setup
 
-### Uninstall Docker Engine - Community
+You don't have to do much here if you already have an NVIDIA GPU and an updated driver. However, you should be sure to have a recent NVIDIA driver installed.
+
+If you are using a new OS install then an easy way to install/update the NVIDIA display driver is to use the "graphics drivers" ppa.
+
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+sudo apt-get update
+
+sudo apt-get install build-essential dkms
+
+sudo apt-get install nvidia-driver-440
+```
+
+You can install other available versions of `nvidia-driver` by pressing `[Tab]`.
+
+### Install Nvidia Container Toolkit
+
+Configure the repository first:
+
+```
+DIST=$(. /etc/os-release; echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | \
+  sudo apt-key add -
+curl -s -L https://nvidia.github.io/libnvidia-container/$DIST/libnvidia-container.list | \
+  sudo tee /etc/apt/sources.list.d/libnvidia-container.list
+sudo apt-get update
+```
+
+Install `nvidia-container-toolkit`:
+
+```
+sudo apt-get install nvidia-container-toolkit
+```
+
+### Miscellaneous
+
+#### Uninstall Docker
+
+```
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
 
 Uninstall the Docker Engine - Community package:
 
