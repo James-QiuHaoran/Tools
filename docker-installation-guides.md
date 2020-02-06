@@ -83,10 +83,13 @@ Configure the repository first:
 
 ```
 DIST=$(. /etc/os-release; echo $ID$VERSION_ID)
+
 curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | \
   sudo apt-key add -
+
 curl -s -L https://nvidia.github.io/libnvidia-container/$DIST/libnvidia-container.list | \
   sudo tee /etc/apt/sources.list.d/libnvidia-container.list
+
 sudo apt-get update
 ```
 
@@ -95,6 +98,20 @@ Install `nvidia-container-toolkit`:
 ```
 sudo apt-get install nvidia-container-toolkit
 ```
+
+Restart Docker:
+
+```
+sudo systemctl restart docker
+```
+
+To test `nvidia-container-toolkit`, try the following (still running as root for now),
+
+```
+sudo docker run --gpus all --rm nvidia/cuda nvidia-smi
+```
+
+After the container downloads you should see the `nvidia-smi` output from the latest cuda release.
 
 ### Miscellaneous
 
