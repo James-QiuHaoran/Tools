@@ -32,27 +32,44 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
     - Refer to: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 - Repeat for all server nodes.
 
-#### Cluster Setup
-
-- Master node(s): dvorak
-- Worker node(s): dvorak-2-1, dvorak-2-2, dvorak-2-3, dvorak-2-4
-
 #### Deploy Kubernetes
 
-- [ALL] Disable the swap memory on each server: `sudo swapoff -a`.
-- [ALL] Assign unique hostname for each server node: `sudo hostnamectl set-hostname xxx`.
-- [MASTER] Initialize Kubernetes on the master node: 
+- [**ALL**] Disable the swap memory on each server: `sudo swapoff -a`.
+- [**ALL**] Assign unique hostname for each server node: `sudo hostnamectl set-hostname xxx`.
+- [**MASTER**] Initialize Kubernetes on the master node: 
     - `sudo kubeadm init --pod-network-cidr=10.244.0.0/16`: Once this command finishes, it will display a `kubeadm join` message at the end. Make a note of the whole entry because it will be used to join the worker nodes to the cluster.
         - `--pod-network-cidr=10.244.0.0/16` is for flannel virtual network to work.
     - Create a directory for the cluster:
         - `mkdir -p $HOME/.kube`;
         - `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`;
         - `sudo chown $(id -u):$(id -g) $HOME/.kube/config`;
-- [MASTER] Deploy pod network to the cluster. A pod network is a way to allow communication between different nodes in the cluster.
+- [**MASTER**] Deploy pod network to the cluster. A pod network is a way to allow communication between different nodes in the cluster.
     - `sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`;
     - `kubectl get pods --all-namespaces` (verify the pod network is working);
-- [WORKER] Connect each worker node to the cluster.
+- [**WORKER**] Connect each worker node to the cluster.
     - `kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443` (replace the alphanumeric codes with those from your master server during initialization);
-- [MASTER] Check the worker nodes joined to the clusster: `kubectl get nodes`.
+- [**MASTER**] Check the worker nodes joined to the clusster: `kubectl get nodes`.
 
 By going through all the instructions above, a Kubernetes cluster should be installed, deployed and ready for use.
+
+#### Cluster Setup
+
+- Master node(s): dvorak (v1.17.2)
+- Worker node(s): dvorak-2-1, dvorak-2-2, dvorak-2-3, dvorak-2-4
+
+### Miscellaneous
+
+#### Invalid Signature/Public Key Not Available
+
+If you see error messages like:
+
+```
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://dl.google.com/linux/chrome/deb stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 78BD65473CB3BD13
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://dl.yarnpkg.com/debian stable InRelease: The following signatures were invalid: EXPKEYSIG 23E7166788B63E1E Yarn Packaging <yarn@dan.cx>
+```
+
+Adding the key using `apt-key` can solve the problem: `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys KEY`.
+
+#### Remove Previously Installed Kubernetes
+
+To remove the outdated Kubernetes installed on the node, execute `sudo apt --purge remove kubeadm kubectl kubelet`.
