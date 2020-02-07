@@ -47,10 +47,17 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
     - `sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`;
     - `kubectl get pods --all-namespaces` (verify the pod network is working);
 - [**WORKER**] Connect each worker node to the cluster.
-    - `kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443` (replace the alphanumeric codes with those from your master server during initialization);
+    - `sudo kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443` (replace the alphanumeric codes with those from your master server during initialization);
 - [**MASTER**] Check the worker nodes joined to the clusster: `kubectl get nodes`.
 
 By going through all the instructions above, a Kubernetes cluster should be installed, deployed and ready for use.
+
+[Optional] In order to get a kubectl on some other computer (e.g. laptop) to talk to your cluster, you need to copy the administrator `kubeconfig` file from your control-plane node to your workstation like this:
+
+```
+scp root@<control-plane-host>:/etc/kubernetes/admin.conf .
+kubectl --kubeconfig ./admin.conf get nodes
+```
 
 #### Cluster Setup
 
@@ -58,6 +65,25 @@ The example Kubernetes cluster consists of one master node and four worker nodes
 
 - Master node(s): dvorak
 - Worker node(s): dvorak-2-1, dvorak-2-2, dvorak-2-3, dvorak-2-4
+
+Commands to join worker nodes to the Kubernetes cluster (**run as root**):
+
+```
+kubeadm join 192.17.100.193:6443 --token 6nyoyd.m9y4647myjz72bvq \
+    --discovery-token-ca-cert-hash sha256:15c534de029ce6056404b1c8be0b2a9b63007b0166a48189bd613492d709f961
+```
+
+Show all nodes:
+
+```
+ubuntu@dvorak:~$ kubectl get nodes
+NAME         STATUS   ROLES    AGE   VERSION
+dvorak       Ready    master   22m   v1.17.2
+dvorak-2-1   Ready    worker   18m   v1.17.2
+dvorak-2-2   Ready    worker   16m   v1.17.2
+dvorak-2-3   Ready    worker   16m   v1.17.2
+dvorak-2-4   Ready    worker   15m   v1.17.2
+```
 
 ### Miscellaneous
 
@@ -75,3 +101,27 @@ Adding the key using `apt-key` can solve the problem: `sudo apt-key adv --keyser
 #### Remove Previously Installed Kubernetes
 
 To remove the outdated Kubernetes installed on the node, execute `sudo apt --purge remove kubeadm kubectl kubelet`.
+
+#### Add/Remove Labels to Nodes in Kubernetes
+
+```
+kubectl label node dvorak-2-1 labelname=labelvalue             # add label
+kubectl label node dvorak-2-1 labelname-                       # remove label
+kubectl label node dvorak-2-1 node-role.kubernetes.io/worker=  # label as worker
+```
+
+#### Commands on Displaying Machine/Server Info
+
+- `hostnamectl status`
+
+```
+ubuntu@dvorak-2-4:~$ sudo hostnamectl status
+   Static hostname: dvorak-2-4
+         Icon name: computer-server
+           Chassis: server
+        Machine ID: 052dfdf6532f42dc8b9098c2e9f2cede
+           Boot ID: d9a6da775f214be0b54b9a27c7ce2040
+  Operating System: Ubuntu 18.04.3 LTS
+            Kernel: Linux 4.15.0-70-generic
+      Architecture: x86-64
+```
