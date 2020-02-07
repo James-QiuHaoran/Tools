@@ -54,7 +54,9 @@ By going through all the instructions above, a Kubernetes cluster should be inst
 
 #### Cluster Setup
 
-- Master node(s): dvorak (v1.17.2)
+The example Kubernetes cluster consists of one master node and four worker nodes, all with version `v1.17.2`.
+
+- Master node(s): dvorak
 - Worker node(s): dvorak-2-1, dvorak-2-2, dvorak-2-3, dvorak-2-4
 
 ### Miscellaneous
