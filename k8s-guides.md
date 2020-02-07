@@ -2,14 +2,14 @@
 
 Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
 
-### An Example on Symphony Cluster
+### An Example on the Symphony Cluster
 
 #### Install Docker
 
 - Update the package list with the command `sudo apt update`.
 - Install Docker with the command: `sudo apt install docker.io`.
 - Check the installation and version by entering the following: `docker -v`.
-    - 19.03.2: dvorak-2-2, dvorak-2-3, dvorak-1-1, dvorak-1-2, dvorak-1-4
+    - 19.03.2: dvorak, dvorak-2-2, dvorak-2-3, dvorak-1-1, dvorak-1-2, dvorak-1-4
     - 19.03.4: dvorak-1-3
     - 19.03.5: dvorak-2-1, dvorak-2-4
 - Repeat the process on each server that will act as a node in the Kubernetes cluster.
@@ -31,6 +31,11 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
     - `kubeadm version` (verify the installation);
     - Refer to: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 - Repeat for all server nodes.
+
+#### Cluster Setup
+
+- Master node(s): dvorak
+- Worker node(s): dvorak-2-1, dvorak-2-2, dvorak-2-3, dvorak-2-4
 
 #### Deploy Kubernetes
 
