@@ -11,6 +11,7 @@ Refer to https://www.tutorialspoint.com/kubernetes/kubernetes_kubectl_commands.h
 - `kubectl apply -f <filename>`: configure a resource by file or stdin;
 - `kubectl create –f <filename>`: create resource by file (JSON or YAML, should be complete) or stdin;
 - `kubectl delete –f ([-f FILENAME] | TYPE [(NAME | -l label | --all)])`: delete resources by file name, stdin, resource or names;
+    - `kubectl delete -n social-network --all pod,svc`;
 
 ### DNS Service Debugging
 
@@ -63,4 +64,3 @@ Deployments are upgraded and higher version of replication controller. They mana
 - Execute commands on the container once the pod is up and running:
   - `kubectl exec $POD_NAME env`
   - `kubectl exec -it $POD_NAME bash` (start a bash session in the container)
-
