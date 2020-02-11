@@ -58,9 +58,9 @@ Deployments are upgraded and higher version of replication controller. They mana
 
 ### Check Application Configuration & Logs
 
-- `kubectl get pods`
-- `kubectl describe pods`
-- `kubectl logs $POD_NAME`
+- `kubectl get pods`: check for existing pods;
+- `kubectl describe pods`: view what containers are inside that Pod and what images are used to build those containers;
+- `kubectl logs $POD_NAME`: retrieve the logs that the application would normally send to STDOUT;
 - Execute commands on the container once the pod is up and running:
   - `kubectl exec $POD_NAME env`
   - `kubectl exec -it $POD_NAME bash` (start a bash session in the container)
