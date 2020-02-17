@@ -64,3 +64,24 @@ Deployments are upgraded and higher version of replication controller. They mana
 - Execute commands on the container once the pod is up and running:
   - `kubectl exec $POD_NAME env`
   - `kubectl exec -it $POD_NAME bash` (start a bash session in the container)
+
+### Deploy Kubernetes Dashboard Web
+
+Kubernetes dashboard web-service is not deployed by default. To deploy and access it, run
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+kubectl proxy
+```
+
+Then you can access the dashboard website using the url:
+
+```
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
+You could use the bearer token to access. To get the token, run:
+
+```
+kubectl describe secrets
+```
