@@ -5,6 +5,7 @@ Kubectl controls the Kubernetes Cluster. It is one of the key components of Kube
 Kubectl commands are used to interact and manage Kubernetes objects and the cluster.
 
 Refer to https://www.tutorialspoint.com/kubernetes/kubernetes_kubectl_commands.htm.
+
 A Guide: https://kubernetes.feisky.xyz/.
 
 ### Standard Operations
