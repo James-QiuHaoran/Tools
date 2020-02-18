@@ -5,9 +5,16 @@ Kubectl controls the Kubernetes Cluster. It is one of the key components of Kube
 Kubectl commands are used to interact and manage Kubernetes objects and the cluster.
 
 Refer to https://www.tutorialspoint.com/kubernetes/kubernetes_kubectl_commands.htm.
+A Guide: https://kubernetes.feisky.xyz/.
 
 ### Standard Operations
 
+- `kubectl get`: similar to `docker ps`, to look up resource lists;
+- `kubectl describe`: similar to `docker inspect`, to retrieve detailed info for resources;
+- `kubectl logs`: similar to `docker logs`, to retrieve docker logs;
+- `kubectl exec`: similar to `docker exec`, to execute a command inside a container;
+- `kubectl run`: similar to `docker run`, to start a container (in fact a deployment managing a pod);
+    - `kubectl run --image=nginx:alpine nginx-app --port=80`;
 - `kubectl apply -f <filename>`: configure a resource by file or stdin;
 - `kubectl create –f <filename>`: create resource by file (JSON or YAML, should be complete) or stdin;
 - `kubectl delete –f ([-f FILENAME] | TYPE [(NAME | -l label | --all)])`: delete resources by file name, stdin, resource or names;
