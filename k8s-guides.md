@@ -11,6 +11,7 @@ A Guide: https://kubernetes.feisky.xyz/.
 ### Standard Operations
 
 - `kubectl get`: similar to `docker ps`, to look up resource lists;
+    - `kubectl get apiservices`: show a list of API resources;
 - `kubectl describe`: similar to `docker inspect`, to retrieve detailed info for resources;
 - `kubectl logs`: similar to `docker logs`, to retrieve docker logs;
 - `kubectl exec`: similar to `docker exec`, to execute a command inside a container;
