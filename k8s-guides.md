@@ -94,3 +94,38 @@ You could use the bearer token to access. To get the token, run:
 ```
 kubectl describe secrets
 ```
+
+### Disable Nodes
+
+Drain the node that you don't want to schedule pods on:
+
+```
+kubectl drain <node-name>
+```
+
+You will see:
+
+```
+ubuntu@dvorak:/gpfs/gpfs0/home/haoranq4/DeathStarBench/socialNetwork/k8s-yaml$ kubectl get nodes
+NAME         STATUS                     ROLES    AGE   VERSION
+dvorak       Ready                      master   27d   v1.17.2
+dvorak-2-1   Ready,SchedulingDisabled   worker   27d   v1.17.2
+dvorak-2-2   Ready                      worker   27d   v1.17.2
+dvorak-2-3   Ready                      worker   27d   v1.17.2
+dvorak-2-4   Ready                      worker   27d   v1.17.2
+```
+
+You might have to ignore daemonsets and local-data in the machine.
+
+```
+kubectl drain <node-name> --ignore-daemonsets --delete-local-data
+```
+
+You can then delete the node or reset the machine if you want.
+
+```
+kubectl delete node <node-name>
+kubeadm reset (on the worker node you delete)
+```
+
+You can rejoin the Kubernetes cluster by using `kubeadm join`.
