@@ -129,3 +129,7 @@ kubeadm reset (on the worker node you delete)
 ```
 
 You can rejoin the Kubernetes cluster by using `kubeadm join`.
+
+If you don't want to delete/reset your node, you can then uncordon it and make it schedulable.
+
+`kubectl cordon` can make the node unschedulable for new pods but Kubernetes doesn't migrate pods from it to other nodes.
