@@ -20,7 +20,7 @@ A Guide: https://kubernetes.feisky.xyz/.
 - `kubectl apply -f <filename>`: configure a resource by file or stdin;
 - `kubectl create –f <filename>`: create resource by file (JSON or YAML, should be complete) or stdin;
 - `kubectl delete –f ([-f FILENAME] | TYPE [(NAME | -l label | --all)])`: delete resources by file name, stdin, resource or names;
-    - `kubectl delete -n social-network --all pod,svc`;
+    - `kubectl delete -n social-network --all pod,svc --force --grace-period=0` does not delete the pods and services, instead, the pods are restarting;
 
 ### DNS Service Debugging
 
@@ -94,42 +94,3 @@ You could use the bearer token to access. To get the token, run:
 ```
 kubectl describe secrets
 ```
-
-### Disable Nodes
-
-Drain the node that you don't want to schedule pods on:
-
-```
-kubectl drain <node-name>
-```
-
-You will see:
-
-```
-ubuntu@dvorak:/gpfs/gpfs0/home/haoranq4/DeathStarBench/socialNetwork/k8s-yaml$ kubectl get nodes
-NAME         STATUS                     ROLES    AGE   VERSION
-dvorak       Ready                      master   27d   v1.17.2
-dvorak-2-1   Ready,SchedulingDisabled   worker   27d   v1.17.2
-dvorak-2-2   Ready                      worker   27d   v1.17.2
-dvorak-2-3   Ready                      worker   27d   v1.17.2
-dvorak-2-4   Ready                      worker   27d   v1.17.2
-```
-
-You might have to ignore daemonsets and local-data in the machine.
-
-```
-kubectl drain <node-name> --ignore-daemonsets --delete-local-data
-```
-
-You can then delete the node or reset the machine if you want.
-
-```
-kubectl delete node <node-name>
-kubeadm reset (on the worker node you delete)
-```
-
-You can rejoin the Kubernetes cluster by using `kubeadm join`.
-
-If you don't want to delete/reset your node, you can then uncordon it and make it schedulable.
-
-`kubectl cordon` can make the node unschedulable for new pods but Kubernetes doesn't migrate pods from it to other nodes.
