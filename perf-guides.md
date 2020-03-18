@@ -31,6 +31,7 @@ The userspace `perf` command present a simple to use interface with commands lik
 
 - Cache-misses counts for each process: `perf stat -e cache-misses -I 1000 -p pid`
     - Output every 1 second;
+- Last-level-cache hit rate: `perf stat -e LLC-loads,LLC-load-misses -I 1000`
 - Memory bandwidth for all sockets: `perf stat -M Memory_BW -I 1000`
     - This does not work for my case so I use `perf stat -e cas_count_read,cas_count_write -I 1000`
     - According to `hsx-metrics.json`, `BW = (64*(uncore_imc@cas_count_read@ + uncore_imc@cas_count_write@)/1000000000)/ duration_time`
