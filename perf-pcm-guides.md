@@ -1,6 +1,6 @@
-## Guideline On Using `perf`
+## Guideline On Using `perf` and `pcm`
 
-### Intro
+### Intro to `perf`
 
 `perf` is powerful: it can instrument CPU performance counters, tracepoints, kprobes, and uprobes (dynamic tracing).
 It is capable of lightweight profiling.
@@ -35,3 +35,7 @@ The userspace `perf` command present a simple to use interface with commands lik
 - Memory bandwidth for all sockets: `perf stat -M Memory_BW -I 1000`
     - This does not work for my case so I use `perf stat -e cas_count_read,cas_count_write -I 1000`
     - According to `hsx-metrics.json`, `BW = (64*(uncore_imc@cas_count_read@ + uncore_imc@cas_count_write@)/1000000000)/ duration_time`
+
+### Intro to `pcm`
+
+https://github.com/opcm/pcm
