@@ -44,4 +44,5 @@ https://github.com/opcm/pcm
 
 A top-down approach to identify bottlenecks in CPU pipeline.
 
-https://github.com/andikleen/pmu-tools/wiki/toplev-manual
+- https://github.com/andikleen/pmu-tools/wiki/toplev-manual
+- http://halobates.de/blog/p/262
