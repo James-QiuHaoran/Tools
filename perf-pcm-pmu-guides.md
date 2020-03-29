@@ -39,3 +39,9 @@ The userspace `perf` command present a simple to use interface with commands lik
 ### Intro to `pcm`
 
 https://github.com/opcm/pcm
+
+### Intro to `pmu`
+
+A top-down approach to identify bottlenecks in CPU pipeline.
+
+https://github.com/andikleen/pmu-tools/wiki/toplev-manual
