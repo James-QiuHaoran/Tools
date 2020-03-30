@@ -1,8 +1,8 @@
-## Guideline On Performance Monitoring
+# Guideline On Performance Monitoring
 
 Tools included: `perf`, `pcm`, `pmu`, and `pcp`
 
-### Intro to `perf`
+## Intro to `perf`
 
 `perf` is powerful: it can instrument CPU performance counters, tracepoints, kprobes, and uprobes (dynamic tracing).
 It is capable of lightweight profiling.
@@ -38,23 +38,23 @@ The userspace `perf` command present a simple to use interface with commands lik
     - This does not work for my case so I use `perf stat -e cas_count_read,cas_count_write -I 1000`
     - According to `hsx-metrics.json`, `BW = (64*(uncore_imc@cas_count_read@ + uncore_imc@cas_count_write@)/1000000000)/ duration_time`
 
-### Intro to `pcm`
+## Intro to `pcm`
 
 https://github.com/opcm/pcm
 
-### Intro to `pmu`
+## Intro to `pmu`
 
 A top-down approach to identify bottlenecks in CPU pipeline.
 
 - https://github.com/andikleen/pmu-tools/wiki/toplev-manual
 - http://halobates.de/blog/p/262
 
-### Intro to `pcp`
+## Intro to `pcp`
 
 https://pcp.io/index.html
 https://pcp.io/docs/lab.containers.html
 
-#### Using `pcp` on Containers
+### Using `pcp` on Containers
 
 ```
 sudo apt install pcp
@@ -85,9 +85,28 @@ $ pmprobe -I --container f4d3b90bea15 network.interface.up
 network.interface.up 2 "lo" "eth0"
 ```
 
-#### Vector
+### Vector
 
 Vector is a performance monitoring framework (frontend) based on `pcp`.
 
 - http://getvector.io/
 - https://ma.ttias.be/taking-netflixs-vector-performance-monitoring-tool-for-a-spin/
+
+```
+$ sudo apt install pcp pcp-webapi
+$ sudo service pcp start
+$ sudo service pmwebd start
+$ sudo netstat -anp | grep ':44323'
+tcp        0      0 0.0.0.0:44323     0.0.0.0:*   LISTEN      8970/pmwebd
+tcp        0      0 :::44323          :::*        LISTEN      8970/pmwebd
+
+$ sudo apt install npm
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+$ git clone https://github.com/Netflix/vector.git
+$ cd vector
+$ nvm use
+$ npm install
+$ npm run build
+$ npm run serve
+```
