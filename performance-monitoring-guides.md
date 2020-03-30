@@ -89,5 +89,5 @@ network.interface.up 2 "lo" "eth0"
 
 Vector is a performance monitoring framework (frontend) based on `pcp`.
 
-http://getvector.io/
-https://ma.ttias.be/taking-netflixs-vector-performance-monitoring-tool-for-a-spin/
+- http://getvector.io/
+- https://ma.ttias.be/taking-netflixs-vector-performance-monitoring-tool-for-a-spin/
