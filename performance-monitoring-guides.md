@@ -1,4 +1,6 @@
-## Guideline On Using `perf` and `pcm`
+## Guideline On Performance Monitoring
+
+Tools included: `perf`, `pcm`, `pmu`, and `pcp`
 
 ### Intro to `perf`
 
@@ -46,3 +48,39 @@ A top-down approach to identify bottlenecks in CPU pipeline.
 
 - https://github.com/andikleen/pmu-tools/wiki/toplev-manual
 - http://halobates.de/blog/p/262
+
+### Intro to `pcp`
+
+https://pcp.io/index.html
+https://pcp.io/docs/lab.containers.html
+
+#### Using `pcp` on Containers
+
+```
+sudo apt install pcp
+pcp verify --containers
+```
+
+```
+$ pminfo --fetch containers.name containers.state.running
+containers.name
+    inst [0 or "f4d3b90bea15..."] value "sharp_feynman"
+    inst [1 or "d43eda0a7e7d..."] value "cranky_colden"
+    inst [2 or "252b56e79da5..."] value "desperate_turing"
+
+containers.state.running
+    inst [0 or "f4d3b90bea15..."] value 1
+    inst [1 or "d43eda0a7e7d..."] value 0
+    inst [2 or "252b56e79da5..."] value 1
+```
+
+```
+$ pmprobe -I network.interface.up
+network.interface.up 5 "p2p1" "wlp2s0" "lo" "docker0" "veth2234780"
+
+$ pmprobe -I --container sharp_feynman network.interface.up
+network.interface.up 2 "lo" "eth0"
+
+$ pmprobe -I --container f4d3b90bea15 network.interface.up
+network.interface.up 2 "lo" "eth0"
+```
