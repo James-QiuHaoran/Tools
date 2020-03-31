@@ -110,3 +110,19 @@ $ npm install
 $ npm run build
 $ npm run serve
 ```
+
+## Intro to Prometheus
+
+Prometheus is a monitoring tools for Kubernetes.
+
+- https://github.com/coreos/kube-prometheus#installing
+- https://github.com/coreos/kube-prometheus/blob/master/docs/kube-prometheus-on-kubeadm.md
+
+It's based on:
+
+- node-exporter (https://github.com/prometheus/node_exporter)
+- kube-state-metrics (https://github.com/kubernetes/kube-state-metrics)
+
+### Example Usage
+
+https://www.replex.io/blog/kubernetes-in-production-the-ultimate-guide-to-monitoring-resource-metrics
