@@ -133,3 +133,25 @@ You can rejoin the Kubernetes cluster by using `kubeadm join`.
 If you don't want to delete/reset your node, you can then uncordon it and make it schedulable.
 
 `kubectl cordon` can make the node unschedulable for new pods but Kubernetes doesn't migrate pods from it to other nodes.
+
+
+### Port Forwarding for Pods
+
+Different ways to forward a local port to a port on the Pod:
+
+```
+# change redis-master-765d459796-258hz to the name of the Pod
+kubectl port-forward redis-master-765d459796-258hz 7000:6379
+kubectl port-forward pods/redis-master-765d459796-258hz 7000:6379
+kubectl port-forward service/redis-master 7000:6379
+kubectl port-forward deployment/redis-master 7000:6379
+```
+
+The output is likely to be:
+
+```
+I0710 14:43:38.274550    3655 portforward.go:225] Forwarding from 127.0.0.1:7000 -> 6379
+I0710 14:43:38.274797    3655 portforward.go:225] Forwarding from [::1]:7000 -> 6379
+```
+
+Then you can access the pod's port 6379 from your local port 7000.
