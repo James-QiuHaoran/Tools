@@ -95,6 +95,8 @@ You could use the bearer token to access. To get the token, run:
 kubectl describe secrets
 ```
 
+Note: You may need to create cluster role binding to cluster-admin if RBAC authentication is enabled. Refer to https://github.com/ubuntu/microk8s/issues/637 and https://github.com/fabric8io/fabric8/issues/6840.
+
 ### Disable Nodes
 
 Drain the node that you don't want to schedule pods on:
