@@ -157,3 +157,40 @@ I0710 14:43:38.274797    3655 portforward.go:225] Forwarding from [::1]:7000 -> 
 ```
 
 Then you can access the pod's port 6379 from your local port 7000.
+
+### Show Detailed Version of `get pods`
+
+```
+ubuntu@dvorak:/gpfs/gpfs0/home/haoranq4/DeathStarBench/socialNetwork/k8s-yaml$ kubectl get pod -n social-network -o wide
+NAME                                            READY   STATUS    RESTARTS   AGE     IP             NODE         NOMINATED NODE   READINESS GATES
+compose-post-redis-cd45f4f88-sfm8m              1/1     Running   0          8m26s   10.244.3.36    dvorak-2-3   <none>           <none>
+compose-post-service-7fbcbdf668-vl8s4           1/1     Running   0          8m26s   10.244.4.112   dvorak-2-4   <none>           <none>
+home-timeline-redis-64c59cbcd4-2gc49            1/1     Running   0          8m26s   10.244.2.28    dvorak-2-2   <none>           <none>
+home-timeline-service-697bd67c5d-9wsx8          1/1     Running   2          8m26s   10.244.4.113   dvorak-2-4   <none>           <none>
+jaeger-d6f5784d5-t5wxf                          1/1     Running   2          8m26s   10.244.2.29    dvorak-2-2   <none>           <none>
+media-frontend-c6967569-p6mhv                   1/1     Running   0          8m26s   10.244.4.115   dvorak-2-4   <none>           <none>
+media-memcached-7c5c9dd455-zvqpp                1/1     Running   0          8m26s   10.244.2.30    dvorak-2-2   <none>           <none>
+media-mongodb-6f75c74767-wl4xr                  1/1     Running   0          8m26s   10.244.2.31    dvorak-2-2   <none>           <none>
+media-service-5cc9d97ddf-vdzwn                  1/1     Running   1          8m26s   10.244.4.111   dvorak-2-4   <none>           <none>
+nginx-thrift-9f596dd86-7xj8p                    1/1     Running   0          8m26s   10.244.4.116   dvorak-2-4   <none>           <none>
+post-storage-memcached-bf659b7ff-vwrm6          1/1     Running   0          8m26s   10.244.3.38    dvorak-2-3   <none>           <none>
+post-storage-mongodb-57996bf8d9-bzztf           1/1     Running   0          8m25s   10.244.3.37    dvorak-2-3   <none>           <none>
+post-storage-service-7d867bbcb7-mzqbh           1/1     Running   0          8m25s   10.244.4.114   dvorak-2-4   <none>           <none>
+social-graph-mongodb-84dbcbbf45-8fk6z           1/1     Running   0          8m25s   10.244.1.28    dvorak-2-1   <none>           <none>
+social-graph-redis-6554f796cf-gf6pw             1/1     Running   0          8m25s   10.244.3.39    dvorak-2-3   <none>           <none>
+social-graph-service-75468b7dd-hc5pc            1/1     Running   0          8m25s   10.244.4.117   dvorak-2-4   <none>           <none>
+text-service-84cf4b5bc9-kp55h                   1/1     Running   2          8m35s   10.244.4.106   dvorak-2-4   <none>           <none>
+unique-id-service-75656457f4-gr679              1/1     Running   1          8m35s   10.244.4.103   dvorak-2-4   <none>           <none>
+url-shorten-memcached-5bf8578548-bk79g          1/1     Running   0          8m35s   10.244.2.27    dvorak-2-2   <none>           <none>
+url-shorten-mongodb-644b44f876-prrz6            1/1     Running   0          8m35s   10.244.4.105   dvorak-2-4   <none>           <none>
+url-shorten-service-79bdfccbd4-nf2k8            1/1     Running   1          8m35s   10.244.4.107   dvorak-2-4   <none>           <none>
+user-memcached-86649988f8-fg8cq                 1/1     Running   0          8m35s   10.244.3.34    dvorak-2-3   <none>           <none>
+user-mention-service-b559d5bdd-2sq77            1/1     Running   2          8m35s   10.244.4.104   dvorak-2-4   <none>           <none>
+user-mongodb-7d88565584-tmtxg                   1/1     Running   0          8m35s   10.244.1.25    dvorak-2-1   <none>           <none>
+user-service-85b744dd47-trl7k                   1/1     Running   2          8m35s   10.244.4.108   dvorak-2-4   <none>           <none>
+user-timeline-mongodb-59cd5666c6-grssf          1/1     Running   0          8m35s   10.244.3.35    dvorak-2-3   <none>           <none>
+user-timeline-redis-6997c6984-9cx42             1/1     Running   0          8m35s   10.244.1.26    dvorak-2-1   <none>           <none>
+user-timeline-service-fc749df54-9khh7           1/1     Running   0          8m34s   10.244.4.109   dvorak-2-4   <none>           <none>
+write-home-timeline-rabbitmq-8486db7d5b-nqdjg   1/1     Running   0          8m34s   10.244.1.27    dvorak-2-1   <none>           <none>
+write-home-timeline-service-679b789c59-7htmx    1/1     Running   2          8m34s   10.244.4.110   dvorak-2-4   <none>           <none>
+```
