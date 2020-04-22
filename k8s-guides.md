@@ -195,6 +195,8 @@ write-home-timeline-rabbitmq-8486db7d5b-nqdjg   1/1     Running   0          8m3
 write-home-timeline-service-679b789c59-7htmx    1/1     Running   2          8m34s   10.244.4.110   dvorak-2-4   <none>           <none>
 ```
 
+You can see the replicas, status, number of restarts, age, IP, on which node pods are deployed on, etc..
+
 ### Restart a Pod
 
 ```
