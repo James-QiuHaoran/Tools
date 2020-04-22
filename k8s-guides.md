@@ -194,3 +194,10 @@ user-timeline-service-fc749df54-9khh7           1/1     Running   0          8m3
 write-home-timeline-rabbitmq-8486db7d5b-nqdjg   1/1     Running   0          8m34s   10.244.1.27    dvorak-2-1   <none>           <none>
 write-home-timeline-service-679b789c59-7htmx    1/1     Running   2          8m34s   10.244.4.110   dvorak-2-4   <none>           <none>
 ```
+
+### Restart a Pod
+
+```
+kubectl scale deployment pod-name --replicas=0 -n namespace-name
+kubectl scale deployment pod-name --replicas=2 -n namespace-name
+```
