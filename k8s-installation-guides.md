@@ -48,6 +48,7 @@ Go to https://phoenixnap.com/kb/install-kubernetes-on-ubuntu for reference.
     - `kubectl get pods --all-namespaces` (verify the pod network is working);
 - [**WORKER**] Connect each worker node to the cluster.
     - `sudo kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443` (replace the alphanumeric codes with those from your master server during initialization);
+    - If you forget the command or the token is expired, run `kubeadm token create --print-join-command` from the master server.
 - [**MASTER**] Check the worker nodes joined to the clusster: `kubectl get nodes`.
 
 By going through all the instructions above, a Kubernetes cluster should be installed, deployed and ready for use.
@@ -71,6 +72,12 @@ Commands to join worker nodes to the Kubernetes cluster (**run as root**):
 ```
 kubeadm join 192.17.100.193:6443 --token 6nyoyd.m9y4647myjz72bvq \
     --discovery-token-ca-cert-hash sha256:15c534de029ce6056404b1c8be0b2a9b63007b0166a48189bd613492d709f961
+```
+
+Commands to generate the above join-command or retrieve the token (run from the master node):
+
+```
+kubeadm token create --print-join-command
 ```
 
 Show all nodes:
