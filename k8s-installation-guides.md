@@ -132,3 +132,21 @@ ubuntu@dvorak-2-4:~$ sudo hostnamectl status
             Kernel: Linux 4.15.0-70-generic
       Architecture: x86-64
 ```
+
+#### Join Cluster
+
+Sometimes you cannot join the cluster and this is because your install a newer version of Kubernetes than the cluster master has.
+To install a specific version of Kubernetes, run:
+
+```
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
+    echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
+    sudo apt-get update -q && \
+    sudo apt-get install -qy kubelet=<version> kubectl=<version> kubeadm=<version>
+```
+
+You can get the exact version time from:
+
+```
+curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
+```
