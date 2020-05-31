@@ -134,3 +134,14 @@ $ sudo rm -rf /var/lib/docker
 ```
 
 You must delete any edited configuration files manually.
+
+#### Cannot Access
+
+Current user cannot access var/run/docker/containerd/docker-containerd.sock
+
+Solution:
+
+```
+$ sudo usermod -a -G docker $USER
+$ sudo systemctl restart docker
+```
