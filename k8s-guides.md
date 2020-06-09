@@ -199,3 +199,9 @@ dvorak-2-4   home-timeline-service-697bd67c5d-9wsx8
 kubectl scale deployment pod-name --replicas=0 -n namespace-name
 kubectl scale deployment pod-name --replicas=2 -n namespace-name
 ```
+
+### Load Balancing
+
+- `ipvs`;
+- `iptables`;
+- L7 Load-balancing: HAProxy, Envoy, etc.;
