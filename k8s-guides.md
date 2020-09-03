@@ -74,6 +74,12 @@ Deployments are upgraded and higher version of replication controller. They mana
   - `kubectl exec $POD_NAME env`
   - `kubectl exec -it $POD_NAME bash` (start a bash session in the container)
 
+### Check Kuberentes Controller Log
+
+```
+journalctl -u kubelet -r
+```
+
 ### Deploy Kubernetes Dashboard Web
 
 Kubernetes dashboard web-service is not deployed by default. To deploy and access it, run
@@ -205,3 +211,34 @@ kubectl scale deployment pod-name --replicas=2 -n namespace-name
 - `ipvs`;
 - `iptables`;
 - L7 Load-balancing: HAProxy, Envoy, etc.;
+
+
+### Label Node Roles
+
+Kubernetes does not assign roles for newly added nodes. So you may see something like this:
+
+```
+ubuntu@dvorak-2-1:~$ kubectl get nodes
+NAME         STATUS   ROLES    AGE   VERSION
+dvorak-2-1   Ready    master   30m   v1.19.0
+dvorak-2-2   Ready    <none>   28m   v1.19.0
+dvorak-2-3   Ready    <none>   16m   v1.19.0
+dvorak-2-4   Ready    <none>   14m   v1.19.0
+```
+
+A role is simply a label attached to the node, you can explicitly add the "worker" role/label to any node in the cluster:
+
+```
+ubuntu@dvorak-2-1:~$ kubectl label node dvorak-2-2 node-role.kubernetes.io/worker=worker
+node/dvorak-2-2 labeled
+ubuntu@dvorak-2-1:~$ kubectl label node dvorak-2-3 node-role.kubernetes.io/worker=worker
+node/dvorak-2-3 labeled
+ubuntu@dvorak-2-1:~$ kubectl label node dvorak-2-4 node-role.kubernetes.io/worker=worker
+node/dvorak-2-4 labeled
+ubuntu@dvorak-2-1:~$ kubectl get nodes
+NAME         STATUS   ROLES    AGE   VERSION
+dvorak-2-1   Ready    master   30m   v1.19.0
+dvorak-2-2   Ready    worker   28m   v1.19.0
+dvorak-2-3   Ready    worker   16m   v1.19.0
+dvorak-2-4   Ready    worker   14m   v1.19.0
+```
