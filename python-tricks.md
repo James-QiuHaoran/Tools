@@ -1,5 +1,12 @@
 ## Python Tricks
 
+### Auto `requirements.txt` Generation
+
+```
+pip install pipreqs
+pipreqs /path/to/project
+```
+
 ### Interchange Values Between Two Variables
 
 ```
