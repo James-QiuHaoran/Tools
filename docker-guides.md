@@ -31,6 +31,25 @@ If you do `$ docker run -i -t ubuntu /bin/bash`, the following happens (assuming
 - Docker starts the container and executes `/bin/bash`. Because the container is running interactively and attached to your terminal (due to the `-i` and `-t` flags), you can provide input using your keyboard while the output is logged to your terminal.
 - When you type `exit` to terminate the `/bin/bash` command, the container stops but is not removed. You can start it again or remove it.
 
+#### Build and Deploy a Docker Image
+
+To build a docker image, you need to prepare the source code and a Dockerfile (which specifies the instructions to build the application, the dependencies, as well as the command to run the program).
+
+```
+docker build -t haoranq4/image-name .
+```
+
+You can check `docker images` to see whether your image is in the local docker repository. It should be there!
+
+Then you can deploy your docker container by `docker run -d -p 7001:7001`.
+
+- `-d` means to run the container in background and print container ID.
+- `-p 7001:7001` means to publish container's port 7001 to the host machine's port 7001.
+
+You can delete the container by `docker stop container-id` and then `docker rm container-id`. The container id can be retrieved from `docker ps`.
+
+You cna delete the image after all container instances are removed by `docker image rm haoranq4/image-name`.
+
 ### Docker Swarm
 
 The following commands work for the Sward Orchestrator:
