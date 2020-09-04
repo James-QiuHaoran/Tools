@@ -242,3 +242,34 @@ dvorak-2-2   Ready    worker   28m   v1.19.0
 dvorak-2-3   Ready    worker   16m   v1.19.0
 dvorak-2-4   Ready    worker   14m   v1.19.0
 ```
+
+### Force Delete A Namespace
+
+Sometimes a namespace is deleted using `kubectl delete` but stuck at a "Terminating" stage forever. This is usually due to some unresolved "finalizer".
+
+A solution is to delete the finalizer first and then delete the namespace. For example, if the namespace you want to delete is called "social-network":
+
+```
+kubectl get namespace social-network -o json > tmp.json
+vim tmp.json # remove the line containing the finalizer
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://10.0.0.108:6443/api/v1/namespaces/social-network/finalize # replace 10.0.0.108:6443 with the cluster ip and port by executing kubectl cluster-info
+```
+
+The namespace should be removed completely now.
+
+If the response of the command is like some error message like `"message": "namespaces "social-network" is forbidden: User "system:anonymous" cannot update resource "namespaces/finalize" in API group "" in the namespace "social-network""`, you can try use `kubectl proxy`.
+
+```
+kubectl proxy &
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://127.0.0.1:8001/api/v1/namespaces/social-network/finalize
+```
+
+The namespace should be removed completely now.
+
+If there's error message like "curl: (35) error:1408F10B:SSL routines:ssl3_get_record:wrong version number", you can then try to use `http` instead of `https`.
+
+```
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json http://127.0.0.1:8001/api/v1/namespaces/social-network/finalize
+```
+
+The namespace should be removed completely now.
