@@ -48,7 +48,9 @@ Then you can deploy your docker container by `docker run -d -p 7001:7001 haoranq
 
 You can delete the container by `docker stop container-id` and then `docker rm container-id`. The container id can be retrieved from `docker ps`.
 
-You cna delete the image after all container instances are removed by `docker image rm haoranq4/image-name`.
+You can push the image to the docker hub by `docker image push haoranq4/image-name`.
+
+You can delete the image after all container instances are removed by `docker image rm haoranq4/image-name`.
 
 ### Docker Swarm
 
