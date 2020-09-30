@@ -41,7 +41,7 @@ docker build -t haoranq4/image-name .
 
 You can check `docker images` to see whether your image is in the local docker repository. It should be there!
 
-Then you can deploy your docker container by `docker run -d -p 7001:7001`.
+Then you can deploy your docker container by `docker run -d -p 7001:7001 haoranq4/image-name`.
 
 - `-d` means to run the container in background and print container ID.
 - `-p 7001:7001` means to publish container's port 7001 to the host machine's port 7001.
