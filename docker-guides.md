@@ -52,6 +52,27 @@ You can push the image to the docker hub by `docker image push haoranq4/image-na
 
 You can delete the image after all container instances are removed by `docker image rm haoranq4/image-name`.
 
+#### Miscellaneous
+
+Get the full container ID:
+
+```
+vagrant@dockertest:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED              STATUS              PORTS               NAMES
+ad6d5d32576a        nginx:latest        "nginx -g 'daemon of   About a minute ago   Up About a minute   80/tcp, 443/tcp     nostalgic_sammet
+9bab1a42d6a9        nginx:latest        "nginx -g 'daemon of   About a minute ago   Up About a minute   80/tcp, 443/tcp     mad_kowalevski
+beb70a6a2426        nginx:latest        "nginx -g 'daemon of   3 minutes ago        Up 3 minutes        80/tcp, 443/tcp     admiring_franklin
+
+vagrant@dockertest:~$ docker ps -q --no-trunc | grep ad6d5d32576a
+ad6d5d32576ad3cb1fcaa59b564b8f6f22b079631080ab1a3bbac9199953eb7d
+```
+
+Get the cgroup name with only the `pid`:
+
+```
+ps -o cgroup <pid>
+```
+
 ### Docker Swarm
 
 The following commands work for the Sward Orchestrator:
