@@ -8,6 +8,15 @@ Intel Cache Allocation Technology (CAT) and Memory Bandwidth Allocation Technolo
 
 https://github.com/intel/intel-cmt-cat
 
+### Build and Install
+
+In the repo directory:
+
+```
+make
+sudo make install
+```
+
 ### Examples
 
 - `allocation_app_l3cat`: Demonstrates usage of PQoS/Intel(R) RDT library APIs related to setting bit mask for L3 CAT classes of service (CLOS) and displaying classes of service (CLOS) and associated bit masks.
@@ -22,3 +31,7 @@ Display supported capabilities of the processor:
 pqos -d
 pqos -D
 ```
+
+## Intel MBA
+
+TODO
