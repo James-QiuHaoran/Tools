@@ -16,6 +16,12 @@ IEEE 802.1Q, often referred to as Dot1q, is the networking standard that support
 The standard defines a system of VLAN tagging for Ethernet frames and the accompanying procedures to be used by bridges and switches in handling such frames.
 The standard also contains provisions for a quality-of-service prioritization scheme commonly known as IEEE 802.1p.
 
+The QoS VLAN Priority lets you assign a priority to outbound packets containing the specified VLAN-ID (VID).
+Packets containing the specified VID are marked with the priority level configured for the VID classifier.
+This 802.1 priority determines the outbound port queue to which the packet is sent. If the packet leaves the switch in a tagged VLAN, it carries the 802.1p priority with it to the next downstream device.
+
+For example, if the default VLAN (VID 1) and the Blue VLAN (VID 20) are both assigned to a port, and Blue VLAN traffic is more important, you can configure QoS to give Blue VLAN traffic a higher priority than default VLAN traffic.
+
 ### IEEE 802.1p
 
 IEEE 802.1p is the name of a task group responsible for adding traffic class expediting and dynamic multicast filtering to the IEEE 802.1D standard.
