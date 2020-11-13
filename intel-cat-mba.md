@@ -41,6 +41,19 @@ For examples in C, build binary files by `make`.
 
 Note that all apps operate in user space and use PQoS/Intel(R) RDT and C libraries only.
 
+#### Configure CLOSs
+
+One can use `./allocation_app_l3cat <CLOS#> <bit-mask>` to configure cache allocation for each CLOS.
+The bit-masks are represented as hex-numbers. For example, a mask enabling a CLOS to use the first 2 cache ways (bits) of the LLC is then `0xc0000`.
+And let's say if you want to allocate this to `CLOS0`, then you can execute `sudo ./allocation_app_l3cat 0 0xc0000`.
+The default bit-mask for a CLOS is `0xfffff`, which means it can use all cache ways without any constraints.
+
+#### Associate Cores to a CLOS
+
+By default, all cores are associated to `CLOS0`.
+One can use `./association_app <CLOS#> <core1> <core2>...` to configure the mapping between cores to CLOSs.
+For example, if you want to pin core number 0, 7, 13, 24 to `CLOS1`, then you can execute `sudo ./association_app 1 0 7 13 24`.
+
 ### Others
 
 Display supported capabilities of the processor:
