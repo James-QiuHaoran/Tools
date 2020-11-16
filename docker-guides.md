@@ -75,6 +75,21 @@ ps -o cgroup <pid>
 
 ### Docker Swarm
 
-The following commands work for the Sward Orchestrator:
+The following commands work for the Swarm orchestrator:
 
-- `docker service ls`: List all docker services.
+- `docker service ls`: list all docker services
+- `docker service ps`: list tasks of one or more services
+  - `docker service ps redis`
+- `docker service create IMAGE`: create a new service
+  - `docker service create --name redis redis:3.0.6`
+- `docker service inspect`: display detailed information on one or more services
+- `docker service logs`: fetch the logs of a service
+- `docker service rm`: remove one or more services
+  - `docker service rm redis`
+- `docker service scale SERVICE=REPLICAS`: scale one or more services
+- `docker service update`: update a service
+  - `docker service update --limit-cpu 2 redis`
+- `docker service rollback`: roll back a service to its previous version
+  - `docker service create --name my-service -p 8080:80 nginx:alpine`
+  - `docker service update --replicas=3 my-service` (update the service to use three replicas)
+  - `docker service rollback myservice` (roll back the service to its previous version with a single replica)
