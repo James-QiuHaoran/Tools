@@ -72,7 +72,8 @@ Deployments are upgraded and higher version of replication controller. They mana
 - `kubectl logs $POD_NAME`: retrieve the logs that the application would normally send to STDOUT;
 - Execute commands on the container once the pod is up and running:
   - `kubectl exec $POD_NAME env`
-  - `kubectl exec -it $POD_NAME bash` (start a bash session in the container)
+  - `kubectl exec -it $POD_NAME bash` (start a bash session in the container) [deprecated]
+  - `kubectl exec -it $POD_NAME -- bash`
 
 ### Check Kuberentes Controller Log
 
