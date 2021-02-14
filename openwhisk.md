@@ -28,6 +28,10 @@ To get the CLI command help, execute the following command:
 $ wsk --help
 ```
 
+There are two required properties to configure in order to use the CLI:
+- API host (name or IP address) for the OpenWhisk deployment you want to use.
+- Authorization key (username and password) which grants you access to the OpenWhisk API.
+
 ## OpenWhisk Quick Start
 
 ```
