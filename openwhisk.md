@@ -151,6 +151,26 @@ $ wsk action invoke /whisk.system/utils/echo -p message hello --result
 }
 ```
 
+## Usage
+
+See the list of successfully built OpenWhisk actions:
+
+```
+wsk action list -i
+```
+
+Create an action:
+
+```
+wsk action create myAction action.js
+```
+
+Invoke an action:
+
+```
+wsk action invoke myAction --result
+```
+
 ## FaaSProfiler
 
 https://github.com/PrincetonUniversity/faas-profiler
@@ -176,4 +196,7 @@ bash configure.sh
 
 ### Usage
 
-TODO
+```
+./WorkloadInvoker -c example_test.json
+./WorkloadAnalyzer -rv
+```
