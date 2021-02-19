@@ -141,3 +141,39 @@ ansible-playbook -i environments/$ENVIRONMENT postdeploy.yml
 ansible-playbook -i environments/$ENVIRONMENT apigateway.yml
 ansible-playbook -i environments/$ENVIRONMENT routemgmt.yml
 ```
+
+Test if it's working:
+
+```
+$ wsk action invoke /whisk.system/utils/echo -p message hello --result
+{
+    "message": "hello"
+}
+```
+
+## FaaSProfiler
+
+https://github.com/PrincetonUniversity/faas-profiler
+
+FaaSProfiler is a tool for testing and profiling FaaS platforms. Several features:
+
+- Arbitrary mix of functions and invocation patterns. FaaSProfiler enables the description of various invocation patterns, function mixes, and activity windows in a clean, user-friendly format.
+- FaaS-testing not plug-and-play. Each function should be invoked independently at the right time. Precisely invoking hundreds or thousands of functions per second needs a reliable, automated tool. We achieve this with FaaSProfiler.
+- Large amount of performance and profiling data. FaaSProfiler enables fast analysis of performance profiling data (e.g., latency, execution time, wait time, etc.) together with resource profiling data (e.g. L1-D MPKI, LLC misses, block I/O, etc.). The user can specify which parameters to profile and make use of the rich feature sets of open-source data analysis libraries like Python pandas
+
+Reference: Mohammad Shahrad, Jonathan Balkind, and David Wentzlaff. "Architectural Implications of Function-as-a-Service Computing." 2019 52nd Annual IEEE/ACM International Symposium on Microarchitecture (MICRO 52), October 2019.
+http://parallel.princeton.edu/papers/micro19-shahrad.pdf
+
+### Set Up
+
+**Important Note**: Some of the default OpenWhisk configuration limits might be too restrictive for your setup. Do not forget to configure those parameters (particularly these: `invocationsPerMinute`, `concurrentInvocations`, `firesPerMinute`, and `sequenceMaxLength`) located at `openwhisk/ansible/group_vars/all`.
+
+Clone the repository and do the one-time configuration:
+
+```
+bash configure.sh
+```
+
+### Usage
+
+TODO
