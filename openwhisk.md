@@ -198,5 +198,9 @@ bash configure.sh
 
 ```
 ./WorkloadInvoker -c example_test.json
-./WorkloadAnalyzer -rv
+./WorkloadAnalyzer -rv -p
 ```
+
+- `-v` for `--verbose`: prints the detailed test data
+- `-r` for `--read_results`: gather also the results of function invocations
+- `-p` for `--plot`: plots the test results 
