@@ -174,6 +174,7 @@ wsk action invoke myAction --result
 ## Install Distributed OpenWhisk on Multiple Nodes
 
 https://github.com/apache/openwhisk/blob/053bd9aefe75033d1e6c09e341d34c4e116bf7d4/ansible/README_DISTRIBUTED.md
+https://github.com/i13tum/openwhisk-bench/blob/master/README_Openwhisk.md
 
 ### Prepare All Physical Nodes or VMs
 
