@@ -46,7 +46,7 @@ To make use of all OpenWhisk features, you will need the OpenWhisk command line 
 $ wsk property set --apihost 'http://172.17.0.1:3233' --auth '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP'
 ```
 
-## OpenWhisk Install on Docker
+## Install OpenWhisk on Docker (Single Node)
 
 https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
 
@@ -170,6 +170,30 @@ Invoke an action:
 ```
 wsk action invoke myAction --result
 ```
+
+## Install Distributed OpenWhisk on Multiple Nodes
+
+https://github.com/apache/openwhisk/blob/053bd9aefe75033d1e6c09e341d34c4e116bf7d4/ansible/README_DISTRIBUTED.md
+
+### Prepare All Physical Nodes or VMs
+
+TODO
+
+### Install Prerequisites on All Nodes
+
+TODO
+
+### Build and Deploy OpenWhisk
+
+TODO
+
+### Verification
+
+TODO
+
+## Contributing to OpenWhisk
+
+https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
 
 ## FaaSProfiler
 
