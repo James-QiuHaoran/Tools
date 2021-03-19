@@ -229,3 +229,20 @@ bash configure.sh
 - `-v` for `--verbose`: prints the detailed test data
 - `-r` for `--read_results`: gather also the results of function invocations
 - `-p` for `--plot`: plots the test results 
+
+## Set Up OpenWhisk Development Environment
+
+https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
+
+1. Fork the repository and clone to local workstation.
+
+2. Install Java and Scala
+- The backbone of OpenWhisk is developed in Scala. All the test cases are written in Scala. OpenWhisk also uses Java libraries as dependences.
+
+3. Install Gradle
+- Gradle is used as the build tool to modulize every major openwhisk projects.
+
+4. Install Go
+- The CLI of OpenWhisk is written in Go language. If the CLI is what you are interested, you need to install Go as well.
+
+5. Import the project to IntelliJ
