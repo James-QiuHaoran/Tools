@@ -245,4 +245,6 @@ https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
 4. Install Go
 - The CLI of OpenWhisk is written in Go language. If the CLI is what you are interested, you need to install Go as well.
 
-5. Import the project to IntelliJ
+5. Install npm
+
+6. Import the project to IntelliJ
