@@ -46,7 +46,7 @@ To make use of all OpenWhisk features, you will need the OpenWhisk command line 
 $ wsk property set --apihost 'http://172.17.0.1:3233' --auth '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP'
 ```
 
-## Install OpenWhisk on Docker (Single Node)
+## Install/Deploy OpenWhisk on Docker (Single Node)
 
 https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
 
@@ -207,6 +207,26 @@ TODO
 ## Contributing to OpenWhisk
 
 https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
+
+## Uninstall OpenWhisk Deployment
+
+Cleaning a Single Component
+You can remove a single component just as you would remove the entire deployment stack. For example, if you wanted to remove only the controller you would run:
+
+```
+cd ansible
+ansible-playbook -i environments/$ENVIRONMENT controller.yml -e mode=clean
+```
+
+Caveat: In distributed environments some components (e.g. Invoker, etc.) exist on multiple machines. So if you run a playbook to clean or deploy those components, it will run on all of the hosts targeted by the component's playbook.
+
+Cleaning an OpenWhisk Deployment
+Once you are done with the deployment you can clean it from the target environment.
+
+```
+ansible-playbook -i environments/$ENVIRONMENT openwhisk.yml -e mode=clean
+ansible-playbook -i environments/$ENVIRONMENT apigateway.yml -e mode=clean
+```
 
 ## FaaSProfiler
 
