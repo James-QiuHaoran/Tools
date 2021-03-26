@@ -95,6 +95,12 @@ $ export OW_DB_USERNAME=admin
 $ export OW_DB_PASSWORD=password
 ```
 
+**Or you can deploy a CouchDB container on Docker (Preferred for MacOS) and change the `OW_DB_HOST` from `127.0.0.1` to `172.1.0.1`:**
+
+```
+ansible-playbook couchdb.yml
+```
+
 Build and distribute the docker images using docker, make sure you move to the OpenWhisk root repository:
 
 ```
