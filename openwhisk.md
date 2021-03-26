@@ -95,11 +95,30 @@ $ export OW_DB_USERNAME=admin
 $ export OW_DB_PASSWORD=password
 ```
 
+Build and distribute the docker images using docker, make sure you move to the OpenWhisk root repository:
+
+```
+cd <home_openwhisk>
+./gradlew distDocker
+```
+
 Generate all the config files:
 
 ```
 cd ansible/
 ansible-playbook setup.yml
+```
+
+Enable Docker remote API
+The remote Docker API is required for collecting logs using the Ansible playbook `logs.yml`.
+
+Activate docker0 network
+This is an optional step for local deployment. The OpenWhisk deployment via Ansible uses the docker0 network interface to deploy OpenWhisk and it does not exist on Docker for Mac environment.
+
+An expedient workaround is to add alias for docker0 network to loopback interface.
+
+```
+sudo ifconfig lo0 alias 172.17.0.1/24
 ```
 
 Install the prerequsites on all the OpenWhisk nodes:
@@ -114,13 +133,6 @@ Create the required data structures to prepare the account to be used for OpenWh
 
 ```
 ansible-playbook initdb.yml
-```
-
-Build and distribute the docker images using docker, make sure you move to the OpenWhisk root repository:
-
-```
-cd <home_openwhisk>
-./gradlew distDocker
 ```
 
 Wipe the database:
