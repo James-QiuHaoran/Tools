@@ -84,15 +84,6 @@ $ curl http://0.0.0.0:5984
 {"couchdb":"Welcome","version":"3.1.1","git_sha":"ce596c65d","uuid":"80f58ffcf3560af247974b2b4b87b48b","features":["access-ready","partitioned","pluggable-storage-engines","reshard","scheduler"],"vendor":{"name":"The Apache Software Foundation"}}
 ```
 
-Adjust all parameters in `ansible/db_local.ini`.
-
-Create the required data structures to prepare the account to be used for OpenWhisk:
-
-```
-cd ansible/
-ansible-playbook initdb.yml
-```
-
 Export all DB parameters:
 
 ```
@@ -107,6 +98,7 @@ $ export OW_DB_PASSWORD=password
 Generate all the config files:
 
 ```
+cd ansible/
 ansible-playbook setup.yml
 ```
 
@@ -114,6 +106,14 @@ Install the prerequsites on all the OpenWhisk nodes:
 
 ```
 ansible-playbook prereq.yml # sudo required
+```
+
+Adjust all parameters in `ansible/db_local.ini`.
+
+Create the required data structures to prepare the account to be used for OpenWhisk:
+
+```
+ansible-playbook initdb.yml
 ```
 
 Build and distribute the docker images using docker, make sure you move to the OpenWhisk root repository:
