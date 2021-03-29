@@ -181,12 +181,18 @@ Create an action:
 
 ```
 wsk action create myAction action.js
+
+# to specify the memory limit for the action, e.g., 128MB
+wsk action create myAction action.js -m 128
 ```
 
 Invoke an action:
 
 ```
 wsk action invoke myAction --result
+
+# if there's a parameter to pass
+wsk action invoke myAction --result --param param_name param_value
 ```
 
 ## Install Distributed OpenWhisk on Multiple Nodes
