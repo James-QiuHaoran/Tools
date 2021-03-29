@@ -234,6 +234,12 @@ ansible-playbook -i environments/$ENVIRONMENT openwhisk.yml -e mode=clean
 ansible-playbook -i environments/$ENVIRONMENT apigateway.yml -e mode=clean
 ```
 
+Check the logs from the controller or invoker container:
+
+```
+docker exec -it container_name/id /bin/bash
+```
+
 ## FaaSProfiler
 
 https://github.com/PrincetonUniversity/faas-profiler
