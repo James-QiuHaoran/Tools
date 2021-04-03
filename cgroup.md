@@ -1,5 +1,10 @@
 # Cgroup
 
+## Monitoring
+
+Cgroup has a hierarchical structure, you can use `systemctl status` command to see the Cgroup tree.
+You can use `systemd-cgtop` to monitor the real-time resource usage of each Cgroup.
+
 ## CPU Sub-system
 
 Get the full ID of the container:
