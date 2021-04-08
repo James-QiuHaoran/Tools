@@ -135,6 +135,7 @@ until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; 
 kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090
 # Grafana
 kubectl --namespace monitoring port-forward svc/grafana 3000
+# default login username:password is admin:admin
 
 # Tear down the stack
 kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
