@@ -111,7 +111,7 @@ $ npm run build
 $ npm run serve
 ```
 
-## Intro to Prometheus
+## Intro to Prometheus and Grafana
 
 Prometheus is a monitoring tools for Kubernetes.
 
@@ -122,6 +122,23 @@ It's based on:
 
 - node-exporter (https://github.com/prometheus/node_exporter)
 - kube-state-metrics (https://github.com/kubernetes/kube-state-metrics)
+
+### On Kubernetes
+
+```
+kubectl create -f manifests/setup
+kubectl create -f manifests/
+until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; done
+
+# Access the dashboard
+# Prometheus
+kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090
+# Grafana
+kubectl --namespace monitoring port-forward svc/grafana 3000
+
+# Tear down the stack
+kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
+```
 
 ### Example Usage
 
