@@ -144,3 +144,6 @@ kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
 ### Example Usage
 
 https://www.replex.io/blog/kubernetes-in-production-the-ultimate-guide-to-monitoring-resource-metrics
+
+- CPU usage: `rate(container_cpu_usage_seconds_total{namespace="social-network"}[5m])`
+- Memory usage: `container_memory_usage_bytes{namespace="social-network"}`
