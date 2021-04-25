@@ -84,6 +84,8 @@ $ curl http://0.0.0.0:5984
 {"couchdb":"Welcome","version":"3.1.1","git_sha":"ce596c65d","uuid":"80f58ffcf3560af247974b2b4b87b48b","features":["access-ready","partitioned","pluggable-storage-engines","reshard","scheduler"],"vendor":{"name":"The Apache Software Foundation"}}
 ```
 
+You can also access CouchDB GUI at `http://localhost:5984/_utils` and use the credentials you set to login.
+
 Export all DB parameters:
 
 ```
