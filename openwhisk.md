@@ -276,11 +276,18 @@ Set the API host and the auth:
 ../bin/wsk property get -i
 ```
 
-Verification:
+Test to see if it's working:
 
 ```
 $ ../bin/wsk -i -v action invoke /whisk.system/samples/helloWorld --blocking --result
 {}
+```
+
+```
+$ ../bin/wsk -i action invoke /whisk.system/utils/echo -p message hello --result
+{
+    "message": "hello"
+}
 ```
 
 ## Contributing to OpenWhisk
