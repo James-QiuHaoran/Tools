@@ -202,21 +202,86 @@ wsk action invoke myAction --result --param param_name param_value
 https://github.com/apache/openwhisk/blob/053bd9aefe75033d1e6c09e341d34c4e116bf7d4/ansible/README_DISTRIBUTED.md
 https://github.com/i13tum/openwhisk-bench/blob/master/README_Openwhisk.md
 
-### Prepare All Physical Nodes or VMs
+### Prepare All Physical Nodes or VMs (Install all dependencies including Ansible, Gradle, Java, and Scala)
 
-TODO
+On each machine, enable SSH access with the `root` user:
+
+```
+sudo passwd root
+sudo su
+cp /home/$USERNAME/.ssh/authorized_keys /root/.ssh/
+```
+
+Enable passwordless SSH login from the master (Ansible server) to all invokers, i.e., generate SSH keys for the `root` user and put the public key in the `authorized_keys` of each other machine.
+
+Define `remote_user = root` in the `ansible/ansible.cfg`.
+
+List the host machine IPs in the `ansible/environments/distributed/hosts`. The `environments/distributed` directory can be extended from the `environments/local` directory. You can simply change the IP address of the local server to be the IP address of any remote server. You can add `invoker1`, `invoker2`, ..., `invokerN` with the IP addresses of the remote servers. Don't forget to change `ansible_connection=local` to `ansible_connection=ssh` for remote servers.
+
+Ensure that the Ansible server can authenticate to the remote servers via SSH using the following command:
+
+```
+cd ansible
+ansible all -i environments/distributed -m ping
+```
 
 ### Install Prerequisites on All Nodes
 
-TODO
+Generate config files
+
+```
+ansible-playbook -i environments/distributed setup.yml
+```
+
+Install prerequisites on OpenWhisk nodes.
+
+```
+ansible-playbook -i environments/distributed prereq.yml
+```
 
 ### Build and Deploy OpenWhisk
 
-TODO
+Build images on each machine:
+
+```
+cd ..
+./gradlew distDocker
+```
+
+Setup Openwhisk with `ansible-playbook`:
+
+```
+cd ansible
+ansible-playbook -i environments/distributed couchdb.yml
+ansible-playbook -i environments/distributed initdb.yml
+ansible-playbook -i environments/distributed wipe.yml
+ansible-playbook -i environments/distributed openwhisk.yml
+
+# installs a catalog of public packages and actions
+ansible-playbook -i environments/distributed postdeploy.yml
+
+# to use the API gateway
+ansible-playbook -i environments/distributed apigateway.yml
+ansible-playbook -i environments/distributed routemgmt.yml
+```
 
 ### Verification
 
-TODO
+Check all Docker containers are up and running: `docker ps`
+
+Set the API host and the auth:
+
+```
+../bin/wsk property set --auth $(cat files/auth.whisk.system) --apihost <master_url>
+../bin/wsk property get -i
+```
+
+Verification:
+
+```
+$ ../bin/wsk -i -v action invoke /whisk.system/samples/helloWorld --blocking --result
+{}
+```
 
 ## Contributing to OpenWhisk
 
