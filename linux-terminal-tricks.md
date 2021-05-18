@@ -29,3 +29,9 @@ sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'
 ```
 
 Use `free` to check the memory & usage.
+
+### Figure Display
+
+```
+feh <image_name>
+```
