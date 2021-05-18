@@ -14,6 +14,12 @@ Enable forwarding graphical display from `dvorak-2-1` to your PC by using `dvora
 jamesqiu@jamesqiu-OptiPlex-7050:~$ ssh -J ubuntu@dvorak -X ubuntu@dvorak-2-1
 ```
 
+Difference bewteen `-X` and `-Y`:
+
+- If you use `ssh -X remotemachine`, the remote machine is treated as an **untrusted** client. So your local client sends a command to the remote machine and receives the graphical output. If your command violates some security settings you'll receive an error instead.
+- If you use `ssh -Y remotemachine`, the remote machine is treated as a **trusted** client. This last option can open security problems. Because other graphical (X11) clients could sniff data from the remote machine (make screenshots, do keylogging and other nasty stuff) and it is even possible to alter those data.
+
+
 ### GUI Program Forwarding
 
 Forward Firefox program from `dvorak` to your PC:
