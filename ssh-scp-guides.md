@@ -1,4 +1,4 @@
-## SSH Guide
+## SSH/SCP Guide
 
 ### Forward Display
 
@@ -58,4 +58,12 @@ Now test it on the **local** machine:
 
 ```
 ssh $USER@$REMOTE
+```
+
+### SCP
+
+Pass a literal escape to use the wild card:
+
+```
+scp 'SERVERNAME:/DIR/\*' .
 ```
