@@ -294,6 +294,8 @@ $ ../bin/wsk -i action invoke /whisk.system/utils/echo -p message hello --result
 
 https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
 
+Redeploy/rebuild after changing the codebase: https://github.com/apache/openwhisk/tree/master/tools/build
+
 ## Uninstall OpenWhisk Deployment
 
 Cleaning a Single Component
@@ -372,3 +374,5 @@ https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
 5. Install npm
 
 6. Import the project to IntelliJ
+
+7. Make the changes and redeploy/rebuild: https://github.com/apache/openwhisk/tree/master/tools/build
