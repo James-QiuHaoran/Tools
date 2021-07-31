@@ -150,3 +150,30 @@ You can get the exact version time from:
 ```
 curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
 ```
+
+### Completely Remove Kubernetes
+
+First delete the node if there is:
+
+```
+kubectl drain <node name> — delete-local-data — force — ignore-daemonsets
+kubectl delete node <node name>
+```
+
+Then remove `kubeadm` `kubectl` `kubelet` and related packages completely:
+
+```
+kubeadm reset
+
+# on debian base 
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube* 
+# on centos base
+sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*
+
+# on debian base
+sudo apt-get autoremove
+# on centos base
+sudo yum autoremove
+ 
+sudo rm -rf ~/.kube
+```
