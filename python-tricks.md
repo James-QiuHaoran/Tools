@@ -1,5 +1,25 @@
 ## Python Tricks
 
+### Install Packages on a Machine without Internet
+
+On the machine with access to the Internet:
+
+```
+mkdir py-packages
+pip download package-1 -d "py-packages"
+pip download package-2 -d "py-packages"
+tar cvfz py-packages.tgz .\py-packages
+```
+
+On the machine without access to the Internet:
+
+```
+tar xvfz .\py-packages.tgz
+pip install py-packages\package-1.whl -f ./ --no-index
+```
+
+Note: You may need to install according to the dependency order between packages. Or you can add `-no-deps` to install the package.
+
 ### Auto `requirements.txt` Generation
 
 ```
