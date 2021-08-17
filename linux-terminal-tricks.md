@@ -1,5 +1,11 @@
 ## Linux Terminal Tricks
 
+### Check The Location of `apt` Installed Libraries/Packages
+
+```
+dpkg -L <package_name>
+```
+
 ### Clear Cache
 
 - To free pagecache:
