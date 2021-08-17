@@ -6,6 +6,12 @@
 dpkg -L <package_name>
 ```
 
+Or:
+
+```
+apt-file list <package_name>
+```
+
 ### Clear Cache
 
 - To free pagecache:
