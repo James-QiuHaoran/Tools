@@ -290,6 +290,37 @@ $ ../bin/wsk -i action invoke /whisk.system/utils/echo -p message hello --result
 }
 ```
 
+## Using OpenWhisk Provided-Tools
+
+Directory: `openwhisk/tools/build`
+
+Tear down all invokers:
+
+```
+# local environment (default)
+sudo ./redo invoker -x
+
+# distributed environment
+sudo ./redo invoker -x -t distributed
+```
+
+Build and deploy all invokers:
+
+```
+# local environment (default)
+sudo ./redo invoker -bd
+
+# distributed environment
+sudo ./redo invoker -bd -t distributed
+```
+
+Rebuild and Redeploy the controller:
+
+```
+sudo ./redo controller -xbd
+sudo ./redo controller -xbd -t distributed
+```
+
 ## Contributing to OpenWhisk
 
 https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
