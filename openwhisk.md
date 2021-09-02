@@ -353,6 +353,12 @@ Check the logs from the controller or invoker container:
 docker exec -it container_name/id /bin/bash
 ```
 
+## Other OpenWhisk Tools
+
+### Runtime Configurations
+
+File: `openwhisk/ansible/files/runtimes.json`
+
 ## FaaSProfiler
 
 https://github.com/PrincetonUniversity/faas-profiler
