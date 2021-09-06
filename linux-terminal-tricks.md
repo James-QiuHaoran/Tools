@@ -1,5 +1,22 @@
 ## Linux Terminal Tricks
 
+### Auto Clean-up Package Configuration Conflicts Problems
+
+In case there are error messages (when executing `apt update`) related to:
+
+```
+W: Target Packages (stable/binary-ppc64el/Packages) is configured multiple times in /etc/apt/sources.list:55 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:55 and /etc/apt/sources.list.d/docker.list:1
+W: Target Translations (stable/i18n/Translation-en_US) is configured multiple times in /etc/apt/sources.list:55 and /etc/apt/sources.list.d/docker.list:1
+```
+
+There's an automatic tool which can be use to clean up those configurations:
+- Install the prerequisites: `sudo apt install python3-apt`
+- Download the PYZ bundle (`aptsources-cleanup.pyz`) from the [latest release](https://github.com/davidfoerster/aptsources-cleanup/releases/tag/v0.1.7.5.2).
+- Mark the PYZ bundle as executable: `chmod a+x aptsources-cleanup.pyz`
+- Run `sudo ./aptsources-cleanup.pyz`
+- Check `sudo apt update` again to see if the error messages disappear!
+
 ### Check The Location of `apt` Installed Libraries/Packages
 
 ```
