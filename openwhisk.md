@@ -97,7 +97,7 @@ $ export OW_DB_USERNAME=admin
 $ export OW_DB_PASSWORD=password
 ```
 
-**Or you can deploy a CouchDB container on Docker (Preferred for MacOS) and change the `OW_DB_HOST` from `127.0.0.1` to `172.1.0.1`:**
+**Or you can deploy a CouchDB container on Docker (Preferred for MacOS) and change the `OW_DB_HOST` from `127.0.0.1` to `172.17.0.1`, `OW_DB_PASSWORD` to `admin`:**
 
 ```
 ansible-playbook couchdb.yml
