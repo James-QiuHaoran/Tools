@@ -114,7 +114,7 @@ Generate all the config files:
 
 ```
 cd ansible/
-ansible-playbook setup.yml
+ansible-playbook -i environments/$ENVIRONMENT setup.yml
 ```
 
 Enable Docker remote API
@@ -132,7 +132,7 @@ sudo ifconfig lo0 alias 172.17.0.1/24
 Install the prerequsites on all the OpenWhisk nodes:
 
 ```
-ansible-playbook prereq.yml # sudo required
+ansible-playbook -i environments/$ENVIRONMENT prereq.yml # sudo required
 ```
 
 Adjust all parameters in `ansible/db_local.ini`.
@@ -140,19 +140,19 @@ Adjust all parameters in `ansible/db_local.ini`.
 Create the required data structures to prepare the account to be used for OpenWhisk:
 
 ```
-ansible-playbook initdb.yml
+ansible-playbook -i environments/$ENVIRONMENT initdb.yml
 ```
 
 Wipe the database:
 
 ```
-ansible-playbook wipe.yml
+ansible-playbook -i environments/$ENVIRONMENT wipe.yml
 ```
 
 Deploy an OpenWhisk stack:
 
 ```
-ansible-playbook openwhisk.yml
+ansible-playbook -i environments/$ENVIRONMENT openwhisk.yml
 
 # installs a catalog of public packages and actions
 ansible-playbook -i environments/$ENVIRONMENT postdeploy.yml
