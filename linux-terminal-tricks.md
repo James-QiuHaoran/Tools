@@ -29,6 +29,12 @@ Or:
 apt-file list <package_name>
 ```
 
+### Install a Package from `.deb` File
+
+```
+sudo dpkg -i package_file.deb
+```
+
 ### Clear Cache
 
 - To free pagecache:
