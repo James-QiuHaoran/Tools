@@ -135,7 +135,7 @@ Install the prerequsites on all the OpenWhisk nodes:
 ansible-playbook -i environments/$ENVIRONMENT prereq.yml # sudo required
 ```
 
-Adjust all parameters in `ansible/db_local.ini`.
+Adjust all parameters in `ansible/db_local.ini` (should be consistent with the parameters exported).
 
 Create the required data structures to prepare the account to be used for OpenWhisk:
 
@@ -154,7 +154,7 @@ Deploy an OpenWhisk stack:
 ```
 ansible-playbook -i environments/$ENVIRONMENT openwhisk.yml
 
-# installs a catalog of public packages and actions
+# installs a catalog of public packages and actions (before that, make sure the `ansible/files/runtimes.json` is not modified)
 ansible-playbook -i environments/$ENVIRONMENT postdeploy.yml
 
 # to use the API gateway
