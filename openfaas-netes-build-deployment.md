@@ -6,7 +6,34 @@ faas-netes: https://github.com/openfaas/faas-netes
 
 ### Requirements
 
-TODO
+1. Install KinD: https://github.com/kubernetes-sigs/kind
+    - Use the latest `go` to do this, ideally `go` 1.13 or greater
+
+```
+$ GO111MODULE="on" go get sigs.k8s.io/kind@v0.11.1
+```
+
+2. Install `helm3`
+
+```
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod 700 get_helm.sh
+$ ./get_helm.sh
+```
+
+3. Install Tiller to your running Kubernetes cluster:
+
+```
+$ helm init
+```
+
+It will also set up any necessary local configuration.
+
+4. Install `faas-cli`:
+
+```
+$ curl -sSL https://cli.openfaas.com | sudo sh
+```
 
 ### Deployment
 
