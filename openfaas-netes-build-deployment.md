@@ -54,20 +54,26 @@ As you are developing on faas-netes, you will want to build and test your own lo
 This can easily be done using the following commands:
 
 ```
-make build
+make build-docker # which will generated the docker image ghcr.io/openfaas/faas-netes:latest
 
-kind load docker-image --name="${OF_DEV_ENV:-kind}" openfaas/faas-netes:latest
+kind load docker-image --name="${OF_DEV_ENV:-kind}" ghcr.io/openfaas/faas-netes:latest
 
-helm upgrade openfaas --install openfaas/openfaas \
+helm upgrade openfaas --install chart/openfaas \
     --namespace openfaas  \
     --set basic_auth=true \
     --set openfaasImagePullPolicy=IfNotPresent \
     --set faasnetes.imagePullPolicy=IfNotPresent \
-    --set faasnetes.image=openfaas/faas-netes:latest \
+    --set faasnetes.image=ghcr.io/openfaas/faas-netes:latest \
     --set functionNamespace=openfaas-fn
 ```
 
 Note that this technique can also be used to test locally built functions, thus avoiding the need to push the image to a remote registry.
+
+To verify that OpenFaaS has been started and running, run:
+
+```
+kubectl -n openfaas get deployments -l "release=openfaas, app=openfaas"
+```
 
 ### Port Forwarding
 
