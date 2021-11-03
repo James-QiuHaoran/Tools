@@ -77,7 +77,31 @@ kubectl -n openfaas get deployments -l "release=openfaas, app=openfaas"
 
 ### Port Forwarding
 
-TODO
+This command will port-forward the OpenFaaS Gateway to your local port 31112:
+
+```
+kubectl port-forward deploy/gateway -n openfaas 31112:8080 &>/dev/null & echo -n "$!" > "of_${OF_DEV_ENV:-kind}_portforward.pid"
+```
+
+You can stop the forwarding with:
+
+```
+kill $(<"of_${OF_DEV_ENV:-kind}_portforward.pid")
+```
+
+For simplicity, a restart script is provided in `contrib/`:
+
+```
+./contrib/restart_port_forward.sh
+```
+
+### Login
+
+You need to provide credentials and login to OpenFaaS gateway (password can be find in `password.txt` created when deploying OpenFaaS):
+
+```
+faas-cli login --password 08e0b3694c5f5182c0fdb21882545abd3ade6ca0
+```
 
 ### Tear Down the Local KinD Cluster
 
