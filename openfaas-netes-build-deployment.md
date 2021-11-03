@@ -110,3 +110,71 @@ Stop the entire environment and clean up using:
 ```
 make stop-kind
 ```
+
+## Example Usage
+
+1. Get ready the source code of the function. (Templates available at https://docs.openfaas.com/cli/templates/)
+
+```
+faas-cli new hello-python --lang python3
+```
+
+It will generates source codes:
+
+```
++ hello-python
+  - handler.py
+  - requirements.txt
+- hello-python.yml
+```
+
+Edit the source code in `handler.py`:
+
+```
+def handle(req):
+    print("Hello! " + req)
+```
+
+2. Build the function.
+
+```
+faas-cli build -f ./hello-python.yml
+```
+
+3. Push the function to register.
+
+```
+faas-cli push -f ./hello-python.yml
+```
+
+4. Deploy the function.
+
+```
+faas-cli deploy -f ./hello-python.yml
+```
+
+5. Invoke the function with the given URL after registering the fucntion.
+
+```
+curl URL -d PARAM
+```
+
+Reference: https://chaoscodes.github.io/2019/06/11/My-first-try-in-OpenFass/
+
+### Get Function Info
+
+```
+$ faas-cli describe hello-python
+Name:                hello-python
+Status:              Ready
+Replicas:            1
+Available replicas:  1
+Invocations:         7
+Image:               haoranq4/hello-python:latest
+Function process:    python3 index.py
+URL:                 http://127.0.0.1:31112/function/hello-python
+Async URL:           http://127.0.0.1:31112/async-function/hello-python
+Labels:              faas_function : hello-python
+                     uid : 626324001
+Annotations:         prometheus.io.scrape : false
+```
