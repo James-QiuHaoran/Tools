@@ -52,6 +52,7 @@ $ echo "8:0 1048576" > /sys/fs/cgroup/blkio/docker/container_id/blkio.throttle.w
 ## Network Bandwidth Limiting
 
 https://www.kernel.org/doc/Documentation/cgroup-v1/net_cls.txt
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-net_cls
 
 The Network classifier cgroup provides an interface to tag network packets with a class identifier (classid).
 The Traffic Controller (tc) can be used to assign different priorities to packets from different cgroups.
