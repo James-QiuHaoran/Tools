@@ -23,7 +23,7 @@ Several other options to the `cf` options of the basic command:
 - `m`: used to include manifest information from an existing manifest file;
   - The format for using this option is `jar cmf jar-file-name existing-manifest-file input-files`
   - The manifest must end with a new line or carriage return. The last line will not be parsed properly if it does not end with a new line or carriage return.
-- `c` to change directories during execution of the command.
+- `C` to change directories during execution of the command.
 
 An example:
 
@@ -31,4 +31,10 @@ In directory `PropertyGraph/target/classes` (under the `class/` directory, there
 
 ```
 jar cvmf ../../src/META-INF/MANIFEST.MF test.jar com
+```
+
+Run the JAR application:
+
+```
+java -jar test.jar arguments_to_JAR
 ```
