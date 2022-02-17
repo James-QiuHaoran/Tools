@@ -38,3 +38,26 @@ Run the JAR application:
 ```
 java -jar test.jar arguments_to_JAR
 ```
+
+## Maven
+
+Maven is a build automation tool provided by Apache which does more than dependency management. We can make it as a peer of Ant and Makefile which downloads all of the dependencies required.
+
+Refer to: https://maven.apache.org/guides/getting-started/index.html
+
+On a `mvn install`, it frames a dependency tree based on the project configuration `pom.xml` on all the sub-projects under the super `pom.xml` (the root POM) and downloads/compiles all the needed components in a directory called `.m2` under the user's folder.
+These dependencies will have to be resolved for the project to be built without any errors, and `mvn install` is one utility that could download most of the dependencies.
+
+Further, there are other utils within Maven like `dependency:resolve` which can be used separately in any specific cases.
+The build life cycle of the maven is as below:
+
+- process-resources
+- compile
+- process-test-resources
+- test-compile
+- test
+- package
+- install
+- deploy
+
+The test phase of this mvn can be ignored by using a flag `-DskipTests=true`.
