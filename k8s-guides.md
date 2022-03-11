@@ -64,6 +64,7 @@ Deployments are upgraded and higher version of replication controller. They mana
 
 - `kubectl create deployment deployment_name image`: provide the deployment name and the app image location;
 - `kubectl get deployments`;
+- `kubectl get deployments deployment_name -o yaml > yaml_file`: export the deployment to an `yaml` file;
 
 ### Check Application Configuration & Logs
 
