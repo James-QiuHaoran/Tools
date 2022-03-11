@@ -94,3 +94,35 @@ The following commands work for the Swarm orchestrator:
   - `docker service create --name my-service -p 8080:80 nginx:alpine`
   - `docker service update --replicas=3 my-service` (update the service to use three replicas)
   - `docker service rollback myservice` (roll back the service to its previous version with a single replica)
+
+### Install Docker on Mac (Doesn't work on M1 chip yet!)
+
+```
+brew install docker
+brew install docker-machine
+brew install virtualbox --cask
+```
+
+- Why installing `docker-machine`?
+    - This is because on macOS the docker binary is only a client and you cannot use it to run the docker daemon, because Docker daemon uses Linux-specific kernel features, therefore you can’t run Docker natively in OS X. So you have to install `docker-machine` in order to create VM and attach to it.
+    - `virtualbox` is needed for creating VMs.
+
+Then the next step is to create a new virtual machine. You can create a machine by `docker-machine create (name)` with `--driver` flag to specify a provider on which the machine is created on.
+
+```
+docker-machine create --driver virtualbox default
+docker-machine ls
+```
+
+Run the following command to tell Docker which machine to execute docker command to:
+
+```
+docker-machine env default
+```
+
+Check the installation finally:
+
+```
+docker run hello-world
+```
+
