@@ -44,7 +44,7 @@ You can check `docker images` to see whether your image is in the local docker r
 Then you can deploy your docker container by `docker run -d -p 7001:7001 haoranq4/image-name`.
 
 - `-d` means to run the container in background and print container ID.
-- `-p 7001:7001` means to publish container's port 7001 to the host machine's port 7001.
+- `-p 7001:7001` means to publish container's port 7001 (**right**) to the host machine's port 7001 (**left**).
 
 You can delete the container by `docker stop container-id` and then `docker rm container-id`. The container id can be retrieved from `docker ps`.
 
