@@ -21,6 +21,7 @@ A Guide: https://kubernetes.feisky.xyz/.
 - `kubectl create –f <filename>`: create resource by file (JSON or YAML, should be complete) or stdin;
 - `kubectl delete –f ([-f FILENAME] | TYPE [(NAME | -l label | --all)])`: delete resources by file name, stdin, resource or names;
     - `kubectl delete -n social-network --all pod,svc --force --grace-period=0` does not delete the pods and services, instead, the pods are restarting;
+    - Delete the deployments is the way to go if you want to delete the pods permenantly;
 
 ### DNS Service Debugging
 
