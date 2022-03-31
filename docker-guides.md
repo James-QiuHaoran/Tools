@@ -143,3 +143,15 @@ CMD ["python", "web-server-senti.py"]
 ```
 
 - In `pip install`, the flag `--no-cache-dir` allows one to save space in the final image.
+
+### Copy a Docker Image
+
+Copy a Docker image from a remote registry to a new image under different namespace/user, and then push to the new registry.
+
+```
+docker pull <image-name>
+docker run -it <image-name> bash
+docker ps
+docker commit <container-id> <new-name>
+docker push <new-name>
+```
