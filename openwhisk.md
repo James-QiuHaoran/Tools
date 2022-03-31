@@ -195,7 +195,37 @@ wsk action invoke myAction --result
 
 # if there's a parameter to pass
 wsk action invoke myAction --result --param param_name param_value
+# or use parameter file
+wsk action invoke myAction --result --param-file file_name
 ```
+
+Create an action from customized container (for accessing files or libraries that are larger than 48MB):
+
+```
+# create a Dockerfile
+FROM openwhisk/python3action:latest
+
+RUN apk add --update py-pip
+RUN pip install numpy
+ADD file_name /file_name
+
+# build the docker image
+docker build -t haoranq4/image-name:ml-libs .
+docker push haoranq4/image-name:ml-libs
+
+# create a new action with the following source code and name it action.py:
+import numpy
+
+def main(params):
+    return {
+        "numpy": numpy.__version__
+    }
+
+wsk action create ml-libs --docker haoranq4/image-name:ml-libs action.py
+wsk action invoke ml-libs --result
+```
+
+Refer to https://github.com/apache/openwhisk/blob/master/docs/actions-docker.md and https://github.com/apache/openwhisk-runtime-python/tree/master/core/python3Action for more information.
 
 ## Install Distributed OpenWhisk on Multiple Nodes
 
