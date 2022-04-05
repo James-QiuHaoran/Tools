@@ -143,6 +143,7 @@ CMD ["python", "web-server-senti.py"]
 ```
 
 - In `pip install`, the flag `--no-cache-dir` allows one to save space in the final image.
+- `ENV` is used to set the environment variables also during the docker container runtime. Another alternative is `ARG` but this is used only during the container build time.
 
 ### Copy a Docker Image
 
