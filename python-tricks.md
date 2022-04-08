@@ -168,3 +168,32 @@ print(sys.getsizeof(x))
 ```
 
 In Python 2.7, a 32-bit integer uses 24 bytes, while in Python 3.5, it uses 28 bytes.
+
+### Scope
+
+Variable scope only applies at the function, module, and class levels. If you are in the same function/module/class, all variables defined will be available within that function/module/class, regardless of whether it was defined within a `with`, `for`, `if`, etc. block.
+
+For example, this is valid.
+
+```
+for x in range(1):
+    y = 1
+print(y)
+```
+
+However, you must be careful since the variable defined within your code block might not actually be defined if the block is never entered, as in this case:
+
+```
+try:
+    with open('filedoesnotexist', 'r') as file:
+        pass
+except:
+    pass # just to emphasize point
+
+print(file.mode)
+
+Traceback (most recent call last):
+  File "<pyshell#43>", line 1, in <module>
+    file.mode
+NameError: name 'file' is not defined
+```
