@@ -70,3 +70,12 @@ Use `free` to check the memory & usage.
 ```
 feh <image_name>
 ```
+
+### Pause a Running Process and Run in Background
+
+```
+ctrl-z
+$ bg
+```
+
+`bg` command moves jobs to the background, as if they had been started with `&`.
