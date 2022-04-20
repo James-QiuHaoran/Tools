@@ -12,6 +12,8 @@ References:
 
 ### GNU/Linux
 
+Install and start MinIO server:
+
 ```
 wget https://dl.min.io/server/minio/release/linux-amd64/minio
 chmod +x minio
@@ -19,6 +21,8 @@ chmod +x minio
 ```
 
 The default port to use is `:9000` so change to other port that you want by using `--address localhost:7000`.
+
+Console endpoint is listening on a dynamic port every time the server is started, please use `--console-address ":PORT"` to choose a static port.
 
 ## Usage
 
