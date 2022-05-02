@@ -34,7 +34,7 @@ Forward Firefox program from `dvorak-2-1` to your PC by using `dvorak` as the mi
 jamesqiu@jamesqiu-OptiPlex-7050:~$ ssh -J ubuntu@dvorak -f -T -X ubuntu@dvorak-2-1 firefox
 ```
 
-### Passwordloss Login
+### Passwordless Login
 
 On the **local** machine, generate SSH keys:
 
@@ -58,6 +58,19 @@ Now test it on the **local** machine:
 
 ```
 ssh $USER@$REMOTE
+```
+
+### Execute Commands Remotely
+
+```
+ssh user1@server1 command1
+ssh user1@server1 'command2'
+
+# pipe
+ssh user1@server1 'command1 | command2'
+
+# multiple commands (must enclose in quotes
+ssh admin@box1 "command1; command2; command3"
 ```
 
 ### SCP
