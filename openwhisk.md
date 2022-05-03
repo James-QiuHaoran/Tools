@@ -56,14 +56,14 @@ Install all required software:
 cd tools/ubuntu-setup && ./all.sh
 ```
 
-Install CouchDB (on Ubuntu 18.04):
+Install CouchDB (on Ubuntu **20.04**):
 https://www.alibabacloud.com/blog/how-to-set-up-apache-openwhisk-on-ubuntu-18-04-part-ii_594685
 
 ```
 # adding the CouchDB GPG key to the keyring
-curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add -
+curl -L https://couchdb.apache.org/repo/keys.asc | sudo apt-key add -
 # adding the repository to the sources
-echo "deb https://apache.bintray.com/couchdb-deb bionic main" | sudo tee -a /etc/apt/sources.list
+echo "deb https://apache.jfrog.io/artifactory/couchdb-deb focal main" | sudo tee -a /etc/apt/sources.list
 
 sudo apt update
 sudo apt install -y couchdb
