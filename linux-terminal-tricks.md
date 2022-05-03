@@ -35,6 +35,14 @@ apt-file list <package_name>
 sudo dpkg -i package_file.deb
 ```
 
+### Remove an Installed Package Completely
+
+```
+$ sudo apt remove package_name
+$ sudo apt purge package_name # remove files and configs
+$ sudo apt autoclean          # remove old downloaded archive files
+```
+
 ### Clear Cache
 
 - To free pagecache:
