@@ -282,7 +282,7 @@ Setup Openwhisk with `ansible-playbook`:
 
 ```
 cd ansible
-ansible-playbook -i environments/distributed couchdb.yml
+ansible-playbook -i environments/distributed couchdb.yml  # skip this step when not deploying couchdb in a container
 ansible-playbook -i environments/distributed initdb.yml
 ansible-playbook -i environments/distributed wipe.yml
 ansible-playbook -i environments/distributed openwhisk.yml
