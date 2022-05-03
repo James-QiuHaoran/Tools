@@ -69,7 +69,7 @@ ssh user1@server1 'command2'
 # pipe
 ssh user1@server1 'command1 | command2'
 
-# multiple commands (must enclose in quotes
+# multiple commands (must enclose in quotes, ' or ")
 ssh admin@box1 "command1; command2; command3"
 ```
 
