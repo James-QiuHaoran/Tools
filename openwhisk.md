@@ -56,6 +56,8 @@ Install all required software:
 cd tools/ubuntu-setup && ./all.sh
 ```
 
+Install `npm` as well (which is not included in `all.sh`): `sudo apt install npm`.
+
 Install CouchDB (on Ubuntu **20.04**):
 https://www.alibabacloud.com/blog/how-to-set-up-apache-openwhisk-on-ubuntu-18-04-part-ii_594685
 
