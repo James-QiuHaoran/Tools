@@ -297,16 +297,18 @@ ansible-playbook -i environments/distributed apigateway.yml
 ansible-playbook -i environments/distributed routemgmt.yml
 ```
 
-### Verification
+### Configuration and Verification
 
 Check all Docker containers are up and running: `docker ps`
 
-Set the API host and the auth:
+Set the API host (look at the port of `nginx` container) and the auth:
 
 ```
 ../bin/wsk property set --auth $(cat files/auth.whisk.system) --apihost <master_url>
 ../bin/wsk property get -i
 ```
+
+An example of `apihost` is: https://172.17.0.1:443
 
 Test to see if it's working:
 
