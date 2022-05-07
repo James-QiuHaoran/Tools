@@ -87,3 +87,7 @@ $ bg
 ```
 
 `bg` command moves jobs to the background, as if they had been started with `&`.
+
+### Cron Job
+
+https://phoenixnap.com/kb/set-up-cron-job-linux
