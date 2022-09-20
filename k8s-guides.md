@@ -276,3 +276,27 @@ curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json http:
 ```
 
 The namespace should be removed completely now.
+
+## Custom Resource and Custom Resource Definition
+
+Kubernetes exposes a powerful declarative API system, where the record of intent or desired state is specified by cluster operators in a YAML file or via the REST API, and created and persisted in the data store, and then the controllers work in a control loop to converge intent with the observed state.
+A Kubernetes resource is a collection of similar objects accessible via the Kubernetes API. Kubernetes comes with several resources by default, such as pods, deployments and ReplicaSets.
+
+### Custom Resource Definition (CRD)
+
+A custom resource definition (CRD) is a powerful feature introduced in Kubernetes 1.7.
+
+The standard Kubernetes distribution ships with many built-in API objects and resources. CRDs enable IT admins to introduce unique objects or types into the Kubernetes cluster to meet their custom requirements. A Kubernetes CRD acts like any other Kubernetes object: It uses all the features of the Kubernetes ecosystem -- for example, its command-line interface (CLI), security, API services and role-based access control. The custom resource is also stored in the etcd cluster with proper replication and lifecycle management. CRDs eliminate the overhead of self-directed implementation as well.
+
+CRDs are, by themselves, just blobs of data: Their primary purpose is to provide a mechanism to create, store and expose Kubernetes API objects that contain data that suits any requirements not satisfied by default. CRDs do not have any logic attached, nor any special behavior; once they are created, modified or removed, they take no actions on their own.
+
+### Custom Resource (CR)
+
+In a nutshell, custom resources are extensions of the Kubernetes API. But, unlike a normal resource, custom resources are not necessarily available in a default Kubernetes installation. Custom resources are instead registered **dynamically** to a cluster. Once the custom resource is registered, end users can create, update and delete its object using `kubectl`, similar to how users interact with built-in resources, like pods, deployments and services.
+
+Custom resources are used for small, in-house configuration objects without any corresponding controller logic -- and are, therefore, defined declaratively.
+
+### Using CRD and CRs
+
+- Create the CRD and register it to the platform
+- Create a new instance (a CR) of the new CRD.
