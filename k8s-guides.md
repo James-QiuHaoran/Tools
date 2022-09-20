@@ -284,7 +284,7 @@ A Kubernetes resource is a collection of similar objects accessible via the Kube
 
 ### Custom Resource Definition (CRD)
 
-A custom resource definition (CRD) is a powerful feature introduced in Kubernetes 1.7.
+A [custom resource definition (CRD)](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) is a powerful feature introduced in Kubernetes 1.7.
 
 The standard Kubernetes distribution ships with many built-in API objects and resources. CRDs enable IT admins to introduce unique objects or types into the Kubernetes cluster to meet their custom requirements. A Kubernetes CRD acts like any other Kubernetes object: It uses all the features of the Kubernetes ecosystem -- for example, its command-line interface (CLI), security, API services and role-based access control. The custom resource is also stored in the etcd cluster with proper replication and lifecycle management. CRDs eliminate the overhead of self-directed implementation as well.
 
@@ -296,7 +296,9 @@ In a nutshell, custom resources are extensions of the Kubernetes API. But, unlik
 
 Custom resources are used for small, in-house configuration objects without any corresponding controller logic -- and are, therefore, defined declaratively.
 
+Tools to generate the code from CRD yaml: https://github.com/kubernetes/code-generator
+
 ### Using CRD and CRs
 
 - Create the CRD and register it to the platform
-- Create a new instance (a CR) of the new CRD.
+- Create a new instance (a CR) of the new CRD
