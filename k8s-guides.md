@@ -292,7 +292,7 @@ CRDs are, by themselves, just blobs of data: Their primary purpose is to provide
 
 ### Custom Resource (CR)
 
-In a nutshell, custom resources are extensions of the Kubernetes API. But, unlike a normal resource, custom resources are not necessarily available in a default Kubernetes installation. Custom resources are instead registered **dynamically** to a cluster. Once the custom resource is registered, end users can create, update and delete its object using `kubectl`, similar to how users interact with built-in resources, like pods, deployments and services.
+In a nutshell, custom resources are extensions of the Kubernetes API. But, unlike a normal resource, custom resources are not necessarily available in a default Kubernetes installation. Custom resources are instead registered **dynamically** to a cluster. Once the custom resource is registered, end users can create, update and delete its object using `kubectl`, similar to how users interact with built-in resources, like pods, deployments and services. Kubernetes apiserver manages defined custom resources like standard resources (e.g. ReplicaSet, etc).
 
 Custom resources are used for small, in-house configuration objects without any corresponding controller logic -- and are, therefore, defined declaratively.
 
@@ -300,5 +300,19 @@ Tools to generate the code from CRD yaml: https://github.com/kubernetes/code-gen
 
 ### Using CRD and CRs
 
-- Create the CRD and register it to the platform
+- Create the CRD and register it to the platform (namely the API server)
 - Create a new instance (a CR) of the new CRD
+
+Tutorials:
+- https://insujang.github.io/2020-02-11/kubernetes-custom-resource/
+- https://insujang.github.io/2020-02-13/programming-kubernetes-crd/
+
+Kubernetes provides a set of options to build a custom controller (to handle CRD events), i.e., using [Operator SDK](https://github.com/operator-framework/operator-sdk), [kubebuilder](https://github.com/kubernetes-sigs/kubebuilder), or [code-generator](https://github.com/kubernetes/code-generator).
+
+Implementing a custom controller with the **code-generator** involves two Kubernetes libraries:
+- `client-go`: Go client library that provides all helper functions to access the Kubernetes apiserver.
+- `code-generator`: Go library that generates some components that are required to implement a custom controller, based on our CRD specification.
+
+Follow the [instructions](https://insujang.github.io/2020-02-13/programming-kubernetes-crd/):
+- Generating Go code with code-generator
+- Implementing custom controller based on the generated code and client-go
