@@ -27,6 +27,8 @@ pip install pipreqs
 pipreqs /path/to/project
 ```
 
+You probably need to add Python binary file location to `$PATH` after installing `pipreqs`.
+
 ### Interchange Values Between Two Variables
 
 ```
