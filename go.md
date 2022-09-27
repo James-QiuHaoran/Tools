@@ -27,6 +27,8 @@ https://go.dev/doc/code
 
 ## Go Tool
 
+### Build and Install Go Programs
+
 Build and install the program with the go module path `example/user/hello`:
 
 ```
@@ -40,3 +42,19 @@ The install directory is controlled by the `GOPATH` and `GOBIN` environment vari
 - If `GOBIN` is set, binaries are installed to that directory.
 - If `GOPATH` is set, binaries are installed to the `bin` subdirectory of the first directory in the `GOPATH` list.
 - Otherwise, binaries are installed to the bin subdirectory of the default `GOPATH` (`$HOME/go` or `%USERPROFILE%\go`).
+
+For convenience, `go` commands accept paths relative to the working directory, and default to the package in the current working directory if no other path is given.
+So in our working directory, the following commands are all equivalent:
+
+```
+$ go install example/user/hello
+$ go install .
+$ go install
+```
+
+### Set and Unset Environment Variables
+
+```
+$ go env -w GOBIN=/somewhere/else/bin
+$ go env -u GOBIN
+```
