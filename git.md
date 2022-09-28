@@ -28,3 +28,9 @@ If you only want to do this for a single repository, run `git config credential.
 If the personal access token is updated, you can delete the saved credentials by deleting `.git-credentials` and then run `git pull/push` again to provide the new personal access token.
 
 **Attention**: This method saves the credentials in plaintext on your PC's disk. Everyone on your computer can access it, e.g. malicious NPM modules.
+
+### Identity
+
+- Set your username (globally): `git config --global user.name "FIRST_NAME LAST_NAME"`
+- Set your email address (globally): `git config --global user.email "MY_NAME@example.com"`
+- For repository-specific setting, remove the flag `--global`
