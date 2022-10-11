@@ -60,6 +60,8 @@ Now test it on the **local** machine:
 ssh $USER@$REMOTE
 ```
 
+`$USER` should be the account on which you put the public key to the `.ssh` folder.
+
 ### Execute Commands Remotely
 
 ```
