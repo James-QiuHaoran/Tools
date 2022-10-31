@@ -2,11 +2,13 @@
 
 Kubectl controls the Kubernetes Cluster. It is one of the key components of Kubernetes which runs on the workstation on any machine when the setup is done. It has the capability to manage the nodes in the cluster.
 
-Kubectl commands are used to interact and manage Kubernetes objects and the cluster.
+`kubectl` commands are used to interact and manage Kubernetes objects and the cluster.
 
 Refer to https://www.tutorialspoint.com/kubernetes/kubernetes_kubectl_commands.htm.
 
 A Guide: https://kubernetes.feisky.xyz/.
+
+Cheat sheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 ### Standard Operations
 
@@ -22,6 +24,22 @@ A Guide: https://kubernetes.feisky.xyz/.
 - `kubectl delete –f ([-f FILENAME] | TYPE [(NAME | -l label | --all)])`: delete resources by file name, stdin, resource or names;
     - `kubectl delete -n social-network --all pod,svc --force --grace-period=0` does not delete the pods and services, instead, the pods are restarting;
     - Delete the deployments is the way to go if you want to delete the pods permenantly;
+
+### Get and Describe Resources
+
+```
+# Get commands with basic output
+kubectl get services                          # List all services in the namespace
+kubectl get pods --all-namespaces             # List all pods in all namespaces
+kubectl get pods -o wide                      # List all pods in the current namespace, with more details
+kubectl get deployment my-dep                 # List a particular deployment
+kubectl get pods                              # List all pods in the namespace
+kubectl get pod my-pod -o yaml                # Get a pod's YAML
+
+# Describe commands with verbose output
+kubectl describe nodes my-node
+kubectl describe pods my-pod
+```
 
 ### DNS Service Debugging
 
