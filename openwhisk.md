@@ -210,7 +210,9 @@ wsk action invoke myAction --result --param param_name param_value
 wsk action invoke myAction --result --param-file file_name
 ```
 
-Create an action from customized container (for accessing files or libraries that are larger than 48MB):
+Refer to https://github.com/apache/openwhisk/blob/master/docs/actions-docker.md and https://github.com/apache/openwhisk-runtime-python/tree/master/core/python3Action for more information.
+
+### Create an action from customized container (for accessing files or libraries that are larger than 48MB):
 
 ```
 # create a Dockerfile
@@ -236,7 +238,64 @@ wsk action create ml-libs --docker haoranq4/image-name:ml-libs action.py
 wsk action invoke ml-libs --result
 ```
 
-Refer to https://github.com/apache/openwhisk/blob/master/docs/actions-docker.md and https://github.com/apache/openwhisk-runtime-python/tree/master/core/python3Action for more information.
+### OpenWhisk Action Running `npm install` for You
+
+For a NodeJS function:
+
+```
+$ cd nodejs/actions/helloworld
+$ ls -1
+index.js
+package.json
+```
+
+```
+# index.js
+function helloworld(params) {
+    var format = require('string-format');
+    var name = params.name || 'Stranger';
+    payload = format('Hello, {}!', name)
+    return { message: payload };
+}
+
+exports.main = helloworld;
+```
+
+```
+# package.json
+{
+	"name": "hello-world-sample",
+	"description": "Sample Node.js6 OpenWhisk action",
+	"license": "Apache-2.0",
+	"version": "1.0.0",
+	"main": "index.js",
+	"dependencies": {
+		"string-format": "0.5.0"
+	}
+}
+```
+
+You may want OpenWhisk to install the packages for you. What you can do is to install `string-format` locally and package its source along with `index.js` and `package.json` in a `zip` file called `helloworld.zip`:
+
+```
+$ cd nodejs/actions/helloworld
+$ npm install --production
+$ ls -1
+index.js
+node_modules/
+package.json
+$ zip -rq helloworld.zip *
+```
+
+Then you can create an action with the dependencies installed:
+
+```
+$ wsk action create helloworld --kind nodejs:6 helloworld.zip
+$ wsk action invoke helloworld -r --blocking --param name Amy
+{
+    "message": "Hello, Amy!"
+}
+```
 
 ## Install Distributed OpenWhisk on Multiple Nodes
 
