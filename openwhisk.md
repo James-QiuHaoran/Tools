@@ -91,18 +91,27 @@ You can also access CouchDB GUI at `http://localhost:5984/_utils` and use the cr
 Export all DB parameters:
 
 ```
-$ export OW_DB=CouchDB
-$ export OW_DB_PROTOCOL=http
-$ export OW_DB_HOST=127.0.0.1
-$ export OW_DB_PORT=5984
-$ export OW_DB_USERNAME=admin
-$ export OW_DB_PASSWORD=password
+export OW_DB=CouchDB
+export OW_DB_PROTOCOL=http
+export OW_DB_HOST=127.0.0.1
+export OW_DB_PORT=5984
+export OW_DB_USERNAME=admin
+export OW_DB_PASSWORD=password
 ```
 
 **Or you can deploy a CouchDB container on Docker (Preferred for MacOS) and change the `OW_DB_HOST` from `127.0.0.1` to `172.17.0.1`, `OW_DB_PASSWORD` to `admin`:**
 
 ```
 ansible-playbook couchdb.yml
+```
+
+```
+export OW_DB=CouchDB
+export OW_DB_PROTOCOL=http
+export OW_DB_HOST=172.17.0.1
+export OW_DB_PORT=5984
+export OW_DB_USERNAME=admin
+export OW_DB_PASSWORD=password
 ```
 
 Build and distribute the docker images using docker, make sure you move to the OpenWhisk root repository:
