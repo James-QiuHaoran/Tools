@@ -392,6 +392,12 @@ $ ../bin/wsk -i action invoke /whisk.system/utils/echo -p message hello --result
 }
 ```
 
+`-i` is needed to bypass the certificate check. Otherwise, you might see the following error:
+
+```
+x509: cannot validate certificate for 172.17.0.1 because it doesn't contain any IP SANs
+```
+
 ## Using OpenWhisk Provided-Tools
 
 Directory: `openwhisk/tools/build`
