@@ -156,3 +156,9 @@ docker ps
 docker commit <container-id> <new-name>
 docker push <new-name>
 ```
+
+Rename the image:
+
+```
+docker image tag oldname:latest accountname/newname:latest
+```
