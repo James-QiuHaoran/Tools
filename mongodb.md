@@ -25,3 +25,58 @@ sudo systemctl enable mongod  # auto restart after rebooting
 ```
 
 By default, MongoDB is listening to the localhost address. You can change the bind IP address to `0.0.0.0` for listening to any interface (so that the clients in the Docker containers can also access the server with `172.17.0.1`).
+
+## Enable Authentication
+
+### Create the User Administrator
+
+```
+> use admin
+> db.createUser(
+  {
+    user: "yourusername",
+    pwd: "yourpassword",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+```
+
+### Update the Configuration File
+
+Open `/etc/mongod.conf` with your favorite code editor and search for the following lines:
+
+```
+security:
+  authorization: "disabled"
+```
+
+Change "disabled" to "enabled", save the file, and restart `mongod`:
+
+```
+sudo service mongodb restart
+```
+
+### Connect and Authenticate as the User Administrator
+
+```
+$ mongo mongodb://<host>:<port>
+> db.auth("yourusername", "yourpassword")
+1
+```
+
+You can also connect and authenticate in one single step with `mongo mongodb://superadmin:thepianohasbeendrinking@<host>:<port>`, but this option isn’t advised because it will leave your credentials visible in your terminal history, which any program on your computer can actually read.
+
+### Create Additional Users as Needed
+
+The following operation adds a user `myTester` to the `test` database who has `readWrite` role:
+
+```
+> use test
+> db.createUser(
+  {
+    user: "myTester",
+    pwd: "xyz123",
+    roles: [ { role: "readWrite", db: "test" } ]
+  }
+)
+```
