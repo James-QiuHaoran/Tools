@@ -80,3 +80,12 @@ The following operation adds a user `myTester` to the `test` database who has `r
   }
 )
 ```
+
+## Usage
+
+### Get Collection Info
+
+```
+use example
+db.getCollectionInfos( { name: "employees" } )
+```
