@@ -98,3 +98,45 @@ $ exit
 ### Cron Job
 
 https://phoenixnap.com/kb/set-up-cron-job-linux
+
+### DNS Not Working
+
+Check the status of `systemd-resolved` and restart it if needed:
+
+```
+sudo systemctl status systemd-resolved.service
+sudo systemctl restart systemd-resolved.service
+```
+
+If you have error `sudo: unable to resolve host meta: Temporary failure in name resolution`, check if the host name has been set properly:
+
+```
+ubuntu@meta:~/owk-actions$ cat /etc/hostname
+meta
+ubuntu@meta:~/owk-actions$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+```
+
+Here we need to add an extra line `127.0.1.1 meta` to the file so it should looks like this:
+
+```
+ubuntu@meta:~/owk-actions$ cat /etc/hosts
+127.0.0.1 localhost
+127.0.1.1 meta
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+```
