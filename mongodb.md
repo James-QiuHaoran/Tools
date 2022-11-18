@@ -90,3 +90,9 @@ The following operation adds a user `myTester` to the `test` database who has `r
 use example
 db.getCollectionInfos( { name: "employees" } )
 ```
+
+### Connect to a Specific Database
+
+```
+var url = "mongodb://username:password@localhost:27017/db-name";
+```
