@@ -60,6 +60,7 @@ sudo service mongodb restart
 
 ```
 $ mongo mongodb://<host>:<port>
+> use admin
 > db.auth("yourusername", "yourpassword")
 1
 ```
