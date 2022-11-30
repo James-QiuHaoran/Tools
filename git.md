@@ -40,3 +40,10 @@ If the personal access token is updated, you can delete the saved credentials by
 ```
 git restore --staged <file>
 ```
+
+### Squash Commits and Merge into One
+
+```
+git reset --soft HEAD~3 && git commit
+git push -f
+```
