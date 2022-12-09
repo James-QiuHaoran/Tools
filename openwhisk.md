@@ -429,6 +429,17 @@ sudo ./redo controller -xbd
 sudo ./redo controller -xbd -t distributed
 ```
 
+Or, the whole sequence of ansible commands:
+
+```
+ansible-playbook -i environments/local initdb.yml
+ansible-playbook -i environments/local wipe.yml
+ansible-playbook -i environments/local openwhisk.yml -e limit_action_memory_max=2147483648  # specify the memory limits for each action
+ansible-playbook -i environments/local postdeploy.yml
+ansible-playbook -i environments/local apigateway.yml
+ansible-playbook -i environments/local routemgmt.yml
+```
+
 ## Contributing to OpenWhisk
 
 https://medium.com/openwhisk/how-to-contribute-to-openwhisk-6164c54134a6
