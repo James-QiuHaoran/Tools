@@ -141,6 +141,12 @@ kubectl --namespace monitoring port-forward svc/grafana 3000
 kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
 ```
 
+### Port-forwarding
+
+```
+kubectl port-forward service/prometheus-operated 9090:9090 --namespace PROMETHEUS_NAMESPACE
+```
+
 ### Example Usage
 
 https://www.replex.io/blog/kubernetes-in-production-the-ultimate-guide-to-monitoring-resource-metrics
