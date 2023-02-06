@@ -12,6 +12,22 @@ Plug-in for VPC management: https://cloud.ibm.com/docs/vpc?topic=vpc-infrastruct
 
 - List all VM instances: `ibmcloud is instances`
 
+### Kubernetes Cluster Access
+
+```
+# login in to the IBM cloud account
+ibmcloud login -a cloud.ibm.com -r us-south -g default
+# or by sso
+ibmcloud login -a cloud.ibm.com -r us-south -g default -sso
+
+# set the k8s context to the cluster for this terminal session
+ibmcloud ks cluster config --cluster bvd6gurd08ea509ckln0
+
+# verify the connection to the k8s cluster
+kubectl config current-context
+kubectl get nodes
+```
+
 ## AWS
 
 ### AWS CLI
