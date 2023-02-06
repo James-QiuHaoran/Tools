@@ -51,7 +51,61 @@ References:
 
 ### Power Capping
 
-TODO
+Call `powercap_register_control_type()` to register the control type object.
+
+Call `powercap_register_zone()` to register a power zone (under a given control type), either as a top-level power zone or as a subzone of another power zone registered earlier. The number of constraints in a power zone and the corresponding callbacks have to be defined before calling `powercap_register_zone()` to register that zone.
+
+To free a power zone, call `powercap_unregister_zone()`.
+
+To free a control type object, call `powercap_unregister_control_type()`.
+
+Detailed API can be generated using kernel-doc on `include/linux/powercap.h`.
 
 References:
 - https://www.kernel.org/doc/html/latest/power/powercap/powercap.html
+
+### Command Line Tool - `powercap-info`
+
+[https://manpages.ubuntu.com/manpages/bionic/man1/powercap-info.1.html](https://manpages.ubuntu.com/manpages/bionic/man1/powercap-info.1.html)
+
+[https://manpages.ubuntu.com/manpages/bionic/man1/rapl-info.1.html](https://manpages.ubuntu.com/manpages/bionic/man1/rapl-info.1.html)
+
+```
+powercap-info -p intel-rapl
+              Print all RAPL zones.
+
+powercap-info -p intel-rapl -z 0
+              Print only zone 0, which is usually named package-0.
+
+powercap-info -p intel-rapl -z 0:1
+              Print zone 0, subzone 1, which is usually the uncore or dram subzone of package-0, depending on the system.
+
+powercap-info -p intel-rapl -z 0 -c 1
+              Print zone 0, constraint 1, which is usually the short-term constraint for package-0.
+
+powercap-info -p intel-rapl -z 0 -j
+              Print the energy counter for zone 0, which is usually named package-0.
+
+powercap-info -p intel-rapl -z 1:0 -c 0 -l
+              Print the power limit for zone 1, subzone 0, and constraint 0, which is usually the long-term constraint for the core subzone of package-1 (a multi-socket system).
+```
+
+### Command Line Tool - `powercap-set`
+
+[https://manpages.ubuntu.com/manpages/bionic/man1/powercap-set.1.html](https://manpages.ubuntu.com/manpages/bionic/man1/powercap-set.1.html)
+
+[https://manpages.ubuntu.com/manpages/bionic/man1/rapl-set.1.html](https://manpages.ubuntu.com/manpages/bionic/man1/rapl-set.1.html)
+
+```
+powercap-set -p intel-rapl -z 0 -e 1
+              Enable zone 0, which is usually named package-0.
+
+powercap-set -p intel-rapl -z 0:1 -e 1
+              Enable zone 0, subzone 1, which is usually the uncore or dram subzone of package-0, depending on the system.
+
+powercap-set -p intel-rapl -z 0 -c 1 -l 25000000
+              Set a power cap of 25 Watts (25000000 uW) on zone 0, constraint 1, which is usually the short-term constraint for package-0.
+
+powercap-set -p intel-rapl -z 1:0 -c 0 -l 15000000 -s 976
+              Set a power cap of 15 Watts (15000000 uW) and a time window of 976 microseconds on zone 1, subzone 0, constraint 0, which is usually the long-term  (and only) constraint for the core subzone of package-1 (a multi-socket system).
+```
