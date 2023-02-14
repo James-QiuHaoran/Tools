@@ -1,5 +1,30 @@
 ## Python Tricks
 
+### Upgrade Python
+
+```
+# if Python 3.8 is not on Ubuntu default repositories
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt list | grep python3.8
+
+# install
+sudo apt-get install python3.8
+
+# add both the old and new Python to update-alternatives
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
+
+# update the default option
+sudo update-alternatives --config python3
+python3 -V
+
+# optional: install related libraries
+sudo apt install python3.8-dev
+```
+
+Note: `update-alternatives` creates, removes, maintains and displays information about the symbolic links comprising the Debian alternatives system.
+
 ### Install Packages on a Machine without Internet
 
 On the machine with access to the Internet:
