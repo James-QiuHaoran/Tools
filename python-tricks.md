@@ -1,5 +1,20 @@
 ## Python Tricks
 
+### Virtual Environment
+
+```
+# sudo apt install python3-venv
+
+# create a virtual environment
+python3 -m venv env-name
+
+# activate the venv
+source env-name/bin/activate
+
+# deactivate
+deactivate
+```
+
 ### Upgrade Python
 
 ```
