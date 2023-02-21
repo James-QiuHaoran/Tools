@@ -170,8 +170,11 @@ Different ways to forward a local port to a port on the Pod:
 
 ```
 # change redis-master-765d459796-258hz to the name of the Pod
+# local-port:pod-port
 kubectl port-forward redis-master-765d459796-258hz 7000:6379
 kubectl port-forward pods/redis-master-765d459796-258hz 7000:6379
+
+# you can also do this to the service or deployment
 kubectl port-forward service/redis-master 7000:6379
 kubectl port-forward deployment/redis-master 7000:6379
 ```
