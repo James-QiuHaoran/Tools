@@ -39,6 +39,8 @@ To build a docker image, you need to prepare the source code and a Dockerfile (w
 docker build -t haoranq4/image-name .
 ```
 
+You can use the `--platform` flag to indicate which architecture you would like to build your image to run on, e.g., `--platform linux/amd64,linux/arm64 `.
+
 You can check `docker images` to see whether your image is in the local docker repository. It should be there!
 
 Then you can deploy your docker container by `docker run -d -p 7001:7001 haoranq4/image-name`.
