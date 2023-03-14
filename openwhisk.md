@@ -46,9 +46,7 @@ To make use of all OpenWhisk features, you will need the OpenWhisk command line 
 $ wsk property set --apihost 'http://172.17.0.1:3233' --auth '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP'
 ```
 
-## Install/Deploy OpenWhisk on Docker (Single Node)
-
-https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
+## Dependencies
 
 Install all required software:
 
@@ -57,6 +55,10 @@ cd tools/ubuntu-setup && ./all.sh
 ```
 
 Install `npm` as well (which is not included in `all.sh`): `sudo apt install npm`.
+
+## Install/Deploy OpenWhisk on Docker (Single Node)
+
+https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
 
 Install CouchDB (on Ubuntu **20.04**):
 https://www.alibabacloud.com/blog/how-to-set-up-apache-openwhisk-on-ubuntu-18-04-part-ii_594685
