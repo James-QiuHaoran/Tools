@@ -164,3 +164,9 @@ Rename the image:
 ```
 docker image tag oldname:latest accountname/newname:latest
 ```
+
+### Copy files from Docker container to local
+
+```
+docker cp <containerId>:/file/path/within/container /host/path/target
+```
