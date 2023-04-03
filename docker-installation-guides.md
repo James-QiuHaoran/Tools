@@ -113,6 +113,14 @@ sudo docker run --gpus all --rm nvidia/cuda nvidia-smi
 
 After the container downloads you should see the `nvidia-smi` output from the latest cuda release.
 
+### Run `docker` command without `sudo`
+
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
 ### Miscellaneous
 
 #### Uninstall Docker
