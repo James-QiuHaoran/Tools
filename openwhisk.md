@@ -61,7 +61,8 @@ Install `npm` as well (which is not included in `all.sh`): `sudo apt install npm
 https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
 
 Install CouchDB (on Ubuntu **20.04**):
-https://www.alibabacloud.com/blog/how-to-set-up-apache-openwhisk-on-ubuntu-18-04-part-ii_594685
+https://www.alibabacloud.com/blog/how-to-set-up-apache-openwhisk-on-ubuntu-18-04-part-ii_594685 (path may not work)
+https://docs.couchdb.org/en/stable/install/unix.html#enabling-the-apache-couchdb-package-repository
 
 ```
 # adding the CouchDB GPG key to the keyring
