@@ -330,6 +330,12 @@ ansible all -i environments/distributed -m ping
 
 ### Install Prerequisites on All Nodes
 
+```
+# all ubuntu-related dependencies
+cd tools/ubuntu-setup
+./all.sh
+```
+
 Generate config files
 
 ```
