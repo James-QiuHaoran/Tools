@@ -374,6 +374,8 @@ ansible-playbook -i environments/distributed apigateway.yml
 ansible-playbook -i environments/distributed routemgmt.yml
 ```
 
+Note that if ansible finds the wrong version of the Python, add the following `-e 'ansible_python_interpreter=/usr/bin/python3'` to the `ansible-playbook` command.
+
 ### Configuration and Verification
 
 Check all Docker containers are up and running: `docker ps`
