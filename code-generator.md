@@ -82,3 +82,5 @@ pkg/client/
             ├── expansion_generated.go
             └── multidimpodautoscaler.go
 ```
+
+Note that the generated `pkg/client` directory path is relative to the `$GOPATH`.
