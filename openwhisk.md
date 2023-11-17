@@ -56,6 +56,10 @@ cd tools/ubuntu-setup && ./all.sh
 
 Install `npm` as well (which is not included in `all.sh`): `sudo apt install npm`.
 
+## Configurations
+
+- Memory limit of each action/container: Specify in `common/scala/src/main/resources/application.conf` (default 512 MB)
+
 ## Install/Deploy OpenWhisk on Docker (Single Node)
 
 https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md
