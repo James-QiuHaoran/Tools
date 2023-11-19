@@ -25,6 +25,7 @@ sudo systemctl enable mongod  # auto restart after rebooting
 ```
 
 By default, MongoDB is listening to the localhost address. You can change the bind IP address to `0.0.0.0` for listening to any interface (so that the clients in the Docker containers can also access the server with `172.17.0.1`).
+- You can do so by changing `/etc/mongod.conf` and then restart the MongoDB service `sudo service mongodb restart` or `sudo systemctl restart mongod`.
 
 ## Enable Authentication
 
