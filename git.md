@@ -90,6 +90,14 @@ If the personal access token is updated, you can delete the saved credentials by
 git restore --staged <file>
 ```
 
+### Revert a Particular File to a Particular Commit
+
+Especially after you've changed a lot to the file but found that it is stupid...
+
+```
+git checkout <SHA-HASH> -- file/file-path
+```
+
 ### Squash Commits and Merge into One
 
 ```
