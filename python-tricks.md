@@ -1,5 +1,12 @@
 ## Python Tricks
 
+### Count the Lines of Code in Your Project Directory
+
+```
+pip install pygount
+pygount --format=summary /path/to/your/directory
+```
+
 ### Virtual Environment
 
 ```
