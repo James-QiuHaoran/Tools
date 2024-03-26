@@ -140,3 +140,26 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 ```
+
+### Compression and Decompression
+
+```
+tar -czvf archive_name.tar.gz /path/to/folder
+```
+
+- `tar`: This is the command to create or extract tar archives.
+- `c`: This option tells tar to create a new archive.
+- `z`: This option instructs tar to compress the archive using gzip compression.
+- `v`: This option makes tar output verbose information, showing the files being compressed.
+- `f`: This option specifies the filename for the archive.
+- `archive_name.tar.gz`: This is the name you want to give to the compressed archive file, with the `.tar.gz` extension indicating that it's a gzipped tar file.
+- `/path/to/folder`: This is the path to the folder you want to compress. Replace it with the actual path on your system.
+
+```
+tar -xzvf archive_name.tar.gz
+```
+
+- `x`: This option tells tar to extract the files from the archive.
+- `z`: This option instructs tar to decompress the archive using gzip compression.
+- `v`: This option makes tar output verbose information, showing the files being extracted.
+- `f`: This option specifies the filename of the archive.
