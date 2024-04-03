@@ -83,6 +83,7 @@ If the personal access token is updated, you can delete the saved credentials by
 - Set your username (globally): `git config --global user.name "FIRST_NAME LAST_NAME"`
 - Set your email address (globally): `git config --global user.email "MY_NAME@example.com"`
 - For repository-specific setting, remove the flag `--global`
+- Set the account credential: `git config credential.username "new name"`
 
 ### Undo `git add`
 
