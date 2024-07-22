@@ -23,3 +23,10 @@ Install a package, e.g., `cuda 12.1`:
 ```
 conda install nvidia/label/cuda-12.1.0::cuda
 ```
+
+## Export/Import Packages
+
+```
+conda list -e > requirements.txt
+conda create --name <env> --file requirements.txt
+```
