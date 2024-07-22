@@ -33,3 +33,5 @@ CUDA was developed for the following two reasons:
 - `gpustat`: `pip install --user gpustat`
 - `nvtop`: `sudo apt install nvtop`
 - `nvitop`: `pip install --user nvitop`; `nvitop -1`
+
+For `pip` installation, one needs to add to `PATH`: `export PATH=$PATH:${HOME}/.local/bin`.
