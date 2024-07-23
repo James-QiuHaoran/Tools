@@ -46,3 +46,5 @@ sudo apt-mark hold nvidia-dkms-<version_number>
 sudo apt-mark hold nvidia-driver-<version_number>
 sudo apt-mark hold nvidia-utils-<version_number>
 ```
+
+To show a list of packages that are on hold: `apt-mark showhold`
