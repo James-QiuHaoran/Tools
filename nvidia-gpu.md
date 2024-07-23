@@ -31,7 +31,18 @@ CUDA was developed for the following two reasons:
 ## Other GPU Monitoring Tools
 
 - `gpustat`: `pip install --user gpustat`
-- `nvtop`: `sudo apt install nvtop`
+- `nvtop`: `sudo apt install nvtop` (may cause driver and library version mismatch)
 - `nvitop`: `pip install --user nvitop`; `nvitop -1`
 
 For `pip` installation, one needs to add to `PATH`: `export PATH=$PATH:${HOME}/.local/bin`.
+
+## NVIDIA Drivers are Troublesome
+
+Consider just forbidding the automatic update of NVIDIA packages by modifying `/etc/apt/sources.list.d/` files.
+In my experience, the best way is to simply hold the packages to prevent them from automatic updates by executing the commands below:
+
+```
+sudo apt-mark hold nvidia-dkms-<version_number>
+sudo apt-mark hold nvidia-driver-<version_number>
+sudo apt-mark hold nvidia-utils-<version_number>
+```
