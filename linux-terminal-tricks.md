@@ -92,6 +92,8 @@ $ bg
 
 ```
 $ nohup long-running-process &
+$ nohup command1 > /dev/null 2>&1 &
+$ nohup command1 > output.log 2>&1 &
 $ exit
 ```
 
