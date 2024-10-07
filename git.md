@@ -1,5 +1,15 @@
 ## Git Tricks
 
+### Commit Changes in Branch A to Branch B
+
+```
+git stash
+git checkout other-branch
+git stash pop
+```
+
+The first `stash` hides away your changes (basically making a temporary commit), and the subsequent `stash pop` re-applies them. This lets Git use its merge capabilities.
+
 ### Upstream and Downstream
 
 After forking a repo, you might want to have a branch to keep tracking of the upstream repo.
