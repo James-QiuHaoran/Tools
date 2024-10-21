@@ -76,6 +76,12 @@ Get the cgroup name with only the `pid`:
 ps -o cgroup <pid>
 ```
 
+SSH to a docker container:
+
+```
+sudo docker exec -it f5c4b82c9f2d /bin/bash
+```
+
 ### Docker Swarm
 
 The following commands work for the Swarm orchestrator:
