@@ -30,3 +30,9 @@ conda install nvidia/label/cuda-12.1.0::cuda
 conda list -e > requirements.txt
 conda create --name <env> --file requirements.txt
 ```
+
+## Upgrade Python Version
+
+```
+conda install python=$pythonversion$
+```
