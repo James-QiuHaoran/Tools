@@ -10,6 +10,13 @@ conda activate myenv
 conda deactivate
 ```
 
+## Remove a Conda Environment
+
+```
+conda remove -n myenv --all
+conda remove -p <path> --all
+```
+
 ## Package Management
 
 List all packages installed into the environment `myenv`:
