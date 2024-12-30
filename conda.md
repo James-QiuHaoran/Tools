@@ -10,6 +10,18 @@ conda activate myenv
 conda deactivate
 ```
 
+Or we can create an environment from a YAML config file:
+
+```
+conda env create -f environment.yml
+```
+
+Check the created environments:
+
+```
+conda env list
+```
+
 ## Remove a Conda Environment
 
 ```
