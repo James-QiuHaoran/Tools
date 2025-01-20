@@ -115,3 +115,9 @@ git checkout <SHA-HASH> -- file/file-path
 git reset --soft HEAD~3 && git commit
 git push -f
 ```
+
+### Git Unset Credentials
+
+```
+git config --unset credential.helper
+```
