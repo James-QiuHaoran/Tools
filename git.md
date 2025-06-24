@@ -68,6 +68,13 @@ What you can do is:
 - You can rebase your branch on top of the destination branch (`git rebase <destination branch>`) to rework the commits such that they will fast forward into it. This works when you don't have local changes or commits. Also you can do `git pull --rebase`.
 - If you do have local changes, you can merge both the current changes and the changes that'd come from the pull of the branch from origin: `git merge origin/BRANCH_NAME`. After that, resolve the merge conflicts if any and push you local commits.
 
+If you just want your branch to be up to date with main, but don’t care about linear history:
+```
+git checkout your-branch
+git fetch origin
+git merge origin/main
+``` 
+
 ### Personal Access Token
 
 Starting Aug 13th, GitHub only uses personal access tokens for code push approval, which is hard to remember.
