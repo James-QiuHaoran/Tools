@@ -1,0 +1,902 @@
+[
+    {
+        "Problem": "sum of two numbers prime to each other is 15 and their l . c . m . is 56 . what are the numbers ?",
+        "Rationale": "\"as two numbers are prime , only options satisfy ie option a and d and c but option d will make the product of numbers i . e 56 answer : d\"",
+        "options": "a ) 9 and 8 , b ) 5 and 10 , c ) 7 and 9 , d ) 7 and 8 , e ) 10 and 8",
+        "correct": "d",
+        "annotated_formula": "add(56, 15)",
+        "linear_formula": "add(n0,n1)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "a rope can make 70 rounds of the circumference of a cylinder whose radius of the base is 14 cm . how many times can it go round a cylinder having radius 20 cm ?",
+        "Rationale": "explanation : let the required number of rounds be x more radius , less rounds ( indirect proportion ) hence we can write as radius 14 : 20 } : : x : 70 ⇒ 14 × 70 = 20 x ⇒ 14 × 7 = 2 x ⇒ x = 7 × 7 = 49 . answer : option a",
+        "options": "['a ) 49 rounds', 'b ) 42 rounds', 'c ) 54 rounds', 'd ) 52 rounds', 'e ) none of these']",
+        "correct": "a",
+        "annotated_formula": "divide(multiply(circumface(14), 70), circumface(20))",
+        "linear_formula": "circumface(n1)|circumface(n2)|multiply(n0,#0)|divide(#2,#1)",
+        "category": "geometry"
+    },
+    {
+        "Problem": "a works twice as fast as b . if b can complete a work in 18 days independently , the number of days in which a and b can together finish the work is :",
+        "Rationale": "\"explanation : ratio of rates of working of a and b = 2 : 1 . so , ratio of times taken = 1 : 2 a ' s 1 day ' s work = 1 / 9 b ' s 1 day ' s work = 1 / 18 ( a + b ) ' s 1 day ' s work = ( 1 / 9 + 1 / 18 ) = 3 / 18 = 1 / 6 so , a and b together can finish the work in 6 days answer is b\"",
+        "options": "a ) 4 days , b ) 6 days , c ) 8 days , d ) 10 days , e ) 12 days",
+        "correct": "b",
+        "annotated_formula": "inverse(add(divide(const_1, 18), multiply(const_2, divide(const_1, 18))))",
+        "linear_formula": "divide(const_1,n0)|multiply(#0,const_2)|add(#0,#1)|inverse(#2)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "the compound ratio of 5 : 7 , 3 : 2 and 4 : 5 ?",
+        "Rationale": "\"5 / 7 * 3 / 2 * 4 / 5 = 6 / 7 6 : 7 answer : c\"",
+        "options": "a ) 1 : 7 , b ) 6 : 5 , c ) 6 : 7 , d ) 4 : 7 , e ) 6 : 9",
+        "correct": "c",
+        "annotated_formula": "divide(divide(multiply(5, 3), multiply(7, 2)), divide(multiply(3, 4), multiply(2, 5)))",
+        "linear_formula": "multiply(n0,n2)|multiply(n1,n3)|multiply(n2,n4)|multiply(n3,n5)|divide(#0,#1)|divide(#2,#3)|divide(#4,#5)|",
+        "category": "other"
+    },
+    {
+        "Problem": "a parking garage rents parking spaces for $ 10 per week or $ 24 per month . how much does a person save in a year by renting by the month rather than by the week ?",
+        "Rationale": "\"10 $ per week ! an year has 52 weeks . annual charges per year = 52 * 10 = 520 $ 30 $ per month ! an year has 12 months . annual charges per year = 12 * 24 = 288 $ 520 - 288 = 232 ans d\"",
+        "options": "a ) $ 140 , b ) $ 160 , c ) $ 220 , d ) $ 232 , e ) $ 260",
+        "correct": "d",
+        "annotated_formula": "subtract(multiply(add(multiply(10, add(const_3, const_2)), const_2), 10), multiply(24, const_12))",
+        "linear_formula": "add(const_2,const_3)|multiply(n1,const_12)|multiply(#0,n0)|add(#2,const_2)|multiply(n0,#3)|subtract(#4,#1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the length of a room is 5.5 m and width is 3.75 m . find the cost of paving the floor by slabs at the rate of rs . 1200 per sq . metre .",
+        "Rationale": "\"solution area of the floor = ( 5.5 × 3.75 ) m 2 = 20.625 m 2 ∴ cost of paving = rs . ( 1200 × 20.625 ) = 24750 . answer c\"",
+        "options": "a ) rs . 15000 , b ) rs . 15550 , c ) rs . 24750 , d ) rs . 16500 , e ) none of these",
+        "correct": "c",
+        "annotated_formula": "multiply(1200, multiply(5.5, 3.75))",
+        "linear_formula": "multiply(n0,n1)|multiply(n2,#0)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "a rectangular plot measuring 90 metres by 40 metres is to be enclosed by wire fencing . if the poles of the fence are kept 5 metres apart , how many poles will be needed ?",
+        "Rationale": "\"solution perimeter of the plot = 2 ( 90 + 40 ) = 260 m . ∴ number of poles = [ 260 / 5 ] = 52 m answer d\"",
+        "options": "a ) 55 , b ) 56 , c ) 57 , d ) 52 , e ) none of these",
+        "correct": "d",
+        "annotated_formula": "divide(rectangle_perimeter(90, 40), 5)",
+        "linear_formula": "rectangle_perimeter(n0,n1)|divide(#0,n2)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "an investor can sell her microtron stock for 36 $ per share and her dynaco stock for 56 $ per share , if she sells 300 shares altogether , some of each stock , at an average price per share of 40 $ , how many shares of dynaco stock has she sold ?",
+        "Rationale": "\"w 1 / w 2 = ( a 2 - aavg ) / ( aavg - a 1 ) = ( 56 - 40 ) / ( 40 - 36 ) = 16 / 4 = 4 / 1 = number of microtron stocks / number of dynaco stocks so for every 4 microtron stock , she sold 1 dynaco stock . so out of 300 total stocks , ( 1 / 5 ) th i . e . 300 / 5 = 60 must be dynaco stock . answer ( c )\"",
+        "options": "a ) 52 , b ) 75 , c ) 60 , d ) 136 , e ) 184",
+        "correct": "c",
+        "annotated_formula": "divide(multiply(300, divide(40, subtract(56, 36))), divide(add(36, 56), subtract(56, 36)))",
+        "linear_formula": "add(n0,n1)|subtract(n1,n0)|divide(n3,#1)|divide(#0,#1)|multiply(n2,#2)|divide(#4,#3)|",
+        "category": "general"
+    },
+    {
+        "Problem": "when a train travels at a speed of 90 kmph , it reaches the destination on time . when the same train travels at a speed of 50 kmph , it reaches its destination 15 min late . what is the length of journey ?",
+        "Rationale": "\"let x be the time reached with the speed 90 km / h 50 km / h - - - - > x + 15 distance is equal so 90 ( km / h ) × xhr = 50 ( km / h ) × ( x + 15 ) hr so 90 x = 50 x + 750 so the would be in km and x = 18.75 answer : a\"",
+        "options": "a ) 18.75 km , b ) 50 km , c ) 60 km , d ) 85 km , e ) 95 km",
+        "correct": "a",
+        "annotated_formula": "multiply(const_60, divide(multiply(divide(15, const_60), 50), 50))",
+        "linear_formula": "divide(n2,const_60)|multiply(n1,#0)|divide(#1,n1)|multiply(#2,const_60)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "what is the smallest number which , when increased by 5 , is divisible by 7 , 8 , and 24 ?",
+        "Rationale": "\"lcm ( 7 , 8,24 ) = 24 x 7 = 168 so the least divisible number is 168 , and the number we are looking for is 168 - 5 = 163 . the answer is d .\"",
+        "options": "a ) 148 , b ) 153 , c ) 158 , d ) 163 , e ) 168",
+        "correct": "d",
+        "annotated_formula": "subtract(lcm(24, 8), 5)",
+        "linear_formula": "lcm(n2,n3)|subtract(#0,n0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a and b complete a work in 6 days . a can alone can do it in 10 days . if both can together can do the work in how many days ?",
+        "Rationale": "1 / 6 + 1 / 10 = 8 / 30 = 4 / 15 15 / 4 = 3.75 days answer b",
+        "options": "a ) 7 , b ) 3.75 , c ) 2 , d ) 1 , e ) 8",
+        "correct": "b",
+        "annotated_formula": "divide(multiply(6, 10), add(6, 10))",
+        "linear_formula": "add(n0,n1)|multiply(n0,n1)|divide(#1,#0)",
+        "category": "physics"
+    },
+    {
+        "Problem": "105 * 2",
+        "Rationale": "\"here d = 5 . 100 + 2 × × 5 / 25 = 11025 answer : a\"",
+        "options": "a ) 11025 , b ) 23889 , c ) 29088 , d ) 1999 , e ) 17710",
+        "correct": "a",
+        "annotated_formula": "multiply(divide(105, 2), const_100)",
+        "linear_formula": "divide(n0,n1)|multiply(#0,const_100)|",
+        "category": "general"
+    },
+    {
+        "Problem": "of all the students in a certain dormitory , 1 / 2 are first - year students and the rest are second - year students . if 4 / 5 of the first - year students have not declared a major and if the fraction of second - year students who have declared a major is 1 / 3 times the fraction of first - year students who have declared a major , what fraction of all the students in the dormitory are second - year students who have not declared a major ?",
+        "Rationale": "tot students = x 1 st year student = x / 2 - - - - > non majaor = 4 / 5 ( x / 2 ) - - - - - > maj = 1 / 5 ( x / 2 ) 2 nd year student = x / 2 - - - - > maj = 1 / 3 ( 1 / 5 ( x / 2 ) ) = 1 / 30 ( x ) - - - > non major = x / 2 - 1 / 30 ( x ) = 7 / 15 ( x ) hence 7 / 15 a",
+        "options": "a ) 7 / 15 , b ) 1 / 5 , c ) 4 / 15 , d ) 1 / 3 , e ) 2 / 5",
+        "correct": "a",
+        "annotated_formula": "subtract(divide(1, 2), divide(const_1, multiply(3, const_10)))",
+        "linear_formula": "divide(n0,n1)|multiply(n5,const_10)|divide(const_1,#1)|subtract(#0,#2)",
+        "category": "general"
+    },
+    {
+        "Problem": "if 20 typists can type 46 letters in 20 minutes , then how many letters will 30 typists working at the same rate complete in 1 hour ?",
+        "Rationale": "\"20 typists can type 46 letters , so 30 typists can type = 46 * 30 / 20 46 * 30 / 20 letters can be typed in 20 mins . in 60 mins typist can type = 46 * 30 * 60 / 20 * 20 = 207 e is the answer\"",
+        "options": "a ) 63 , b ) 72 , c ) 144 , d ) 216 , e ) 207",
+        "correct": "e",
+        "annotated_formula": "multiply(divide(multiply(46, const_3), 20), 30)",
+        "linear_formula": "multiply(n1,const_3)|divide(#0,n0)|multiply(n3,#1)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "on july 1 of last year , total employees at company e was decreased by 10 percent . without any change in the salaries of the remaining employees , the average ( arithmetic mean ) employee salary was 10 percent more after the decrease in the number of employees than before the decrease . the total of the combined salaries of all the employees at company e after july 1 last year was what percent q of thatbeforejuly 1 last year ?",
+        "Rationale": "\"the total number of employees = n the average salary = x total salary to all emplyoees = xn after the total number of employees = n - 0.1 n = 0.9 n the average salary = x + 10 % of x = 1.1 x total salary to all emplyoees = 0.9 n ( 1.1 x ) total salary after as a % of total salary before q = [ 0.9 n ( 1.1 x ) ] / xn = 0.99 or 99 % = b\"",
+        "options": "a ) 90 % , b ) 99 % , c ) 100 % , d ) 101 % , e ) 110 %",
+        "correct": "b",
+        "annotated_formula": "multiply(10, 10)",
+        "linear_formula": "multiply(n1,n1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a fruit drink is made of orange , watermelon , and grape juice , where 25 percent of the drink is orange juice and 40 percent is watermelon juice . if the drink is made with 70 ounces of grape juice , how many ounces is the drink total ?",
+        "Rationale": "\"let the total number of ounces in the drink be x . % of orange = 25 % % of watermelon = 40 % % of grape = 100 % - 65 % = 35 % 0.35 x = 70 x = 200 therefore there are a total of 200 ounces in the drink . the answer is c .\"",
+        "options": "a ) 125 , b ) 160 , c ) 200 , d ) 250 , e ) 320",
+        "correct": "c",
+        "annotated_formula": "add(add(70, divide(multiply(70, 25), subtract(const_100, add(40, 25)))), divide(multiply(70, 40), subtract(const_100, add(40, 25))))",
+        "linear_formula": "add(n0,n1)|multiply(n0,n2)|multiply(n1,n2)|subtract(const_100,#0)|divide(#1,#3)|divide(#2,#3)|add(n2,#4)|add(#6,#5)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a survey was sent to 60 customers , 7 of whom responded . then the survey was redesigned and sent to another 63 customers , 9 of whom responded . by approximately what percent did the response rate increase from the original survey to the redesigned survey ?",
+        "Rationale": "\"case 1 : ( 7 / 60 ) = x / 100 x = 12 % case 2 : ( 9 / 63 ) = y / 100 y = 14 % so percent increase is = ( y - x ) = ( 14 - 12 ) % = 2 % answer is a\"",
+        "options": "a ) 2 % , b ) 5 % , c ) 14 % , d ) 28 % , e ) 4 %",
+        "correct": "a",
+        "annotated_formula": "floor(multiply(subtract(divide(9, 63), divide(7, 60)), const_100))",
+        "linear_formula": "divide(n3,n2)|divide(n1,n0)|subtract(#0,#1)|multiply(#2,const_100)|floor(#3)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "water consists of hydrogen and oxygen , and the approximate ratio , by mass , of hydrogen to oxygen is 2 : 16 . approximately how many grams of oxygen are there in 162 grams of water ?",
+        "Rationale": "\"solution : we are given that the ratio of hydrogen to oxygen in water , by mass , is 2 : 16 . using our ratio multiplier we can re - write this as 2 x : 16 x . we can now use these expressions to determine how much oxygen is in 162 grams of water . 2 x + 16 x = 162 18 x = 162 x = 9 since x is 9 , we know that there are 16 x 9 = 144 grams of oxygen in 162 grams of water . answer e .\"",
+        "options": "a ) 16 , b ) 72 , c ) 112 , d ) 128 , e ) 144",
+        "correct": "e",
+        "annotated_formula": "multiply(2, divide(162, add(2, 16)))",
+        "linear_formula": "add(n0,n1)|divide(n2,#0)|multiply(n0,#1)|",
+        "category": "other"
+    },
+    {
+        "Problem": "a trader bought a car at 30 % discount on its original price . he sold it at a 40 % increase on the price he bought it . what percent of profit did he make on the original price ?",
+        "Rationale": "\"original price = 100 cp = 70 s = 70 * ( 140 / 100 ) = 98 100 - 112 = 2 % answer : e\"",
+        "options": "a ) 118 , b ) 110 , c ) 112 , d ) 113 , e ) 98",
+        "correct": "e",
+        "annotated_formula": "multiply(subtract(divide(divide(multiply(subtract(const_100, 30), add(const_100, 40)), const_100), const_100), const_1), const_100)",
+        "linear_formula": "add(n1,const_100)|subtract(const_100,n0)|multiply(#0,#1)|divide(#2,const_100)|divide(#3,const_100)|subtract(#4,const_1)|multiply(#5,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "two circular frames are kept one above the other . frame x has a diameter of 16 cm and frame y has a diameter of 12 cm . what fraction of the surface of frame x is not covered by frame y ?",
+        "Rationale": "the questions asks us to find the surface which is not covered by the frame y i . e . , area of the surface not covered . where as circumference is the length along the edge of the circle , 2 * pi * r implies the length of the curve pi * r ^ 2 implies area enclosed by that curve . . hence area of the circle is considered for this problem area of the frame y = pi * r ^ 2 , where r = 6 = > pi * 36 area of the frame x = pi * 64 surface not covered by the frame y = pi * 64 - pi * 36 = pi * 28 fraction of frame x ' s surface is not covered by a frame y = pi * 28 / total area of the frame x = 28 / 64 = 7 / 16 answer is b",
+        "options": "['a ) 3 / 5', 'b ) 7 / 16', 'c ) 12 / 16', 'd ) 24 / 12', 'e ) 2 / 3']",
+        "correct": "b",
+        "annotated_formula": "divide(subtract(circle_area(divide(16, const_2)), circle_area(divide(12, const_2))), circle_area(divide(16, const_2)))",
+        "linear_formula": "divide(n0,const_2)|divide(n1,const_2)|circle_area(#0)|circle_area(#1)|subtract(#2,#3)|divide(#4,#2)",
+        "category": "geometry"
+    },
+    {
+        "Problem": "a student has to obtain 33 % of the total marks to pass . he got 125 marks and failed by 40 marks . the maximum mark is",
+        "Rationale": "\"the student got 125 marks and still failed by 40 marks = 125 + 40 = 165 therefore 33 % of the total marks = 165 100 % of the total = 165 * 100 / 33 = 55 max mark = 500 answer b\"",
+        "options": "a ) 600 , b ) 500 , c ) 400 , d ) 300 , e ) 800",
+        "correct": "b",
+        "annotated_formula": "divide(add(125, 40), divide(33, const_100))",
+        "linear_formula": "add(n1,n2)|divide(n0,const_100)|divide(#0,#1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "what least number must be subtracted from 3830 so that the remaining number is divisible by 15 ?",
+        "Rationale": "\"on dividing 3830 by 15 , we get remainder = 5 . required number be subtracted = 5 answer : c\"",
+        "options": "a ) 3 , b ) 1 , c ) 5 , d ) 11 , e ) 15",
+        "correct": "c",
+        "annotated_formula": "subtract(3830, multiply(floor(divide(3830, 15)), 15))",
+        "linear_formula": "divide(n0,n1)|floor(#0)|multiply(n1,#1)|subtract(n0,#2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "tom , working alone , can paint a room in 6 hours . peter and john , working independently , can paint the same room in 3 hours and 4 hours , respectively . tom starts painting the room and works on his own for one hour . he is then joined by peter and they work together for an hour . finally , john joins them and the three of them work together to finish the room , each one working at his respective rate . what fraction of the whole job was done by peter ?",
+        "Rationale": "\"tom paints 1 / 6 of the room in the first hour . tom and peter paint 1 / 6 + 1 / 3 = 1 / 2 of the room in the next hour for a total of 4 / 6 . the three people then paint the remaining 2 / 6 in a time of ( 2 / 6 ) / ( 3 / 4 ) = 4 / 9 hours peter worked for 13 / 9 hours so he painted 13 / 9 * 1 / 3 = 13 / 27 of the room . the answer is d .\"",
+        "options": "a ) 7 / 15 , b ) 9 / 20 , c ) 11 / 25 , d ) 13 / 27 , e ) 15 / 31",
+        "correct": "d",
+        "annotated_formula": "divide(const_4, add(multiply(const_4, 4), const_1))",
+        "linear_formula": "multiply(n2,const_4)|add(#0,const_1)|divide(const_4,#1)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "6 chess players take part in a tournament . every player plays twice with each of his opponents . how many games are to be played ?",
+        "Rationale": "\"though 2 * ( 6 c 2 ) is the correct approcah to do this , but for people like me who find perm , comb n prob a nightmare , an easy approach can be used . the first guy has to play 2 matches with the rest of 5 , so he ' ll play 10 matches . similarly , second guy has to play with the rest of 4 as his 2 games with the first guy are already played . so he plays 8 matches . this continues like this and the total matches are 10 + 8 + 6 . . . + 2 10 + 8 + . . . + 2 = 2 ( 5 + 4 + . . . + 1 ) = 2 ( ( 5 * 6 ) / 2 ) = 5 * 6 = 30 . answer : c\"",
+        "options": "a ) 19 , b ) 20 , c ) 30 , d ) 33 , e ) 34",
+        "correct": "c",
+        "annotated_formula": "multiply(6, subtract(6, const_1))",
+        "linear_formula": "subtract(n0,const_1)|multiply(n0,#0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the length and the breadth of a rectangle are in the ratio of 3 : 2 respectively . if the sides of the rectangle are extended on each side by 1 metre , the ratio of length to breadth becomes 10 : 7 . find the area of the original rectangle in square metres .",
+        "Rationale": "let the length and breadth be l and b respectively . l ⁄ b = 3 ⁄ 2 or l = 3 ⁄ 2 b . . . . . ( i ) l + 1 / b + 1 = 10 / 7 or 7 l - 10 b = 3 . . . . . ( ii ) from eq . ( i ) 10.5 b – l 0 b = 6 or , 0.5 b = 3 or , b = 6 and l = 9 area = l × b = 6 × 9 = 54 m 2 answer e",
+        "options": "['a ) 256', 'b ) 150', 'c ) 280', 'd ) data inadequate', 'e ) none of these']",
+        "correct": "e",
+        "annotated_formula": "rectangle_area(subtract(7, 1), subtract(10, 1))",
+        "linear_formula": "subtract(n4,n2)|subtract(n3,n2)|rectangle_area(#0,#1)",
+        "category": "geometry"
+    },
+    {
+        "Problem": "what is 120 % of 13 / 24 of 720 ?",
+        "Rationale": "\"120 % * 13 / 24 * 360 = 1.2 * 13 * 30 = 468 the answer is c .\"",
+        "options": "a ) 372 , b ) 434 , c ) 468 , d ) 512 , e ) 564",
+        "correct": "c",
+        "annotated_formula": "divide(multiply(120, add(add(multiply(multiply(add(const_3, const_2), const_2), multiply(multiply(const_3, const_4), const_100)), multiply(multiply(add(const_3, const_4), add(const_3, const_2)), multiply(add(const_3, const_2), const_2))), add(const_3, const_3))), const_100)",
+        "linear_formula": "add(const_2,const_3)|add(const_3,const_4)|add(const_3,const_3)|multiply(const_3,const_4)|multiply(#0,const_2)|multiply(#3,const_100)|multiply(#1,#0)|multiply(#4,#5)|multiply(#6,#4)|add(#7,#8)|add(#9,#2)|multiply(n0,#10)|divide(#11,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "a man buys rs . 20 shares paying 9 % dividend . the man wants to have an interest of 12 % on his money . what is the market value of each share ?",
+        "Rationale": "\"explanation : face value of each share = rs . 20 dividend per share = 9 % of 20 = 9 × 20 / 100 = 9 / 5 he needs to have an interest of 12 % on his money ie , money paid for a share 9 × 12 / 100 = 9 / 5 money paid for a share = 9 / 5 × 100 / 12 = 15 ie , market value of the share = rs . 15 answer : option c\"",
+        "options": "a ) rs . 12 , b ) rs . 18 , c ) rs . 15 , d ) rs . 21 , e ) rs . 25",
+        "correct": "c",
+        "annotated_formula": "multiply(divide(const_100, 12), multiply(divide(9, const_100), 20))",
+        "linear_formula": "divide(const_100,n2)|divide(n1,const_100)|multiply(n0,#1)|multiply(#0,#2)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the simple interest on a sum of money will be rs . 600 after 10 years . if the principal is trebled after 5 years , what will be the total interest at the end of the tenth year ?",
+        "Rationale": "solution 22.22 let the sum be rs . x . now , s . i . = rs . 600 , t = 10 years . rate = % = ( 100 x 600 / x x 10 ) % = ( 6000 / x ) % s . i . for first 5 years = rs . ( x x 5 x 6000 / x x 100 ) = rs . 300 . s . i . for first 5 years = rs . ( 3 x x 5 x 6000 / x x 100 ) = rs . 900 . ∴ total interest = rs . 1200 . answer c",
+        "options": "a ) rs . 600 , b ) rs . 900 , c ) 1200 rupees , d ) rs . 1500 , e ) none",
+        "correct": "c",
+        "annotated_formula": "add(multiply(multiply(divide(600, 10), 5), const_3), multiply(divide(600, 10), 5))",
+        "linear_formula": "divide(n0,n1)|multiply(n2,#0)|multiply(#1,const_3)|add(#2,#1)",
+        "category": "general"
+    },
+    {
+        "Problem": "find the compound interest on $ 36,000 at 20 % per annum for 9 months , compounded quarterly",
+        "Rationale": "\"principal = $ 36000 ; time = 9 months = 3 quarters ; rate = 20 % per annum = 5 % per quarter . amount = $ [ 36000 x ( 1 + ( 5 / 100 ) ) ^ 3 ] = $ 41674.5 ci . = $ ( 41674.5 - 36000 ) = $ 5674.5 answer d .\"",
+        "options": "a ) 2532.6 , b ) 2552.2 , c ) 2524.1 , d ) 5674.5 , e ) 2512.9",
+        "correct": "d",
+        "annotated_formula": "subtract(multiply(36,000, power(add(const_1, divide(9, const_100)), 20)), 36,000)",
+        "linear_formula": "divide(n2,const_100)|add(#0,const_1)|power(#1,n1)|multiply(n0,#2)|subtract(#3,n0)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "find the amount on rs . 4000 in 2 years , the rate of interest being 4 % per first year and 5 % for the second year ?",
+        "Rationale": "\"4000 * 104 / 100 * 105 / 100 = > 4368 answer : a\"",
+        "options": "a ) 4368 , b ) 2678 , c ) 5460 , d ) 1976 , e ) 1671",
+        "correct": "a",
+        "annotated_formula": "divide(multiply(divide(multiply(4000, add(const_100, 4)), const_100), add(const_100, 5)), const_100)",
+        "linear_formula": "add(n3,const_100)|add(n2,const_100)|multiply(n0,#1)|divide(#2,const_100)|multiply(#0,#3)|divide(#4,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the sum of two numbers is 64 , and one of them is 12 more than the other . what are the two numbers ?",
+        "Rationale": "\"in this problem , we are asked to find two numbers . therefore , we must let x be one of them . let x , then , be the first number . we are told that the other number is 12 more , x + 12 . the problem states that their sum is 64 : word problem = 64 the line over x + 12 is a grouping symbol called a vinculum . it saves us writing parentheses . we have : 2 x = 64 â ˆ ’ 12 = 52 . x = 52 / 2 = 26 . this is the first number . therefore the other number is x + 12 = 26 + 12 = 38 . the sum of 26 + 38 is 64 . a\"",
+        "options": "a ) 26 - 38 , b ) 50 - 34 , c ) 60 - 24 , d ) 42 - 42 , e ) 21 - 63",
+        "correct": "a",
+        "annotated_formula": "divide(subtract(64, 12), const_2)",
+        "linear_formula": "subtract(n0,n1)|divide(#0,const_2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a man can row 4.2 km / hr in still water . it takes him twice as long to row upstream as to row downstream . what is the rate of the current ?",
+        "Rationale": "\"speed of boat in still water ( b ) = 4.2 km / hr . speed of boat with stream ( down stream ) , d = b + u speed of boat against stream ( up stream ) , u = b – u it is given upstream time is twice to that of down stream . ⇒ downstream speed is twice to that of upstream . so b + u = 2 ( b – u ) ⇒ u = b / 3 = 1.4 km / hr . answer : c\"",
+        "options": "a ) 1.9 , b ) 1.7 , c ) 1.4 , d ) 1.5 , e ) 1.1",
+        "correct": "c",
+        "annotated_formula": "divide(subtract(multiply(4.2, const_2), 4.2), const_3)",
+        "linear_formula": "multiply(n0,const_2)|subtract(#0,n0)|divide(#1,const_3)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a person lent a certain sum of money at 4 % per annum at simple interest and in 8 years the interest amounted to rs . 170 less than the sum lent . what was the sum lent ?",
+        "Rationale": "\"p - 170 = ( p * 4 * 8 ) / 100 p = 250 answer : c\"",
+        "options": "a ) 228 , b ) 278 , c ) 250 , d ) 500 , e ) 821",
+        "correct": "c",
+        "annotated_formula": "divide(170, subtract(const_1, divide(multiply(4, 8), const_100)))",
+        "linear_formula": "multiply(n0,n1)|divide(#0,const_100)|subtract(const_1,#1)|divide(n2,#2)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "nails and screws are manufactured at a uniform weight per nail and a uniform weight per screw . if the total weight of one screw and one nail is half that of 6 screws and one nail , then the total weight of 3 screws , and 3 nails is how many times that of 5 screws and 1 nails ?",
+        "Rationale": "let the weight of nail be n and that of screw be s . . so s + w = 1 / 2 * ( 6 s + 1 n ) . . . or 1 n = 4 s . . lets see the weight of 3 s and 3 n = 3 s + 3 * 4 s = 15 s . . and weight of 5 s and 1 n = 5 s + 1 * 5 s = 10 s . . ratio = 15 s / 10 s = 15 / 10 = 3 / 2 d",
+        "options": "a ) a . 4 , b ) b . 5 / 2 , c ) c . 2 , d ) d . 3 / 2 , e ) e . 5 / 4",
+        "correct": "d",
+        "annotated_formula": "divide(add(multiply(3, const_4), 3), const_10)",
+        "linear_formula": "multiply(n1,const_4)|add(n1,#0)|divide(#1,const_10)",
+        "category": "general"
+    },
+    {
+        "Problem": "a shopkeeper forced to sell at cost price , uses a 700 grams weight for a kilogram . what is his gain percent ?",
+        "Rationale": "\"shopkeeper sells 700 g instead of 1000 g . so , his gain = 1000 - 700 = 300 g . thus , % gain = ( 300 * 100 ) / 700 = 42.85 % . answer : option d\"",
+        "options": "a ) 10 % , b ) 9 % , c ) 11.11 % , d ) 42.85 % , e ) none of these",
+        "correct": "d",
+        "annotated_formula": "multiply(divide(add(multiply(const_2, const_100), divide(const_100, const_2)), 700), const_100)",
+        "linear_formula": "divide(const_100,const_2)|multiply(const_100,const_2)|add(#0,#1)|divide(#2,n0)|multiply(#3,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "p software has coding line 5 % more than n , n software has coding line 1 / 3 more than m . m software has 90 lines of coding . find p lines .",
+        "Rationale": "m s / w has 90 line of code n s / w has = 90 + 90 * 1 / 3 = 120 line of code p s / w 5 % more n ' code 120 + 6 = 126 answer : c",
+        "options": "a ) 106 , b ) 107 , c ) 126 , d ) 109 , e ) 110",
+        "correct": "c",
+        "annotated_formula": "add(90, divide(90, 3))",
+        "linear_formula": "divide(n3,n2)|add(n3,#0)",
+        "category": "general"
+    },
+    {
+        "Problem": "what is the units digit of the expression 14 ^ 7 − 18 ^ 4 ?",
+        "Rationale": "\"units digit of 14 ^ 7 − 18 ^ 4 : consider the following unit digits : 4 ^ 1 : 4 4 ^ 2 : 6 4 ^ 3 : 4 4 ^ 4 : 6 ⇒ unit digit of 4 ^ 7 is : 4 the unit digit of 14 ^ 7 will also be 4 also : 8 ^ 1 : 8 8 ^ 2 : 4 8 ^ 3 : 2 8 ^ 4 : 6 ⇒ unit digit of 8 ^ 4 is : 6 the unit digit of 18 ^ 4 will also be 6 finally , 4 - 6 ( or 14 - 6 ) = 8 answer : e )\"",
+        "options": "a ) 0 , b ) 3 , c ) 4 , d ) 6 , e ) 8",
+        "correct": "e",
+        "annotated_formula": "add(add(const_4, const_3), const_2)",
+        "linear_formula": "add(const_3,const_4)|add(#0,const_2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "gold is 10 times as heavy as water and copper is 5 times as heavy as water . in what ratio should these be mixed to get an alloy 9 times as heavy as water ?",
+        "Rationale": "\"g = 10 w c = 5 w let 1 gm of gold mixed with x gm of copper to get 1 + x gm of the alloy 1 gm gold + x gm copper = x + 1 gm of alloy 10 w + 5 wx = x + 1 * 9 w 10 + 5 x = 9 ( x + 1 ) x = 1 / 4 ratio of gold with copper = 1 : 1 / 4 = 4 : 1 answer is c\"",
+        "options": "a ) 3 : 2 , b ) 1 : 2 , c ) 4 : 1 , d ) 5 : 2 , e ) 4 : 3",
+        "correct": "c",
+        "annotated_formula": "divide(subtract(9, 5), subtract(10, 9))",
+        "linear_formula": "subtract(n2,n1)|subtract(n0,n2)|divide(#0,#1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "for a race a distance of 224 meters can be covered by p in 16 seconds and q in 32 seconds . by what distance does p defeat q eventually ?",
+        "Rationale": "\"explanation : this is a simple speed time problem . given conditions : = > speed of p = 224 / 16 = 14 m / s = > speed of q = 224 / 32 = 7 m / s = > difference in time taken = 16 seconds therefore , distance covered by p in that time = 14 m / s x 16 seconds = 224 metres answer : c\"",
+        "options": "a ) 232 m , b ) 238 m , c ) 224 m , d ) 331 m , e ) 236 m",
+        "correct": "c",
+        "annotated_formula": "subtract(224, multiply(16, speed(224, 32)))",
+        "linear_formula": "speed(n0,n2)|multiply(n1,#0)|subtract(n0,#1)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "a and b invests rs . 3000 and rs . 10000 respectively in a business . if a doubles his capital after 6 months . in what ratio should a and b divide that year ' s profit ?",
+        "Rationale": "\"( 3 * 6 + 6 * 6 ) : ( 10 * 12 ) 54 : 120 = > 9 : 20 . answer : c\"",
+        "options": "a ) 9 : 6 , b ) 9 : 8 , c ) 9 : 20 , d ) 9 : 9 , e ) 9 : 5",
+        "correct": "c",
+        "annotated_formula": "divide(add(multiply(3000, 6), multiply(multiply(3000, const_2), 6)), multiply(10000, add(6, 6)))",
+        "linear_formula": "add(n2,n2)|multiply(n0,n2)|multiply(n0,const_2)|multiply(n2,#2)|multiply(n1,#0)|add(#1,#3)|divide(#5,#4)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "if it is 5 : 14 in the evening on a certain day , what time in the morning was it exactly 2 , 880,702 minutes earlier ? ( assume standard time in one location . )",
+        "Rationale": "5 : 14 minus 2 , 880,702 must end with 2 , the only answer choice which ends with 2 is a . answer : a .",
+        "options": "a ) 5 : 32 , b ) 5 : 36 , c ) 5 : 48 , d ) 5 : 54 , e ) 5 : 58",
+        "correct": "a",
+        "annotated_formula": "divide(floor(divide(subtract(add(multiply(add(5, multiply(const_3, const_4)), const_60), 14), reminder(add(multiply(multiply(2, const_1000), const_1000), add(multiply(multiply(multiply(multiply(const_2, const_4), add(const_10, const_1)), const_10), const_1000), add(multiply(add(const_3, const_4), const_100), const_2))), multiply(multiply(multiply(const_3, const_4), const_2), const_60))), const_60)), reminder(subtract(add(multiply(add(5, multiply(const_3, const_4)), const_60), 14), reminder(add(multiply(multiply(2, const_1000), const_1000), add(multiply(multiply(multiply(multiply(const_2, const_4), add(const_10, const_1)), const_10), const_1000), add(multiply(add(const_3, const_4), const_100), const_2))), multiply(multiply(multiply(const_3, const_4), const_2), const_60))), const_60))",
+        "linear_formula": "add(const_3,const_4)|add(const_1,const_10)|multiply(const_3,const_4)|multiply(const_2,const_4)|multiply(n2,const_1000)|add(n0,#2)|multiply(#0,const_100)|multiply(#1,#3)|multiply(#4,const_1000)|multiply(#2,const_2)|add(#6,const_2)|multiply(#5,const_60)|multiply(#7,const_10)|multiply(#9,const_60)|add(n1,#11)|multiply(#12,const_1000)|add(#10,#15)|add(#16,#8)|reminder(#17,#13)|subtract(#14,#18)|divide(#19,const_60)|reminder(#19,const_60)|floor(#20)|divide(#22,#21)",
+        "category": "physics"
+    },
+    {
+        "Problem": "the ratio between the number of passengers travelling by i and ii class between the two railway stations is 1 : 50 , whereas the ratio of i and ii class fares between the same stations is 3 : 1 . if on a particular day rs . 1,325 were collected from the passengers travelling between these stations , then what was the amount collected from the ii class passengers ?",
+        "Rationale": "let x be the number of passengers and y be the fare taken from passengers . 3 xy + 50 xy = 1325 = > xy = 25 amount collected from ii class passengers = 25 × 50 = rs . 1250 . answer : d",
+        "options": "a ) rs . 750 , b ) rs . 1000 , c ) rs . 850 , d ) rs . 1250 , e ) none of these",
+        "correct": "d",
+        "annotated_formula": "multiply(multiply(50, 1), divide(add(add(add(multiply(const_10, const_100), multiply(const_3, const_100)), multiply(const_2, const_10)), add(const_2, const_3)), add(multiply(1, 3), multiply(50, 1))))",
+        "linear_formula": "add(const_2,const_3)|multiply(const_10,const_100)|multiply(const_100,const_3)|multiply(const_10,const_2)|multiply(n0,n2)|multiply(n0,n1)|add(#1,#2)|add(#4,#5)|add(#6,#3)|add(#8,#0)|divide(#9,#7)|multiply(#10,#5)",
+        "category": "other"
+    },
+    {
+        "Problem": "60 % of x is greater than 1 / 3 rd of x by 110 . what is x ?",
+        "Rationale": "\"6 x / 10 - x / 3 = 110 4 x / 15 = 110 x = 412.5 answer : e\"",
+        "options": "a ) 100.5 , b ) 200.5 , c ) 300.5 , d ) 350.5 , e ) 412.5",
+        "correct": "e",
+        "annotated_formula": "divide(110, subtract(divide(60, const_100), divide(1, 3)))",
+        "linear_formula": "divide(n0,const_100)|divide(n1,n2)|subtract(#0,#1)|divide(n3,#2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a cyclist climbs a hill with a length of 400 m with a speed of 7.2 km / h . when descending , the speed is two times greater . how much time is necessary for the cyclist to climb and descend the hill ?",
+        "Rationale": "7.2 km = 7200 m . 1 h = 3600 s . the speed will be 7200 m / 3600 s = 2 m / s . the necessary time to climb will be 20 seconds . when descending , if the speed is two times greater , the necessary time will be two times smaller , so 10 seconds . the total necessary time is 20 s + 10 s = 30 seconds . answer a",
+        "options": "a ) 30 seconds , b ) 20 seconds , c ) 40 seconds , d ) 10 seconds , e ) none",
+        "correct": "a",
+        "annotated_formula": "divide(add(divide(divide(400, divide(multiply(7.2, const_1000), const_3600)), const_2), divide(400, divide(multiply(7.2, const_1000), const_3600))), const_10)",
+        "linear_formula": "multiply(n1,const_1000)|divide(#0,const_3600)|divide(n0,#1)|divide(#2,const_2)|add(#3,#2)|divide(#4,const_10)",
+        "category": "general"
+    },
+    {
+        "Problem": "company kw is being sold , and both company a and company b were considering the purchase . the price of company kw is 20 % more than company a has in assets , and this same price is also 100 % more than company b has in assets . if companies a and b were to merge and combine their assets , the price of company kw would be approximately what percent of these combined assets ?",
+        "Rationale": "\"let the price of company a ' s assets be 100 price of assets of kw is 20 % more than company a ' s assets which is 120 price of assets of kw is 100 % more than company b ' s assets which means price of company b ' s assets is half the price of kw = 60 a + b = 160 kw = 120 kw / ( a + b ) * 100 = 120 / 160 * 100 = 75 % b\"",
+        "options": "a ) 66 % , b ) 75 % , c ) 86 % , d ) 116 % , e ) 150 %",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(add(100, 20), add(100, divide(add(100, 20), const_2))), 100)",
+        "linear_formula": "add(n0,n1)|divide(#0,const_2)|add(n1,#1)|divide(#0,#2)|multiply(#3,n1)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the cost to park a car in a certain parking garage is $ 9.00 for up to 2 hours of parking and $ 1.75 for each hour in excess of 2 hours . what is the average ( arithmetic mean ) cost per hour to park a car in the parking garage for 9 hours ?",
+        "Rationale": "\"total cost of parking for 9 hours = 9 $ for the first 2 hours and then 1.75 for ( 9 - 2 ) hours = 9 + 7 * 1.75 = 21.25 thus the average parking price = 21.25 / 9 = 2.36 $ d is the correct answer .\"",
+        "options": "a ) $ 1.09 , b ) $ 1.67 , c ) $ 2.25 , d ) $ 2.36 , e ) $ 2.50",
+        "correct": "d",
+        "annotated_formula": "divide(add(9.00, multiply(1.75, subtract(9, 2))), 9)",
+        "linear_formula": "subtract(n4,n1)|multiply(n2,#0)|add(n0,#1)|divide(#2,n4)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a sum was put at simple interest at a certain rate for 10 years . had it been put at 5 % higher rate , it would have fetched rs . 400 more . what was the sum ?",
+        "Rationale": "\"at 5 % more rate , the increase in s . i for 10 years = rs . 400 ( given ) so , at 5 % more rate , the increase in si for 1 year = 400 / 10 = rs . 40 / - i . e . rs . 40 is 5 % of the invested sum so , 1 % of the invested sum = 40 / 5 therefore , the invested sum = 40 × 100 / 5 = rs . 800 answer : b\"",
+        "options": "a ) s . 1200 , b ) s . 800 , c ) s . 1400 , d ) s . 1000 , e ) s . 920",
+        "correct": "b",
+        "annotated_formula": "divide(400, multiply(divide(5, const_100), 10))",
+        "linear_formula": "divide(n1,const_100)|multiply(n0,#0)|divide(n2,#1)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "for what value of “ k ” will the equation ( 2 kx 2 + 5 kx + 2 ) = 0 have equal roots ?",
+        "Rationale": "for a 2 nd degree equation ax 2 + bx _ c = 0 has equal roots the condition is b 2 - 4 ac = 0 in the given equation ( 5 k ) ^ 2 - 4 * 2 k * 2 = 0 by solving this equation we get k = 0 , k = 16 / 25 answer : c",
+        "options": "a ) 2 / 7 , b ) 9 / 4 , c ) 16 / 25 , d ) 7 / 1 , e ) 7 / 2",
+        "correct": "c",
+        "annotated_formula": "divide(multiply(multiply(multiply(2, 2), 2), 2), multiply(5, 5))",
+        "linear_formula": "multiply(n0,n0)|multiply(n2,n2)|multiply(n0,#0)|multiply(n0,#2)|divide(#3,#1)",
+        "category": "general"
+    },
+    {
+        "Problem": "if n is a prime number greater than 19 , what is the remainder when n ^ 2 is divided by 12 ?",
+        "Rationale": "\"there are several algebraic ways to solve this question , but the easiest way is as follows : since we can not have two correct answers just pick a prime greater than 19 , square it and see what would be the remainder upon division of it by 12 . n = 23 - - > n ^ 2 = 529 - - > remainder upon division 529 by 12 is 1 . answer : b .\"",
+        "options": "a ) 0 , b ) 1 , c ) 2 , d ) 3 , e ) 5",
+        "correct": "b",
+        "annotated_formula": "subtract(power(add(19, 2), 2), multiply(12, const_4))",
+        "linear_formula": "add(n0,n1)|multiply(n2,const_4)|power(#0,n1)|subtract(#2,#1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a train running at a speed of 36 kmph crosses an electric pole in 12 seconds . in how much time will it cross a 340 m long platform ?",
+        "Rationale": "\"let the length of the train be x m . when a train crosses an electric pole , the distance covered is its own length . so , x = 12 * 36 * 5 / 18 m = 120 m . time taken to cross the platform = ( 120 + 340 ) / 36 * 5 / 18 = 46 min . answer : d\"",
+        "options": "a ) 19 , b ) 27 , c ) 29 , d ) 46 , e ) 28",
+        "correct": "d",
+        "annotated_formula": "divide(add(340, multiply(multiply(const_0_2778, 36), 12)), multiply(const_0_2778, 36))",
+        "linear_formula": "multiply(n0,const_0_2778)|multiply(n1,#0)|add(n2,#1)|divide(#2,#0)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "a certain city with a population of 120,000 is to be divided into 11 voting districts , and no district is to have a population that is more than 10 percent greater than the population of any other district what is the minimum possible population that the least populated district could have ?",
+        "Rationale": "\"let x = number of people in smallest district x * 1.1 = number of people in largest district x will be minimised when the number of people in largest district is maximised 10 * x * 1.1 = 11 x = total number of people in other districts so we have 11 x + x = 120 k x = 10,000 answer : b\"",
+        "options": "a ) a ) 10,700 , b ) b ) 10,000 , c ) c ) 10,900 , d ) d ) 11,000 , e ) e ) 11,100",
+        "correct": "b",
+        "annotated_formula": "multiply(multiply(const_4, const_2), const_100)",
+        "linear_formula": "multiply(const_2,const_4)|multiply(#0,const_100)|",
+        "category": "general"
+    },
+    {
+        "Problem": "how many two - digit numbers yield a remainder of 3 when divided by both 4 and 14 ?",
+        "Rationale": "\"easier to start with numbers that are of the form 14 p + 3 - - - > 17,31 , 45,59 , 73,87 . out of these 3 ( 31 , 59,87 ) are also of the form 4 q + 3 . thus 3 is the answer . d is the correct answer .\"",
+        "options": "a ) 0 , b ) 1 , c ) 2 , d ) 3 , e ) 4",
+        "correct": "d",
+        "annotated_formula": "subtract(add(3, multiply(14, 4)), multiply(14, 4))",
+        "linear_formula": "multiply(n1,n2)|add(n0,#0)|subtract(#1,#0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "what number has a 15 : 1 ratio to the number 10 ?",
+        "Rationale": "\"15 : 1 = x : 10 x = 10 * 15 x = 150 answer : d\"",
+        "options": "a ) 130 , b ) 100 , c ) 200 , d ) 150 , e ) 120",
+        "correct": "d",
+        "annotated_formula": "multiply(10, 15)",
+        "linear_formula": "multiply(n0,n2)|",
+        "category": "other"
+    },
+    {
+        "Problem": "a trader bought a car at 10 % discount on its original price . he sold it at a 40 % increase on the price he bought it . what percent of profit did he make on the original price ?",
+        "Rationale": "\"original price = 100 cp = 80 s = 80 * ( 140 / 100 ) = 126 100 - 126 = 26 % answer : d\"",
+        "options": "a ) 118 , b ) 110 , c ) 112 , d ) 126 , e ) 115",
+        "correct": "d",
+        "annotated_formula": "multiply(subtract(divide(divide(multiply(subtract(const_100, 10), add(const_100, 40)), const_100), const_100), const_1), const_100)",
+        "linear_formula": "add(n1,const_100)|subtract(const_100,n0)|multiply(#0,#1)|divide(#2,const_100)|divide(#3,const_100)|subtract(#4,const_1)|multiply(#5,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "if rs . 10 be allowed as true discount on a bill of rs . 110 at the end of a certain time , then the discount allowed on the same sum due at the end of double the time is",
+        "Rationale": "\"explanation : present worth = amount - truediscount = 110 - 10 = rs . 100 si on rs . 100 for a certain time = rs . 10 si on rs . 100 for doube the time = rs . 20 truediscount on rs . 120 = 120 - 100 = rs . 20 truediscount on rs . 110 = ( 110 x 20 / 120 ) = rs . 18.33 answer : b\"",
+        "options": "a ) 18.20 , b ) 18.33 , c ) 18 , d ) 18.3 , e ) none of these",
+        "correct": "b",
+        "annotated_formula": "multiply(110, divide(subtract(add(10, 110), const_100), add(10, 110)))",
+        "linear_formula": "add(n0,n1)|subtract(#0,const_100)|divide(#1,#0)|multiply(n1,#2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "if a is a positive integer , and if the units digit of a ^ 2 is 1 and the units digit of ( a + 1 ) ^ 2 is 0 , what is the units digit of ( a + 2 ) ^ 2 ?",
+        "Rationale": "\"if the units digit of a ^ 2 is 1 , then the units digit of a is either 1 or 9 . if the units digit of ( a + 1 ) ^ 2 is 0 , then the units digit of a + 1 is 0 . to satisfy both conditions , the units digit of a must be 9 . then a + 2 has the units digit of 1 , thus the units digit of ( a + 2 ) ^ 2 will be 1 . the answer is a .\"",
+        "options": "a ) 1 . , b ) 3 . , c ) 5 . , d ) 7 . , e ) 9 .",
+        "correct": "a",
+        "annotated_formula": "power(add(multiply(1, 2), 2), 2)",
+        "linear_formula": "multiply(n0,n1)|add(n0,#0)|power(#1,n0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "two numbers are in the ratio of 1 : 2 . if 9 be added to both , their ratio changes to 3 : 5 . the greater number is",
+        "Rationale": "\"let the ratio be x : y , given x / y = 1 / 2 , ( x + 9 ) / ( y + 9 ) = 3 / 5 = > x = 18 and y = 36 answer : e\"",
+        "options": "a ) 20 , b ) 24 , c ) 28 , d ) 32 , e ) 36",
+        "correct": "e",
+        "annotated_formula": "multiply(1, 9)",
+        "linear_formula": "multiply(n0,n2)|",
+        "category": "other"
+    },
+    {
+        "Problem": "the area of a triangle will be when a = 5 m , b = 7 m , c = 8 m , a , b , c being lengths of respective sides ?",
+        "Rationale": "s = ( 5 + 7 + 8 ) / 2 = e answer : e",
+        "options": "a ) 3 , b ) 6 , c ) 4 , d ) 9 , e ) 10",
+        "correct": "e",
+        "annotated_formula": "divide(add(add(5, 7), 8), 7)",
+        "linear_formula": "add(n0,n1)|add(n2,#0)|divide(#1,n1)|",
+        "category": "geometry"
+    },
+    {
+        "Problem": "the cost of painting the whole surface area of a cube at the rate of 13 paise per sq . cm is rs . 343.98 . then the volume of the cube is",
+        "Rationale": "solution surface area = ( 34398 / 13 ) ‹ = › 2646 cm 3 ‹ = › 6 a 2 = 2646 ‹ = › a 2 = 441 ‹ = › a = 21 . so , volume = ( 21 x 21 x 21 ) cm 3 = 9261 cm 3 . answer d",
+        "options": "['a ) 8500 cm 3', 'b ) 9000 cm 3', 'c ) 9250 cm 3', 'd ) 9261 cm 3', 'e ) none']",
+        "correct": "d",
+        "annotated_formula": "volume_cube(sqrt(divide(divide(343.98, divide(13, const_100)), multiply(const_2, const_3))))",
+        "linear_formula": "divide(n0,const_100)|multiply(const_2,const_3)|divide(n1,#0)|divide(#2,#1)|sqrt(#3)|volume_cube(#4)",
+        "category": "geometry"
+    },
+    {
+        "Problem": "a ’ s speed is 32 / 27 times that of b . if a and b run a race , what part of the length of the race should a give b as a head start , so that the race ends in a dead heat ?",
+        "Rationale": "\"we have the ratio of a ’ s speed and b ’ s speed . this means , we know how much distance a covers compared with b in the same time . this is what the beginning of the race will look like : ( start ) a _________ b ______________________________ if a covers 32 meters , b covers 27 meters in that time . so if the race is 32 meters long , when a reaches the finish line , b would be 5 meters behind him . if we want the race to end in a dead heat , we want b to be at the finish line too at the same time . this means b should get a head start of 5 meters so that he doesn ’ t need to cover that . in that case , the time required by a ( to cover 32 meters ) would be the same as the time required by b ( to cover 27 meters ) to reach the finish line . so b should get a head start of 5 / 32 th of the race . answer ( a )\"",
+        "options": "a ) 5 / 32 , b ) 5 / 27 , c ) 1 / 27 , d ) 1 / 32 , e ) 27 / 32",
+        "correct": "a",
+        "annotated_formula": "divide(subtract(32, 27), 32)",
+        "linear_formula": "subtract(n0,n1)|divide(#0,n0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "of the 13 employees in a certain department , 1 has an annual salary of 38000 , 2 have an annual salary of 45700 each , 2 have an annual salary of 42500 each , 3 have an annual salary of 40000 each and 5 have an annual salary of 48500 each . what is the median annual salary for the 13 employees ?",
+        "Rationale": "median is just the value in the middle when you arrange all values in the ascending order in this question , the 7 th value would be the median ( since there are 13 employees ) 38 , 40 , 40 , 40 , 42.5 , 42.5 , 45.7 so , answer is d .",
+        "options": "a ) 38,000 , b ) 40,000 , c ) 42,500 , d ) 45,700 , e ) 48,500",
+        "correct": "d",
+        "annotated_formula": "multiply(42500, const_1)",
+        "linear_formula": "multiply(n6,const_1)",
+        "category": "general"
+    },
+    {
+        "Problem": "a committee is reviewing a total of 30 x black - and - white films and 6 y color films for a festival . if the committee selects y / x % of the black - and - white films and all of the color films , what fraction of the selected films are in color ?",
+        "Rationale": "\"say x = y = 10 . in this case we would have : 30 x = 300 black - and - white films ; 6 y = 60 color films . y / x % = 10 / 10 % = 1 % of the black - and - white films , so 3 black - and - white films and all 60 color films , thus total of 63 films were selected . color films thus compose 60 / 63 = 20 / 21 of the selected films . answer : b\"",
+        "options": "a ) 22 / 21 , b ) 20 / 21 , c ) 23 / 21 , d ) 25 / 21 , e ) 28 / 21",
+        "correct": "b",
+        "annotated_formula": "divide(6, add(divide(30, const_100), 6))",
+        "linear_formula": "divide(n0,const_100)|add(n1,#0)|divide(n1,#1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the annual interest rate earned by an investment increased by 10 percent from last year to this year . if the annual interest rate earned by the investment this year was 13 percent , what was the annual interest rate last year ?",
+        "Rationale": "13 = 1.1 * x x = 11.81 % answer d )",
+        "options": "a ) 1 % , b ) 1.1 % , c ) 9.1 % , d ) 11.81 % , e ) 11.50 %",
+        "correct": "d",
+        "annotated_formula": "divide(multiply(13, const_100), add(13, const_100))",
+        "linear_formula": "add(n1,const_100)|multiply(n1,const_100)|divide(#1,#0)",
+        "category": "gain"
+    },
+    {
+        "Problem": "in a renowned city , the average birth rate is 4 people every two seconds and the death rate is 3 people every two seconds . estimate the size of the population net increase that occurs in one day .",
+        "Rationale": "\"this question can be modified so that the birth rate is given every m seconds and the death rate is given every n seconds . for this particular question : increase in the population every 2 seconds = 4 - 3 = 1 people . total 2 second interval in a day = 24 * 60 * 60 / 2 = 43,200 population increase = 43,200 * 1 = 43,200 . hence b .\"",
+        "options": "a ) 43,100 , b ) 43,200 , c ) 43,300 , d ) 43,400 , e ) 43,450",
+        "correct": "b",
+        "annotated_formula": "multiply(multiply(subtract(4, 3), const_3600), const_12)",
+        "linear_formula": "subtract(n0,n1)|multiply(#0,const_3600)|multiply(#1,const_12)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the ratio of the arithmetic mean of two numbers to one of the numbers is 5 : 8 . what is the ratio of the smaller number to the larger number ?",
+        "Rationale": "\"for two numbers , the arithmetic mean is the middle of the two numbers . the ratio of the mean to the larger number is 5 : 8 , thus the smaller number must have a ratio of 2 . the ratio of the smaller number to the larger number is 2 : 8 = 1 : 4 . the answer is d .\"",
+        "options": "a ) 1 : 8 , b ) 1 : 6 , c ) 1 : 5 , d ) 1 : 4 , e ) 1 : 3",
+        "correct": "d",
+        "annotated_formula": "multiply(subtract(divide(5, 8), divide(const_1, const_2)), const_2)",
+        "linear_formula": "divide(n0,n1)|divide(const_1,const_2)|subtract(#0,#1)|multiply(#2,const_2)|",
+        "category": "other"
+    },
+    {
+        "Problem": "two equally sized jugs full of water are each emptied into two separate unequally sized empty jugs , x and y . now , jug x is 1 / 6 full , while jug y is 2 / 3 full . if water is poured from jug x into jug y until jug y is filled , what fraction of jug x then contains water ?",
+        "Rationale": "\"suppose the water in each jug is l liters cx x ( 1 / 6 ) = l cx = 6 l liters cx is capacity of x cy x ( 2 / 3 ) = l cy = 3 l / 2 liters cy is capacity of y now , y is 3 l / 2 - l empty = l / 2 empty so , we can put only l / 2 water in jug y from jug x jug x ' s remaining water = l - l / 2 = l / 2 fraction of x which contains water = water / cx = ( l / 2 ) / 6 l = 1 / 12 answer will be b\"",
+        "options": "a ) 0 , b ) 1 / 12 , c ) 2 / 15 , d ) 1 / 10 , e ) 2 / 10",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(1, 6), divide(subtract(1, divide(2, 3)), divide(2, 3)))",
+        "linear_formula": "divide(n0,n1)|divide(n2,n3)|subtract(n0,#1)|divide(#2,#1)|multiply(#0,#3)|",
+        "category": "general"
+    },
+    {
+        "Problem": "p works 25 % more efficiently than q and q works 50 % more efficiently than r . to complete a certain project , p alone takes 50 days less than q alone . if , in this project p alone works for 60 days and then q alone works for 145 days , in how many days can r alone complete the remaining work ?",
+        "Rationale": "p works 25 % more efficiently than q : something that takes q 5 days , takes p 4 days q works 50 % more efficiently than r : something that takes r 7.5 days , takes q 5 days p alone takes 50 days less than q : for every 4 days p works , q has to work an extra day . hence p alone can do it in 200 days and q alone in 250 days and hence r alone in 395 days p works for 60 days - - > 60 / 200 work done = > 30 % q works for 145 days - - > 145 / 250 work done = > 58 % 28 % work left . . . r alone will take 28 % * 395 = 110.6 days answer is ( b )",
+        "options": "a ) 50 days , b ) 110.6 days , c ) 100 days , d ) 150 days , e ) 80 days",
+        "correct": "b",
+        "annotated_formula": "subtract(multiply(const_4, 50), multiply(divide(145, const_100), 60))",
+        "linear_formula": "divide(n4,const_100)|multiply(n1,const_4)|multiply(n3,#0)|subtract(#1,#2)",
+        "category": "physics"
+    },
+    {
+        "Problem": "a milk man has 15 liters of milk . if he mixes 5 liters of water , which is freely available , in 20 liters of pure milk . if the cost of pure milk is rs . 18 per liter , then the profit of the milkman , when he sells all the mixture at cost price is :",
+        "Rationale": "\"explanation : when the water is freely available and all the water is sold at the price of the milk , then the water gives the profit on the cost of 20 liters of milk . therefore , profit percentage = 20 % . answer : a\"",
+        "options": "a ) 20 % , b ) 25 % , c ) 33.33 % , d ) 18 % , e ) none of these",
+        "correct": "a",
+        "annotated_formula": "multiply(divide(subtract(multiply(add(add(add(20, 5), const_10), add(divide(5, const_2), const_3)), 18), multiply(15, 18)), multiply(15, 18)), const_100)",
+        "linear_formula": "add(n1,n2)|divide(n1,const_2)|multiply(n0,n3)|add(#0,const_10)|add(#1,const_3)|add(#3,#4)|multiply(n3,#5)|subtract(#6,#2)|divide(#7,#2)|multiply(#8,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the value of x + ( xx ) when x = 3 is :",
+        "Rationale": "x + ( xx ) put the value of x = 2 in the above expression we get , 3 + ( 33 ) = 3 + ( 3 × 3 ) = 3 + ( 9 ) = 3 + 9 = 12 b",
+        "options": "a ) a ) 36 , b ) b ) 12 , c ) c ) 18 , d ) d ) 64 , e ) e ) 10",
+        "correct": "b",
+        "annotated_formula": "add(multiply(3, 3), 3)",
+        "linear_formula": "multiply(n0,n0)|add(n0,#0)",
+        "category": "general"
+    },
+    {
+        "Problem": "what distance will be covered by a bus moving at 36 kmph in 30 seconds ?",
+        "Rationale": "\"36 kmph = 36 * 5 / 18 = 10 mps d = speed * time = 10 * 30 = 300 m . answer : d\"",
+        "options": "a ) 287 , b ) 600 , c ) 289 , d ) 300 , e ) 207",
+        "correct": "d",
+        "annotated_formula": "multiply(multiply(36, const_0_2778), 30)",
+        "linear_formula": "multiply(n0,const_0_2778)|multiply(n1,#0)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "angelo and isabella are both salespersons . in any given week , angelo makes $ 580 in base salary plus 8 percent of the portion of his sales above $ 1,000 for that week . isabella makes 10 percent of her total sales for any given week . for what amount of weekly sales would angelo and isabella earn the same amount of money ?",
+        "Rationale": "\"let the weekly sales of both = x 580 + ( x − 1000 ) 8 / 100 = 10 / 100 x x = 25000 answer : c\"",
+        "options": "a ) 23,500 , b ) 24,500 , c ) 25,000 , d ) 26,500 , e ) 27,500",
+        "correct": "c",
+        "annotated_formula": "floor(divide(divide(subtract(580, multiply(1,000, divide(8, const_100))), subtract(divide(10, const_100), divide(8, const_100))), 1,000))",
+        "linear_formula": "divide(n1,const_100)|divide(n3,const_100)|multiply(#0,n2)|subtract(#1,#0)|subtract(n0,#2)|divide(#4,#3)|divide(#5,n2)|floor(#6)|",
+        "category": "general"
+    },
+    {
+        "Problem": "jerry travels 8 miles at an average speed of 40 miles per hour , stops for 15 minutes , and then travels another 20 miles at an average speed of 60 miles per hour . what is jerry ’ s average speed , in miles per hour , for this trip ?",
+        "Rationale": "total time taken by jerry = ( 8 / 40 ) * 60 minutes + 15 minutes + ( 20 / 60 ) * 60 minutes = 47 minutes average speed = total distance / total time = ( 8 + 20 ) miles / ( 47 / 60 ) hours = 28 * 60 / 47 = 35 miles per hour answer : option a",
+        "options": "a ) 35 , b ) 42.5 , c ) 44 , d ) 50 , e ) 52.5",
+        "correct": "a",
+        "annotated_formula": "divide(add(8, 20), add(add(divide(8, 40), divide(15, const_60)), divide(20, 60)))",
+        "linear_formula": "add(n0,n3)|divide(n0,n1)|divide(n2,const_60)|divide(n3,n4)|add(#1,#2)|add(#4,#3)|divide(#0,#5)",
+        "category": "physics"
+    },
+    {
+        "Problem": "of 3 numbers , the third is 4 times the second and the second is two times the first . if their average is 165 , the second number of the 3 numbers is :",
+        "Rationale": "explanation : let first number be x . so , 2 nd no . = 2 x & 3 rd no . = 8 x . so , x + 2 x + 8 x = 165 × 3 = 495 11 x = 495 / 11 x = 495 / 11 hence , first number is x = 45 so , second number is = 2 x 45 = 90 answer : c",
+        "options": "a ) 18 , b ) 100 , c ) 90 , d ) 45 , e ) 120",
+        "correct": "c",
+        "annotated_formula": "divide(multiply(const_3, 165), divide(add(multiply(const_4, const_2), 3), const_2))",
+        "linear_formula": "multiply(n2,const_3)|multiply(const_2,const_4)|add(n0,#1)|divide(#2,const_2)|divide(#0,#3)",
+        "category": "general"
+    },
+    {
+        "Problem": "what is the sum of the integers from - 190 to 191 inclusive ?",
+        "Rationale": "\"sum / n = average . sum = ( average ) ( n ) average = a + b / 2 = 190 + 191 / 2 = 0.5 number of items ( n ) = b - a + 1 = 191 - ( - 190 ) + 1 = 195 + 191 = 382 . sum = average * n = 0.5 * 382 = 191 . answer is b\"",
+        "options": "a ) 0 , b ) 191 , c ) 375 , d ) 875 , e ) 965",
+        "correct": "b",
+        "annotated_formula": "divide(multiply(190, 191), const_4)",
+        "linear_formula": "multiply(n0,n1)|divide(#0,const_4)|",
+        "category": "general"
+    },
+    {
+        "Problem": "how many of the positive factors of 45 , 16 and how many common factors are there in numbers ?",
+        "Rationale": "\"factors of 45 - 1 , 3 , 9 , 15 and 45 factors of 16 - 1 , 2 , 4 , 8 and 16 comparing both , we have three common factors of 45,16 - 1 answer ( a )\"",
+        "options": "a ) 1 , b ) 2 , c ) 3 , d ) 4 , e ) 5",
+        "correct": "a",
+        "annotated_formula": "divide(16, 45)",
+        "linear_formula": "divide(n1,n0)|",
+        "category": "other"
+    },
+    {
+        "Problem": "an agent , gets a commission of 4 % on the sales of cloth . if on a certain day , he gets rs . 12.50 as commission , the cloth sold through him on that day is worth",
+        "Rationale": "\"explanation : let the total sale be rs . x . then , 4 % . of x = 12.50 = ( 4 / 100 * x ) = 12.5 < = > x = 312.5 . answer : a\"",
+        "options": "a ) 312 , b ) 500 , c ) 887 , d ) 299 , e ) 132",
+        "correct": "a",
+        "annotated_formula": "divide(12.50, divide(4, const_100))",
+        "linear_formula": "divide(n0,const_100)|divide(n1,#0)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "car x began traveling at an average speed of 35 miles per hour . after 72 minutes , car y began traveling at an average speed of 40 miles per hour . when both cars had traveled the same distance , both cars stopped . how many miles did car x travel from the time car y began traveling until both cars stopped ?",
+        "Rationale": "\"car y began travelling after 72 minutes or 1.2 hours . let t be the time for which car y travelled before it stopped . both cars stop when they have travelled the same distance . so , 35 ( t + 1.2 ) = 40 t t = 8.4 distance traveled by car x from the time car y began traveling until both cars stopped is 35 x 8.4 = 294 miles answer : - e\"",
+        "options": "a ) 205 , b ) 220 , c ) 240 , d ) 247 , e ) 294",
+        "correct": "e",
+        "annotated_formula": "multiply(35, divide(multiply(divide(72, const_60), 35), subtract(40, 35)))",
+        "linear_formula": "divide(n1,const_60)|subtract(n2,n0)|multiply(n0,#0)|divide(#2,#1)|multiply(n0,#3)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "the salary of a worker is first increased by 10 % and afterwards reduced by 10 % . what is the net change in the worker ' s salary ?",
+        "Rationale": "\"let x be the original salary . the final salary is 0.9 ( 1.1 x ) = 0.99 x the answer is b .\"",
+        "options": "a ) 1 % increase , b ) 1 % decrease , c ) 2 % increase , d ) 2 % decrease , e ) no change",
+        "correct": "b",
+        "annotated_formula": "subtract(const_100, subtract(add(10, const_100), divide(multiply(add(10, const_100), 10), const_100)))",
+        "linear_formula": "add(n0,const_100)|multiply(n0,#0)|divide(#1,const_100)|subtract(#0,#2)|subtract(const_100,#3)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the ratio of investments of two partners p and q is 7 : 5 and the ratio of their profits is 7 : 10 . if p invested the money for 2 months , find for how much time did q invest the money ?",
+        "Rationale": "\"7 * 5 : 2 * x = 7 : 10 x = 4 answer : 4 answer is d\"",
+        "options": "a ) 8 , b ) 10 , c ) 18 , d ) 4 , e ) 12",
+        "correct": "d",
+        "annotated_formula": "multiply(multiply(divide(7, 5), divide(10, 7)), 2)",
+        "linear_formula": "divide(n0,n1)|divide(n3,n2)|multiply(#0,#1)|multiply(n4,#2)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "the value of ( 34.31 * 0.473 * 1.567 ) / ( 0.0673 * 23.25 * 7.57 ) is close to",
+        "Rationale": "\"( 34.31 * 0.473 * 1.567 ) / ( 0.0673 * 23.25 * 7.57 ) = 25.4303 / 11.845 = 2.15 answer : d\"",
+        "options": "a ) 2 , b ) 1.15 , c ) 2.05 , d ) 2.15 , e ) 2.35",
+        "correct": "d",
+        "annotated_formula": "divide(divide(multiply(multiply(34.31, 0.473), 1.567), multiply(multiply(7.57, 23.25), 0.0673)), const_10)",
+        "linear_formula": "multiply(n0,n1)|multiply(n4,n5)|multiply(n2,#0)|multiply(n3,#1)|divide(#2,#3)|divide(#4,const_10)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the length of a room is 5.5 m and width is 3.75 m . find the cost of paying the floor by slabs at the rate of rs . 1400 per sq . metre .",
+        "Rationale": "\"solution area of the floor = ( 5.5 x 3.75 ) m ² = 20.635 m ² cost of paying = rs . ( 1400 x 20.625 ) = rs . 28875 . answer d\"",
+        "options": "a ) rs . 15,000 , b ) rs . 15,500 , c ) rs . 15,600 , d ) rs . 28,875 , e ) none",
+        "correct": "d",
+        "annotated_formula": "multiply(1400, multiply(5.5, 3.75))",
+        "linear_formula": "multiply(n0,n1)|multiply(n2,#0)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "walking 6 / 5 of his usual rate , a boy reaches his school 4 min early . find his usual time to reach the school ?",
+        "Rationale": "\"speed ratio = 1 : 6 / 5 = 5 : 6 time ratio = 6 : 5 1 - - - - - - - - 6 4 - - - - - - - - - ? 24 m . answer : d\"",
+        "options": "a ) 22 , b ) 99 , c ) 27 , d ) 24 , e ) 20",
+        "correct": "d",
+        "annotated_formula": "multiply(4, 6)",
+        "linear_formula": "multiply(n0,n2)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "rs . 2500 is divided into two parts such that if one part be put out at 5 % simple interest and the other at 6 % , the yearly annual income may be rs . 120 . how much was lent at 5 % ?",
+        "Rationale": "( x * 5 * 1 ) / 100 + [ ( 2500 - x ) * 6 * 1 ] / 100 = 120 x = 3000 answer : c",
+        "options": "a ) 2333 , b ) 2777 , c ) 3000 , d ) 1000 , e ) 2871",
+        "correct": "c",
+        "annotated_formula": "divide(subtract(120, divide(multiply(6, 2500), const_100)), subtract(divide(5, const_100), divide(6, const_100)))",
+        "linear_formula": "divide(n1,const_100)|divide(n2,const_100)|multiply(n0,n2)|divide(#2,const_100)|subtract(#0,#1)|subtract(n3,#3)|divide(#5,#4)",
+        "category": "gain"
+    },
+    {
+        "Problem": "an inspector rejects 15 % of the meters as defective . how many will he examine to reject 10 ?",
+        "Rationale": "\"then , 10 % of x = 15 ( 15 / 100 ) x = 10 x = ( 10 * 100 * ) / 15 = 66.7 answer is b\"",
+        "options": "a ) a ) 100 , b ) b ) 66.7 , c ) c ) 250 , d ) d ) 200 , e ) e ) 160",
+        "correct": "b",
+        "annotated_formula": "divide(multiply(10, const_100), 15)",
+        "linear_formula": "multiply(n1,const_100)|divide(#0,n0)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "how many three digit numbers q are divisible by 78 or 91 ?",
+        "Rationale": "\"the answer will be 19 . explanation : 78 = 2 * 3 * 13 now multiples of 78 , 156 . . . . 780 , now 1000 - 780 = 220 only two more muktiples of 78 can exists . so total number of 3 digit multiples of 78 are 9 + 2 = 11 91 = 13 * 7 - - total number of three digit multiples - - 9 no remember we have a common multiples as well - - 13 * 7 * 6 = 91 * 6 = 546 so total number of multiples q - - 11 + 9 - 1 = 19 . hence answer is 19 . b\"",
+        "options": "a ) 17 , b ) 19 , c ) 20 , d ) 21 , e ) 22",
+        "correct": "b",
+        "annotated_formula": "add(subtract(subtract(const_1000, const_10), multiply(multiply(const_10, multiply(78, 78)), multiply(const_4, const_2))), const_10)",
+        "linear_formula": "multiply(n0,n0)|multiply(const_2,const_4)|subtract(const_1000,const_10)|multiply(#0,const_10)|multiply(#3,#1)|subtract(#2,#4)|add(#5,const_10)|",
+        "category": "general"
+    },
+    {
+        "Problem": "at the end of the day , february 14 th , a florist had 150 roses left in his shop , all of which were red , white or pink in color and either long or short - stemmed . a third of the roses were short - stemmed , 20 of which were white and 15 of which were pink . the percentage of pink roses that were short - stemmed equaled the percentage of red roses that were short - stemmed . if none of the long - stemmed roses were white , what percentage of the long - stemmed roses were red ?",
+        "Rationale": "\"r + w + p = 150 s + l = 150 1 / 3 * 150 = 50 short - stemmed white = 20 short - stemmed pink = 15 = > short - stemmed red = 15 15 / p = 15 / r = > r = p so total long stemmed = 100 and long stemmed red + long stemmed pink = 100 so long stemmed red / long stemmed = ? total white = 20 ( as no long stemmed white ) = > r + r + 20 = 150 = > r = 130 and r = 65 long stemmed r = 65 - 15 = 50 so long stemmed red / r = 50 / 100 = 50 % answer - a\"",
+        "options": "a ) 50 % , b ) 25 % , c ) 250 % , d ) 75 % , e ) 80 %",
+        "correct": "a",
+        "annotated_formula": "multiply(divide(divide(multiply(subtract(150, divide(150, const_3)), subtract(subtract(divide(150, const_3), 20), 15)), add(15, subtract(subtract(divide(150, const_3), 20), 15))), subtract(150, divide(150, const_3))), const_100)",
+        "linear_formula": "divide(n1,const_3)|subtract(n1,#0)|subtract(#0,n2)|subtract(#2,n3)|add(n3,#3)|multiply(#1,#3)|divide(#5,#4)|divide(#6,#1)|multiply(#7,const_100)|",
+        "category": "general"
+    },
+    {
+        "Problem": "due to construction , the speed limit along an 6 - mile section of highway is reduced from 55 miles per hour to 35 miles per hour . approximately how many minutes more will it take to travel along this section of highway at the new speed limit than it would have taken at the old speed limit ?",
+        "Rationale": "6 / 35 - 6 / 55 = 6 / 5 * ( 11 - 7 ) / 77 = 6 / 5 * 4 / 77 * 60 min = 6 * 12 * 4 / 77 = 288 / 77 ~ 3.7 answer - a",
+        "options": "a ) 4 , b ) 8 , c ) 10 , d ) 15 , e ) 24",
+        "correct": "a",
+        "annotated_formula": "max(multiply(subtract(add(55, 6), const_1), subtract(divide(6, 35), divide(6, 55))), const_4)",
+        "linear_formula": "add(n0,n1)|divide(n0,n2)|divide(n0,n1)|subtract(#0,const_1)|subtract(#1,#2)|multiply(#3,#4)|max(#5,const_4)",
+        "category": "physics"
+    },
+    {
+        "Problem": "at the beginning of 1992 , maria ' s stock portfolio was worth $ 600000 . during 1992 , the portfolio ' s value increased by 95 % . during the next year , the portfolio increased its worth by only 5 % . what was maria ' s portfolio worth , in dollars , by the end of 1993 ?",
+        "Rationale": "by the end of 1992 , the port folio worth is 1.95 * ( $ 600 k ) by 1993 , the portfolio is 1.05 * ( 1.95 * $ 600 k ) = $ 1 , 228,500 answer : d",
+        "options": "a ) 1 , 180000 , b ) 1 , 200000 , c ) 1 , 200300 , d ) 1 , 228500 , e ) 1 , 330,000",
+        "correct": "d",
+        "annotated_formula": "divide(600000, const_3)",
+        "linear_formula": "divide(n1,const_3)",
+        "category": "general"
+    },
+    {
+        "Problem": "what is the least integer greater than 1 + 0.5 ?",
+        "Rationale": "\"this question is just about doing careful arithmetic and remembering what makes a numberbiggerorsmallercompared to another number . first , let ' s take care of the arithmetic : ( 1 ) + ( 0.5 ) = 1.5 on a number line , since we ' re adding + . 5 to a number , the total moves to the right ( so we ' re moving from 1 to 1.5 ) . next , the question asks for the least integer that is greater than 1.5 again , we can use a number line . numbers become greater as you move to the right . the first integer to the right of 1.5 is 2 . final answer : e\"",
+        "options": "a ) – 2 , b ) – 1 , c ) 0 , d ) 1 , e ) 2",
+        "correct": "e",
+        "annotated_formula": "multiply(add(1, const_1), const_2)",
+        "linear_formula": "add(n0,const_1)|multiply(#0,const_2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a side of beef lost 40 percent of its weight in processing . if the side of beef weighed 240 pounds after processing , how many pounds did it weigh before processing ?",
+        "Rationale": "\"let weight of side of beef before processing = x ( 60 / 100 ) * x = 240 = > x = ( 240 * 100 ) / 60 = 400 answer b\"",
+        "options": "a ) 191 , b ) 400 , c ) 737 , d ) 840 , e ) 1,560",
+        "correct": "b",
+        "annotated_formula": "divide(multiply(240, const_100), subtract(const_100, 40))",
+        "linear_formula": "multiply(n1,const_100)|subtract(const_100,n0)|divide(#0,#1)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "a man saves a certain portion of his income during a year and spends the remaining portion on his personal expenses . next year his income increases by 25 % but his savings increase by 100 % . if his total expenditure in 2 years is double his expenditure in 1 st year , what % age of his income in the first year did he save ?",
+        "Rationale": "\"1 st year income = i 1 st year savings = s 1 st year expense = e 1 2 nd year income = 1.25 i 2 nd year savings = 2 s ( 100 % increase ) 2 nd year expense = e 2 e 1 + e 2 = 2 e 1 e 2 = e 1 that means expenses are same during both years . with increase of 25 % income the savings increased by 100 % . or s = . 25 i or s = 25 % of income b is the answer\"",
+        "options": "a ) 20 % , b ) 25 % , c ) 28.5 % , d ) 30 % , e ) 32 %",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(subtract(add(add(100, 25), 100), multiply(2, 100)), 100), 100)",
+        "linear_formula": "add(n0,n1)|multiply(n1,n2)|add(n1,#0)|subtract(#2,#1)|divide(#3,n1)|multiply(#4,n1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "3 friends a , b , c went for week end party to mcdonald ’ s restaurant and there they measure there weights in some order in 7 rounds . a , b , c , ab , bc , ac , abc . final round measure is 140 kg then find the average weight of all the 7 rounds ?",
+        "Rationale": "\"average weight = [ ( a + b + c + ( a + b ) + ( b + c ) + ( c + a ) + ( a + b + c ) ] / 7 = 4 ( a + b + c ) / 7 = 4 x 140 / 7 = 80 kgs answer : b\"",
+        "options": "a ) 98.5 kgs , b ) 80 kgs , c ) 76.5 kgs , d ) 67.5 kgs , e ) 58.2 kgs",
+        "correct": "b",
+        "annotated_formula": "divide(multiply(add(const_1, 3), 140), 7)",
+        "linear_formula": "add(const_1,n0)|multiply(n2,#0)|divide(#1,n1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "from the beginning to the end of 2007 , the price of a stock rose 20 percent . in 2008 , it dropped 25 percent . in 2009 , it rose 35 percent . what percent of the stock â € ™ s 2007 starting price was the price of the stock at the end of 2009 ?",
+        "Rationale": "assume a value at the beginning of 2007 . as this is a % question , assume p = 100 . at the end of 2007 it becmae = 1.2 * 100 = 120 at the end of 2008 it decreased by 25 % = 120 * . 75 = 90 at the end of 2009 it increased by 35 % = 90 * 1.35 = 121.5 thus ratio = 121.5 / 100 = 1.215 ( in % terms = 121.5 % ) . thus d is the correct answer .",
+        "options": "a ) 80 , b ) 90 , c ) 95 , d ) 121.5 , e ) 108",
+        "correct": "d",
+        "annotated_formula": "multiply(multiply(multiply(const_100, divide(add(const_100, 20), const_100)), divide(subtract(const_100, 25), const_100)), divide(add(const_100, 35), const_100))",
+        "linear_formula": "add(n5,const_100)|add(n1,const_100)|subtract(const_100,n3)|divide(#0,const_100)|divide(#2,const_100)|divide(#1,const_100)|multiply(#5,const_100)|multiply(#4,#6)|multiply(#3,#7)",
+        "category": "gain"
+    },
+    {
+        "Problem": "how many multiples of 7 are there between 14 and 252 ?",
+        "Rationale": "\"it should be mentioned whether 14 and 252 are inclusive . if 14 and 252 are inclusive , then the answer is ( 252 - 14 ) / 7 + 1 = 35 . if 14 and 252 are not inclusive , then the answer is ( 245 - 21 ) / 7 + 1 = 33 . since oa is a , then we have not inclusive case .\"",
+        "options": "a ) 33 , b ) 46 , c ) 59 , d ) 66 , e ) 80",
+        "correct": "a",
+        "annotated_formula": "add(divide(subtract(252, 14), 7), const_1)",
+        "linear_formula": "subtract(n2,n1)|divide(#0,n0)|add(#1,const_1)|",
+        "category": "general"
+    },
+    {
+        "Problem": "m and n are the x and y coordinates , respectively , of a point in the coordinate plane . if the points ( m , n ) and ( m + p , n + 21 ) both lie on the line defined by the equation x = ( y / 7 ) - ( 2 / 5 ) , what is the value of p ?",
+        "Rationale": "x = ( y / 7 ) - ( 2 / 5 ) , and so y = 7 x + 14 / 5 . the slope is 7 . ( n + 21 - n ) / ( m + p - m ) = 7 p = 3 the answer is c .",
+        "options": "a ) 1 , b ) 2 , c ) 3 , d ) 4 , e ) 5",
+        "correct": "c",
+        "annotated_formula": "divide(21, 7)",
+        "linear_formula": "divide(n0,n1)",
+        "category": "general"
+    },
+    {
+        "Problem": "when greenville state university decided to move its fine arts collection to a new library , it had to package the collection in 20 - inch by 20 - inch by 15 - inch boxes . if the university pays $ 0.70 for every box , and if the university needs 3.06 million cubic inches to package the collection , what is the minimum amount the university must spend on boxes ?",
+        "Rationale": "\"total no . of boxes = 3060000 / ( 20 × 20 × 15 ) = 510 total cost = 510 × $ 0.7 = $ 357 answer b\"",
+        "options": "a ) $ 255 , b ) $ 357 , c ) $ 510 , d ) $ 1,250 , e ) $ 2,550",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(multiply(3.06, multiply(const_1000, const_1000)), multiply(multiply(20, 20), 15)), 0.70)",
+        "linear_formula": "multiply(const_1000,const_1000)|multiply(n0,n0)|multiply(n4,#0)|multiply(n2,#1)|divide(#2,#3)|multiply(n3,#4)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the famous denali star train starts from anchorge & travels towards fair banksat speed 50 mph . after some time another train glacier discovery train ( at parallel track ) at fair banks and moves towards anchorge at a speed of 70 mph . both the trains denali star & glacier discovery have a length 1 / 6 miles each . after the trains meet how many seconds will faster train take to overtake the slower one ?",
+        "Rationale": "total distance = ( 1 / 6 ) + ( 1 / 6 ) = 1 / 3 miles relative speed = ( 50 + 70 ) mph = 120 mph time taken = ( 1 / 3 ) / ( 120 ) hours = 10 seconds answer : a",
+        "options": "a ) 10 sec , b ) 11 sec , c ) 12 sec , d ) 13 sec , e ) 14 sec",
+        "correct": "a",
+        "annotated_formula": "multiply(divide(add(divide(1, 6), divide(1, 6)), add(50, 70)), const_3600)",
+        "linear_formula": "add(n0,n1)|divide(n2,n3)|add(#1,#1)|divide(#2,#0)|multiply(#3,const_3600)",
+        "category": "physics"
+    },
+    {
+        "Problem": "a person walks from one end to the other of a 100 - meter long moving walkway at a constant rate in 25 seconds , assisted by the walkway . when this person reaches the end , they reverse direction and continue walking with the same speed , but this time it takes 150 seconds because the person is traveling against the direction of the moving walkway . if the walkway were to stop moving , how many seconds would it take this person to walk from one end of the walkway to the other ?",
+        "Rationale": "\"let v be the speed of the person and let x be the speed of the walkway . 25 ( v + x ) = 100 then 150 ( v + x ) = 600 150 ( v - x ) = 100 when we add the two equations : 300 v = 700 v = 7 / 3 time = 100 / ( 7 / 3 ) = ( 300 / 7 ) seconds which is about 43 seconds the answer is d .\"",
+        "options": "a ) 37 , b ) 39 , c ) 41 , d ) 43 , e ) 45",
+        "correct": "d",
+        "annotated_formula": "divide(100, divide(add(divide(100, 25), divide(100, 150)), const_2))",
+        "linear_formula": "divide(n0,n1)|divide(n0,n2)|add(#0,#1)|divide(#2,const_2)|divide(n0,#3)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "a pharmaceutical company received $ 5 million in royalties on the first $ 20 million in sales of and then $ 10 million in royalties on the next $ 108 million in sales . by approximately what percentage did the ratio of royalties to sales decrease from the first $ 20 million in sales to the next $ 108 million in sales ?",
+        "Rationale": "( 10 / 108 ) / ( 5 / 20 ) = 20 / 27 = 74 % it means that 10 / 108 represents only 74 % . therefore a decrease of 26 % . answer b",
+        "options": "a ) 8 % , b ) 26 % , c ) 45 % , d ) 52 % , e ) 56 %",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(5, 20), const_100)",
+        "linear_formula": "divide(n0,n1)|multiply(#0,const_100)",
+        "category": "general"
+    },
+    {
+        "Problem": "two employees x and y are paid a total of rs . 600 per week by their employer . if x is paid 120 percent of the sum paid to y , how much is y paid per week ?",
+        "Rationale": "\"let the amount paid to x per week = x and the amount paid to y per week = y then x + y = 600 but x = 120 % of y = 120 y / 100 = 12 y / 10 ∴ 12 y / 10 + y = 600 ⇒ y [ 12 / 10 + 1 ] = 600 ⇒ 22 y / 10 = 600 ⇒ 22 y = 6000 ⇒ y = 6000 / 22 = rs . 272.72 c\"",
+        "options": "a ) s . 200.72 , b ) s . 250.72 , c ) s . 272.72 , d ) s . 300.72 , e ) s . 310.72",
+        "correct": "c",
+        "annotated_formula": "divide(multiply(600, multiply(add(const_1, const_4), const_2)), multiply(add(multiply(add(const_1, const_4), const_2), const_1), const_2))",
+        "linear_formula": "add(const_1,const_4)|multiply(#0,const_2)|add(#1,const_1)|multiply(n0,#1)|multiply(#2,const_2)|divide(#3,#4)|",
+        "category": "general"
+    }
+]
