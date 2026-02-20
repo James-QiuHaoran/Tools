@@ -5,7 +5,13 @@ Blob storage account --> Containers (buckets) --> Blobs (objects)
 List the containers:
 
 ```
-az storage account show -n hqiublobstorage --query networkRuleSet
+az storage container list --account-name hqiublobstorage --auth-mode login --query "[].name" -o tsv
+```
+
+Create a container:
+
+```
+az storage container create --name opscale --account-name hqiublobstorage --auth-mode login
 ```
 
 Upload a file:
