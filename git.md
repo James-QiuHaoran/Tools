@@ -73,6 +73,8 @@ If you just want your branch to be up to date with main, but don’t care about 
 git checkout your-branch
 git fetch origin
 git merge origin/main
+# resolve any conflicts
+git push --force-with-lease
 ``` 
 
 ### Personal Access Token
